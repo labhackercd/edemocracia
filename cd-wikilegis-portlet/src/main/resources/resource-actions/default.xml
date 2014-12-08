@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<resource-action-mapping>
+	<portlet-resource>
+		<portlet-name>wl</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>CONFIGURATION</action-key>
+				<action-key>VIEW</action-key>
+				<action-key>DELETE_DISCUSSION</action-key>
+				<action-key>ADD_DISCUSSION</action-key>
+				<action-key>UPDATE_DISCUSSION</action-key>
+				<action-key>PROPOSE</action-key>
+				<action-key>UPDATE_PROPOSITION</action-key>
+				<action-key>DELETE_PROPOSITION</action-key>
+				<action-key>EXPORT_DATA</action-key>
+			</supports>
+			<community-defaults />
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key>CONFIGURATION</action-key>
+				<action-key>DELETE_DISCUSSION</action-key>
+				<action-key>ADD_DISCUSSION</action-key>
+				<action-key>UPDATE_DISCUSSION</action-key>
+				<action-key>PROPOSE</action-key>
+				<action-key>UPDATE_PROPOSITION</action-key>
+				<action-key>DELETE_PROPOSITION</action-key>				
+			</guest-unsupported>
+		</permissions>
+	</portlet-resource>
+	
+</resource-action-mapping>

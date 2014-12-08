@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+<head>
+    <title>WikiLegis</title>
+</head>
+<body>
+  	<wicket:panel>
+  		<div class="conteudoArtigo">
+  			<a wicket:id="nodeName"></a>
+  			<div class="colunaIconesWikilegis">
+  				<ul>
+  					<li>  					
+  						<div class="contadorWikilegis" wicket:id="containerNumeroComentarios" >
+  							<span wicket:id="numeroComentarios"></span>
+  							<span class="visualHidden"> Comentários </span>
+  						</div>  						
+  						<div class="demaisIconesWikilegis" wicket:id="containerIconeComentarios" >
+  							<a wicket:id="mostrarComentarios" >
+				  				<img src="/e-democracia-theme/images/common/conversation.png" alt="Comentários" title="Comentários"  />			  				
+				  			</a>
+				  		</div>
+			  		</li>			  		
+			  		<li>
+			  			<div class="contadorWikilegis"  wicket:id="containerNumeroContribuicoes">
+			  				<span wicket:id="numeroSugestoes"></span>
+			  				<span  class="visualHidden"> Sugestões</span>
+			  			</div>			  		
+			  			<div class="demaisIconesWikilegis" wicket:id="containerIconeSugestoes">							
+			  				<a wicket:id="mostrarContribuicoes" >
+			  					<img src="/e-democracia-theme/images/common/activate.png" alt="Sugestões de Alteração" title="Sugestões de Alteração"  />
+			  				</a>
+			  			</div>
+			  		</li>			  		
+			  		<li>
+			  			<div class="demaisIconesWikilegis">							
+			  				<a wicket:id="mostrarLegislacao" >
+		  						<img src="/e-democracia-theme/images/common/page.png" alt="Legislação" title="Legislação" />
+		  					</a>
+		  				</div>
+		  			</li>
+		  			<li>
+			  			<div class="demaisIconesWikilegis">	
+			  				<a wicket:id="editar" >
+			  					<img src="/e-democracia-theme/images/common/edit.png" alt="Editar Artigo" title="Editar Artigo"  />
+			  				</a>
+			  			</div>
+			  		</li>
+			  		
+		  		</ul>
+		  	</div>
+		  	<div class="colunaTextoWikilegis">
+		  	
+		  		<wicket:container wicket:id="textoFormatado">Texto do artigo</wicket:container>
+		  				  			  		
+		  		<div wicket:id="legislacaoVigenteRegiao">
+		  			<h4>Legislação em vigor</h4>
+		  			<div class="legislacaoWikilegis" >
+		  				<p wicket:id="legislacaoVigenteFormatada">Texto em vigor</p>
+		  			</div>
+		  			<div class="comentarioWikilegisOcultar">
+		  				<a href="#" wicket:id="ocultarLegislacao" >Ocultar legislação em vigor</a>
+		  			</div>
+		  		</div>
+	
+		  		<div wicket:id="comentariosRegiao">
+		  			<h4>Comentários</h4>	
+		  			<div  wicket:id="comentarios">Comentários</div>		  			
+		  		</div>
+		  		
+		  	</div>
+		  <div class="clearWikilegis"></div>
+  		</div>
+  	</wicket:panel>
+ </body>
+</html>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>WikiLegis</title>
+<wicket:head>
+	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+</wicket:head>
+</head>
+<body>
+	<div>
+	
+		<wicket:container wicket:id="menuWikilegis" ></wicket:container>
+		<div class="clearWikilegis"></div>
+	
+		<div class="taglib-header">
+			<h3>Editar Artigo </h3>
+		</div>
+		<div class="foldered">
+					
+			<div>
+				<div class="conteudo_aba" id="alterarArtigo">
+					<div >
+
+						<h5>Redação do artigo</h5>
+
+						<p wicket:id="labelArtigo" >Art. 1º Aenean posuer...</p>
+
+						<h5>Legislação em vigor</h5>
+
+						<p  wicket:id ="labelLegislacao" class="legislacaoWikilegis">Art. 12. Os juizes...</p>
+
+						<form class="vForm" wicket:id="form">						
+
+							<ul class="fieldList">
+							
+								<li>
+									<label wicket:for="textoArtigo">Nova redação do artigo</label>
+									 <textarea class="textAreaWikilegis"  cols="50" rows="5"	wicket:id="textoArtigo">
+							      		Redação do artigo
+							        </textarea></li>
+								<li>
+									<label wicket:for="legislacaoVigente">Nova legislação em vigor</label> 
+									<textarea  class="textAreaWikilegis" cols="50" rows="5" wicket:id="legislacaoVigente">
+							      		Legislação vigente
+							        </textarea></li>
+							        
+								<!-- 
+								<li>
+									<label for="descricao">Descrição do artigo</label>
+									<input type="text" id="descricao" size="70" class="campoGrande" />
+									<span class="hint">Resumo do novo artigo (entrar� como comentário)</span>
+								</li>
+								 -->		
+								 <fieldset class="vForm">
+
+									<legend>Posição</legend>
+
+									<ul class="fieldList">
+									
+									  <wicket:container wicket:id="posicao">
+							        	Posicao do elemento
+							      	  </wicket:container>
+
+									</ul>
+									
+								</fieldset>
+						         
+
+							</ul>
+							<ul class="actionList">
+								<li>
+									<input type="submit" wicket:id="enviar" value="Enviar" />
+								</li>
+								<li>
+									<input type="submit" wicket:id="excluir" value="Excluir" />
+								</li>
+								<li>
+									<input type="submit" wicket:id="cancelar" value="Cancelar" />
+								</li>
+							</ul>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

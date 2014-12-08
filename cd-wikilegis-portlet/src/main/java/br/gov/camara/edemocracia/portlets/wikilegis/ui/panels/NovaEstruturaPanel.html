@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>WikiLegis</title>
+</head>
+<body>
+<wicket:panel>
+
+<div class="conteudoInternoAba">
+	<form class="vForm" wicket:id="form">
+
+			<ul class="fieldList">
+
+				<li>
+					<label wicket:for="novoAgrupamento">Nome do	agrupamento</label>
+					 <input type="text" size="50" maxlength="300" wicket:id="novoAgrupamento" />
+				</li>
+
+				<li>
+					<label wicket:for="pai">Agrupamento pai</label>
+					<select	wicket:id="pai"></select>
+				</li>
+				<li>
+					<label wicket:for="posicao">Posição do agrupamento</label> 
+					<select	wicket:id="posicao"></select>
+				</li>
+
+			</ul>
+
+			<ul class="actionList">
+
+				<li>
+					<input type="submit" wicket:id="criar" value="Gravar" />
+				</li>
+
+				<li>
+					<input type="submit" wicket:id="cancelar" value="Cancelar" />
+				</li>
+
+			</ul>
+
+	</form>
+
+</div>
+
+</wicket:panel>
+</body>
+</html>

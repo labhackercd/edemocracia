@@ -1,0 +1,31 @@
+#mask {
+  position:absolute;
+   left:0; 
+   top:0; 
+   z-index:9000; 
+   background-color:#000;
+   display:none;
+}
+#boxes .modalWindow {
+   position:fixed;
+   display:none;   
+   left:30%;
+   top:20%;
+   width:440px; 
+   height:200px; 
+   z-index:9999; 
+   padding:20px; 
+} 
+#boxes #dialog {
+   border: 10px solid #CCC; 
+   -moz-border-radius: 5px; /* Para Firefox */ 
+   -webkit-border-radius: 5px; /*Para Safari e Chrome */ 
+   border-radius: 5px; /* Para Opera 10.5+*/ 
+   width:500px; 
+   height:300px; 
+   padding:10px; 
+   background-color:#ffffff; 
+}
+#boxes #dialog h3 {
+	color: #B65210 !important;
+}

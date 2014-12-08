@@ -1,0 +1,30 @@
+.compartilhe {
+	float: right;
+	padding-top: 4px;
+}
+
+.compartilhe .titulo {
+	float: left;
+	margin-right: 0.3em;
+	font-weight: bold;
+	padding-top: 3px;
+	color:#666;
+}
+
+.compartilhe .addthis_toolbox {
+	float: left;
+}
+
+.compartilhe .addthis_toolbox .at300b,
+.compartilhe .addthis_toolbox .at300m {
+	padding: 0 3px;
+}
+
+.compartilhe .addthis_toolbox .at300bs {
+	width: 20px;
+	height: 20px;
+	
+	background-attachment: scroll;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}

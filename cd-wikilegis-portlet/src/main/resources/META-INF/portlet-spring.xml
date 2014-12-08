@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.gov.camara.edemocracia.portlets.wikilegis.service.ArtigoLocalService" class="br.gov.camara.edemocracia.portlets.wikilegis.service.impl.ArtigoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.ArtigoPersistence" class="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.ArtigoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.ArtigoFinder" class="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.ArtigoFinderImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.wikilegis.service.ContribuicaoLocalService" class="br.gov.camara.edemocracia.portlets.wikilegis.service.impl.ContribuicaoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.ContribuicaoPersistence" class="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.ContribuicaoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.wikilegis.service.EstruturaLocalService" class="br.gov.camara.edemocracia.portlets.wikilegis.service.impl.EstruturaLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.EstruturaPersistence" class="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.EstruturaPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.wikilegis.service.WikiLegisService" class="br.gov.camara.edemocracia.portlets.wikilegis.service.impl.WikiLegisServiceImpl" />
+</beans>

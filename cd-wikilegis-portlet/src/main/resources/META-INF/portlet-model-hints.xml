@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.gov.camara.edemocracia.portlets.wikilegis.model.Artigo">
+		<field name="artigoId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="estruturaId" type="long" />
+		<field name="ordem" type="int" />
+		<field name="texto" type="String">
+			<hint name="max-length">20000</hint>
+		</field>
+		<field name="legislacaoVigente" type="String">
+			<hint name="max-length">20000</hint>
+		</field>
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.wikilegis.model.Contribuicao">
+		<field name="contribuicaoId" type="long" />
+		<field name="artigoId" type="long" />
+		<field name="texto" type="String">
+			<hint name="max-length">20000</hint>
+		</field>
+		<field name="descricao" type="String">
+			<hint name="max-length">20000</hint>
+		</field>
+		<field name="data" type="Date" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.wikilegis.model.Estrutura">
+		<field name="estruturaId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="texto" type="String">
+			<hint name="max-length">300</hint>
+		</field>
+		<field name="ordem" type="int" />
+		<field name="paiEstruturaId" type="long" />
+	</model>
+</model-hints>

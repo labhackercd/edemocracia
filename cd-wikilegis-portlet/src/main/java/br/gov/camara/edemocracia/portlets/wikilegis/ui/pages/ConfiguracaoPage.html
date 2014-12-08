@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>WikiLegis</title>
+</head>
+<body>
+	
+	<span wicket:id="mensagensFeedback" />	
+	
+	<form wicket:id="form">
+
+		Digite o nome do projeto de lei em discussão 
+		<br />
+		<input type="text" wicket:id="tituloProjetoLei"
+			style="width: 350px;" />
+		<br />
+		<br />
+
+		<fieldset class="vForm">
+
+			<legend>Descrição do Projeto</legend>
+			<ul class="fieldList">
+
+				<li>
+					<label>Título</label> 
+					<input type="text"  wicket:id="tituloDescricaoProjeto"  style="width: 350px;" />
+				</li>
+				<li>
+					<label>Descrição</label> 
+					<textarea  cols="50" rows="8" wicket:id="descricaoProjeto">
+					Breve Descrição do Projeto
+			 		</textarea>
+				</li>
+				
+			</ul>
+
+		</fieldset>
+		
+		<input type="checkbox" wicket:id="habilitaPlugins"/> Habilitar plugins de compartilhamento nas redes sociais.
+		<br/>
+		<br/>
+		<input type="checkbox" wicket:id="habilitaSugestoes"/> Habilitar sugestões de alteração.
+		<br/>
+		<br/>
+		<input type="submit" value="Gravar" />
+		<input type="button" wicket:id="paginaInicial" value="Voltar" />
+	</form>
+</body>
+</html>

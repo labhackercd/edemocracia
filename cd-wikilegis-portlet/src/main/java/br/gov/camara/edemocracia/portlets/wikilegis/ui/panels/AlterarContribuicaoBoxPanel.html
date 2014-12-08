@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<wicket:head>
+<title>WikiLegis</title>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('a[name=modal]').click(function(e) {
+    	
+		e.preventDefault();
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+        $('#mask').css({'width':maskWidth,'height':maskHeight});
+        $('#mask').fadeIn(400);    
+        $('#mask').fadeTo("slow",0.8);  
+    });
+ 
+    $('#mask').click(function () {
+        $('#mask').hide();
+        $('.modalWindow').hide();
+    });         
+});
+
+</script>
+</wicket:head>
+<body>
+
+<wicket:panel >
+	
+	<div id="boxes" >
+	    <div id="dialog" class="modalWindow" >
+			   	<form wicket:id="formEdicao">
+			       	<h3>Alterar Sugestão </h3>  
+			       	<label>Texto do Artigo</label>
+					<textarea wicket:id="editTextoArtigo" class="textAreaWikilegis" rows="5" cols="50">Content</textarea>	
+					<br />
+					<br />
+					<label>Justificativa da Alteração</label>
+					<textarea wicket:id="editDescricao" class="textAreaWikilegis" rows="5" cols="50">Content</textarea>	
+					<br />	
+					<br />	
+					<div style="float: right;" >
+						<input type="submit"  value="Gravar" />
+						<input id="cancelar" type="button" class="close" value="Cancelar" />
+					</div>
+				</form>
+		</div>
+	</div>
+</wicket:panel>
+
+</body>
+</html>

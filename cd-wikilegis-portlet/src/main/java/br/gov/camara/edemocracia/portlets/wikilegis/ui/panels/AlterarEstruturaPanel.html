@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>WikiLegis</title>
+</head>
+<body>
+
+<wicket:panel>
+<div class="conteudoInternoAba">	
+	<form class="vForm" wicket:id="formAlteracao" >
+
+		<ul class="fieldList">
+
+			<li>
+				<label for="agrupamento">Agrupamento</label> 
+				<select id="agrupamento" wicket:id="agrupamentos"></select>
+			</li>
+
+			<li>	
+				<label for="nomeAgrupamento">Novo nome do agrupamento</label> 
+				<input type="text" wicket:id="nomeAgrupamento" maxlength="300" size="135" />
+			</li>
+
+			<li>
+				<label for="agrupamentoPai">Agrupamento pai</label> 
+				<select	id="agrupamentoPai" wicket:id="paiAlt" >
+					<option>Livro I</option>
+					<option>Título I</option>
+					<option>Capítulo I</option>
+				</select>
+			</li>
+
+			<li>
+				<label for="posicaoAgrupamento">Posição do agrupamento</label>
+			    <select id="posicaoAgrupamento" wicket:id="posicaoAlt" >
+					<option>Anterior a todos</option>
+					<option>Livro I</option>
+					<option>Título I</option>
+					<option>Capítulo I</option>
+				</select>
+			</li>
+
+		</ul>
+
+		<ul class="actionList">
+
+			<li>
+				<input type="submit"  wicket:id="gravarAlteracao" class="submit " value="Gravar" />
+			</li>
+			<li>
+				<input type="button"  wicket:id="cancelarAlteracao" value="Cancelar" />
+			</li>
+
+		</ul>
+
+	</form>
+	
+</div>
+</wicket:panel>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>WikiLegis</title>
+<wicket:head>
+	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+</wicket:head>
+</head>
+<body>
+	<div>
+		
+		<wicket:container wicket:id="menuWikilegis" ></wicket:container>
+		<div class="clearWikilegis"></div>
+	
+		<div class="taglib-header">
+			<h3>Novo Artigo</h3>
+		</div>
+
+		<form  class="vForm" wicket:id="form">
+
+			<ul class="fieldList">
+
+				<li>
+					<label wicket:for="textoArtigo">Redação do artigo</label> 
+					<textarea  class="textAreaWikilegis" cols="50" rows="5" wicket:id="textoArtigo">
+			      		Redação do artigo
+					</textarea>
+				</li>
+
+				<li>
+					<label wicket:for="legislacaoVigente">Legislação em vigor</label> 
+					<textarea  class="textAreaWikilegis" cols="50" rows="5" wicket:id="legislacaoVigente">
+			    		Legislação em vigor
+					</textarea>
+				</li>
+				<!--  
+				<li>
+					<label for="descricao">Descrição do artigo</label>
+					<input type="text" id="descricao" size="70" class="campoGrande" />
+					<span class="hint">Resumo do novo artigo (entrar� como comentário)</span>
+				</li>		
+				-->	
+				<li>
+					<fieldset class="vForm">
+
+						<legend>Posição</legend>
+
+						<ul class="fieldList">
+
+							<wicket:container wicket:id="posicao">
+								Posicao do artigo
+							</wicket:container>
+
+						</ul>
+
+					</fieldset>
+				</li>
+			</ul>
+
+			<ul class="actionList">
+				<li>
+					<input class="submit" type="submit" wicket:id="enviar" value="Enviar" /> 
+				</li>
+				<li>
+					<input type="submit" wicket:id="cancelar" value="Cancelar" />
+				</li>
+			</ul>
+		</form>
+	</div>
+</body>
+</html>

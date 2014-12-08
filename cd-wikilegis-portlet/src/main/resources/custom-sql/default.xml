@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<custom-sql>
+	<sql id="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.ArtigoFinderImpl.findAllArtigoDisplay">
+		<![CDATA[
+SELECT {art.*}, 
+	(select COUNT(*) from CDWL_Contribuicao contr where contr.artigoId = art.artigoId) as contribuicoes,
+	(select COUNT(*) from MBMessage mbm WHERE art.artigoId = mbm.classPK AND mbm.parentMessageId <> 0 AND mbm.classNameId = (select classNameId from ClassName_ where value = 'br.gov.camara.edemocracia.portlets.wikilegis.model.Artigo')) as comentarios
+FROM
+	CDWL_Artigo art
+WHERE
+	art.groupId = ?
+ORDER BY
+	estruturaId, ordem
+		]]>
+	</sql>
+	
+	<sql id="br.gov.camara.edemocracia.portlets.wikilegis.service.persistence.ArtigoFinderImpl.findArtigoDisplayByGE">
+		<![CDATA[
+SELECT {art.*}, 
+	(select COUNT(*) from CDWL_Contribuicao contr where contr.artigoId = art.artigoId) as contribuicoes,
+	(select COUNT(*) from MBMessage mbm WHERE art.artigoId = mbm.classPK AND mbm.parentMessageId <> 0 AND mbm.classNameId = (select classNameId from ClassName_ where value = 'br.gov.camara.edemocracia.portlets.wikilegis.model.Artigo')) as comentarios
+FROM
+	CDWL_Artigo art
+WHERE
+	art.groupId = ? AND art.estruturaId = ? 
+ORDER BY
+	ordem
+		]]>
+	</sql>
+</custom-sql>

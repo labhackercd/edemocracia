@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>WikiLegis</title>
+</head>
+
+<body>
+
+	<div>
+
+		<wicket:container wicket:id="menuWikilegis"></wicket:container>
+
+		<div class="clearWikilegis"></div>
+
+		<div class="taglib-header">
+			<h3 wicket:id="tituloProjetoLei">Título do PL: Documento
+				preeliminar para debate</h3>
+		</div>
+
+		<div class="grid-line">
+
+			<div class="grid-cell size1of4">
+				<div class="menuWikilegis">
+					<div>
+						<ul class="arvoreRetratil">
+							<li>  				
+								<a href="#" class='expandirMenu menuAberto' onclick="toggleGrupo(this); return false;"><img src="#" alt="Recolher Menu" wicket:id="imgExpandir"/></a>
+								<span wicket:id="tituloDescricaoProjeto" >Breve descrição</span>
+								<ul>
+									<li>
+										<div class="wikilegisLink" >
+											<p wicket:id="descricaoProjeto" >
+													Descricão ...
+											</p>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="menuWikilegis" wicket:id="navegador">Estrutura</div>
+				<div class="menuWikilegis" style="border-style:none;border-color:#ffffff;max-width:235px;">
+					<iframe wicket:id="plugins" src="#" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:235px; height:80px;" allowTransparency="true"></iframe>
+				</div>
+			</div>
+
+			<div class="grid-cell size3of4 last-cell">
+
+				<div class="conteudoWikilegis">
+
+					<wicket:container wicket:id="filhos">
+						<wicket:container wicket:id="filho" />
+					</wicket:container>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+</html>

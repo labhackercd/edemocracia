@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+<head>
+    <title>WikiLegis</title>
+</head>
+<body>
+  	<wicket:panel>
+  	
+  		<ul class="arvoreRetratil">
+  			<li class="itemMenu" wicket:id="raizes">
+  				<a href="#" class='expandirMenu' onclick="toggleGrupo(this); return false;"><img src="#" alt="Expandir Menu" wicket:id="imgExpandir"/></a>
+  				<wicket:container wicket:id="filho">Conteudo</wicket:container>
+  			</li>
+  		</ul>  		
+  		
+  	</wicket:panel>
+  	
+  	<wicket:fragment wicket:id="no">
+		<a wicket:id="link"><wicket:container wicket:id="titulo">Título</wicket:container></a>
+		<wicket:enclosure child="filhos">
+			<ul style="display: none;">
+				<li class="itemMenu" wicket:id="filhos">
+					<a href="#" class='expandirMenu' onclick="toggleGrupo(this);return false;"><img src="#" alt="Expandir Menu" wicket:id="imgExpandir"/></a>
+					<wicket:container wicket:id="filho">Conteudo</wicket:container>
+				</li>
+			</ul>
+		</wicket:enclosure>
+  	</wicket:fragment>
+  	
+ </body>
+</html>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+<head>
+    <title>WikiLegis</title>
+</head>
+<body>
+  	<wicket:panel>
+  	<div class="wikilegisComentarios">
+	  <div wicket:id="comentariosContainer">
+		<div class="comentarioWikilegisAdicionar">
+			<a href="#" wicket:id="adicionarComentario">
+				<img src="/e-democracia-theme/images/common/add_article.png" alt="Adicionar Comentário" />
+				Adicionar Comentário
+			</a>
+		</div>
+		
+		<!-- Novo comentário -->
+		<wicket:container wicket:id="comentarioRaiz"></wicket:container>
+		<wicket:container wicket:id="comentarioVazio">
+			Nenhum comentário
+		</wicket:container>					
+		<wicket:container wicket:id="comentarios">			
+		  	<div class="comentariosWikilegis">	  				
+  				<div class="comentariosWikilegisAvatar">
+	  				<div>   									
+	  					<a wicket:id="postagem" name="nome"></a>  	  										
+	  				</div>
+					<div class="user-profile-image">
+					
+						<a wicket:id="senderProfile" ><img wicket:id="senderId" class="avatar" width="65" /></a>
+						
+						<a  wicket:id="senderName" >nome do usuário</a>
+					
+					</div>
+				</div> 					
+  				<div class="comentariosWikilegisTexto">
+  					
+  					<p wicket:id="body">Texto</p>
+  						
+		  			<p>Postado em <wicket:container wicket:id="when">12/12/2012</wicket:container> 
+		  				<wicket:enclosure child="parentMessageName:inReplyToName">
+		  					em resposta a 
+							<a wicket:id="parentMessageName">
+								<wicket:container wicket:id="inReplyToName">Quem publicou</wicket:container>
+							</a>
+		  				</wicket:enclosure>
+		  			</p>		  				
+  				 				
+					<div class="comentariosWikilegisLinks">
+						<ul>
+							<li>
+								<a href="#" wicket:id="responder">
+									<img src="/e-democracia-theme/images/common/reply.png" alt="Postar Resposta" title="Postar Resposta" />
+									Responder
+								</a>
+							</li>
+							<li>
+								<a href="#" wicket:id="linkArtigo">
+									<img src="/e-democracia-theme/images/common/top.png" alt="Voltar ao Início do Artigo" title="Voltar ao Início do Artigo" />
+									Voltar ao Início do Artigo
+								</a>
+							</li>
+							<li>
+								<a href="#" wicket:id="alterar">
+									<img src="/html/themes/control_panel/images/common/edit.png" alt="Alterar" title="Alterar" />
+									Alterar
+								</a>
+							</li>
+							<li>
+								<a href="#" wicket:id="exclui">
+									<img src="/e-democracia-theme/images/common/delete.png" alt="Excluir" title="Excluir" />
+									Excluir
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div> 
+  			   <div class="clearWikilegis"></div>
+		  	 </div>
+			 <!-- Resposta -->
+		  	 <wicket:container wicket:id="resposta"></wicket:container>
+		  </wicket:container>	  			
+ 			</div>
+ 		</div>
+  		<div class="comentarioWikilegisOcultar"><a href="#" wicket:id="ocultarComentarios">Ocultar comentários</a></div>
+  		<div class="clearWikilegis"></div>
+ 		
+ 		<wicket:fragment wicket:id="comentarioForm">
+ 			<form class="vForm" wicket:id="form">
+			 	<div class="iconesComentarios">
+					<ul class="fieldList">
+						<li>
+							<textarea class="textAreaWikilegis" cols="100" rows="5" wicket:id="comentario"></textarea>
+						</li>
+					</ul>
+					<ul class="actionList">
+						<li>
+							<input type="submit" class="submit" value="Enviar" wicket:id="comentar"/>
+						</li>
+						<li>
+							<input type="button" value="Cancelar" class="cancelarBtn" wicket:id="cancelar"/>
+						</li>
+							
+					</ul>
+				</div>  		
+			</form>
+		</wicket:fragment>
+  	</wicket:panel>
+ </body>
+</html>

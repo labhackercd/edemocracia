@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder
+	package-path="br.gov.camara.edemocracia.portlets.wikilegis">
+	<author>robson</author>
+	<namespace>CDWL</namespace>
+	
+	<entity name="Estrutura" local-service="true" remote-service="false">
+		<column name="estruturaId" type="long" primary="true"/>
+		<column name="companyId" type="long"/>
+		<column name="groupId" type="long"/>
+		<column name="texto" type="String"/>
+		<column name="ordem" type="int" />
+		<column name="paiEstruturaId" type="long" />
+		
+		<finder return-type="Collection" name="G_P">
+			<finder-column name="groupId"/>
+			<finder-column name="paiEstruturaId"/>
+		</finder>
+	</entity>
+
+	<entity name="Artigo" local-service="true" remote-service="false">
+		<column name="artigoId" type="long" primary="true"/>
+		<column name="companyId" type="long"/>
+		<column name="groupId" type="long"/>
+		
+		<!-- Hierarquia -->
+		<column name="estruturaId" type="long"/>	<!-- Identificador da entrada pai (modelo hierárquico) -->
+		
+		<!-- Numeração -->
+		<column name="ordem" type="int" />
+		
+		<column name="texto" type="String" />
+		<column name="legislacaoVigente" type="String" />
+		
+		<column name="contribuicoes" type="Collection" entity="Contribuicao" mapping-key="artigoId" />
+		
+		<finder return-type="Collection" name="G_E">
+			<finder-column name="groupId"/>
+			<finder-column name="estruturaId" />
+		</finder>
+	</entity>
+	
+	<!-- Contribuição a um artigo -->
+	<entity name="Contribuicao" local-service="true" remote-service="false">
+		<column name="contribuicaoId" type="long" primary="true"/>
+		<column name="artigoId" type="long" />
+		
+		<column name="texto" type="String" />
+		<column name="descricao" type="String" />
+	
+		<column name="data" type="Date" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		
+		<finder return-type="Collection" name="A">
+			<finder-column name="artigoId" />
+		</finder>
+	</entity>
+	
+	<entity name="WikiLegis" local-service="false" remote-service="true">
+	</entity>
+</service-builder>

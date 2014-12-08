@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<wicket:head>
+<title>WikiLegis</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/compartilhe.css" />
+</wicket:head>
+<body>
+	<div>
+		<div id="mask"></div>
+		<wicket:container wicket:id="menuWikilegis"></wicket:container>
+		<div class="clearWikilegis"></div>
+
+		<div class="taglib-header">
+			<div wicket:id="plugins"  class="compartilhe">
+			  <span class="titulo">Compartilhe:</span>
+				<div id="share" wicket:id="share" class="addthis_toolbox addthis_default_style" addthis:url="url">
+			        <a class="addthis_button_facebook_like" fb:like:layout="button_count"  ></a>
+			        <a class="addthis_button_google_plusone" g:plusone:size="medium" ></a>
+<!-- 			        g:plusone:count="true" g:plusone:size="medium" -->
+					<a class="addthis_button_twitter" title="Twitter"></a>
+					<a class="addthis_button_orkut" title="Orkut"></a>
+					<a class="addthis_button_email" title="E-mail"></a>
+					<a class="addthis_button_compact"></a>
+				</div>
+				
+				<script type="text/javascript">
+					var addthis_config = {
+			            ui_language: 'pt',
+						data_track_clickback:true
+					};
+			        var addthis_share = {
+						url: "$link.getData()"
+			        };
+				</script>
+				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=codis"></script>	
+			</div>
+			<h3>Sugestões de Alteração ao Artigo</h3>
+		</div>
+
+		<h4>Redação do artigo</h4>
+
+		<div wicket:id="texto">Texto original</div>
+
+		<wicket:enclosure child="legislacaoVigente">
+			<h4>Legislação em vigor</h4>
+
+			<div class="legislacaoWikilegis" wicket:id="legislacaoVigente">
+				Legislação em vigor</div>
+		</wicket:enclosure>
+		
+		<wicket:enclosure child="form">
+			<div class="sugestaoBox" >
+			<h4>Nova Sugestão</h4>
+
+			<form class="vForm" wicket:id="form">
+
+				<ul class="fieldList">
+					<li><label wicket:for="textoArtigo">Redação do artigo</label>
+						<textarea class="textAreaWikilegis" cols="50" rows="5"
+							wicket:id="textoArtigo">
+		      			Texto do artigo
+		     		</textarea></li>
+
+					<li><label wicket:for="descricao">Justificativa da
+							Alteração</label> <textarea class="textAreaWikilegis" cols="50" rows="5"
+							wicket:id="descricao">
+      					Descrição da sugestão
+      				</textarea></li>
+				</ul>
+
+				<ul class="actionList">
+
+					<li><input class="submit" type="submit" value="Enviar"
+						wicket:id="enviar" /></li>
+
+					<li><input type="submit" wicket:id="cancelar" value="Cancelar" />
+					</li>
+
+				</ul>
+
+			</form>
+		</div>
+		</wicket:enclosure>
+		
+			<div class="sugestaoBox" wicket:id="contribuicoes">
+	
+				<h4>Sugestão</h4>
+				<div class="colunaAvatarWikilegis">
+					<div>
+						<img src="#" wicket:id="userId" />
+					</div>
+					<div wicket:id="userName">Nome do Usuário</div>
+				</div>
+	
+				<div class="colunaTextoWikilegis">
+	
+					<h4>Redação do artigo</h4>
+	
+					<p wicket:id="texto">Art. 1º Aenean posuere...</p>
+	
+					<wicket:enclosure wicket:child="descricao">
+						<h4>Descrição da Sugestão</h4>
+	
+						<p wicket:id="descricao">Resumo do que foi alterado</p>
+					</wicket:enclosure>
+	
+				</div>
+				<div class="comentarioWikilegisOcultar">
+					<a wicket:id="alterar" href="#dialog" name="modal">
+						<img src="/html/themes/control_panel/images/common/edit.png" alt="Alterar" title="Alterar"/>Alterar
+					</a>
+					<a  href="#" wicket:id="excluir" >
+						<img src="/e-democracia-theme/images/common/delete.png" alt="Excluir" title="Excluir" />Excluir
+					</a>		
+				</div>
+				<div class="clearWikilegis"></div>	
+		  </div>
+	
+		  <div wicket:id="alterarContribuicaoBox" ></div>
+	
+	</div>
+	
+</body>
+</html>

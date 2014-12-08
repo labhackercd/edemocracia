@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.wikilegis.model.impl.ArtigoModelImpl">
+		<attributes>
+			<id name="artigoId" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="estruturaId" />
+			<basic name="ordem" />
+			<basic name="texto" />
+			<basic name="legislacaoVigente" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.wikilegis.model.impl.ContribuicaoModelImpl">
+		<attributes>
+			<id name="contribuicaoId" />
+			<basic name="artigoId" />
+			<basic name="texto" />
+			<basic name="descricao" />
+			<basic name="data">
+				<column name="DATA_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="userId" />
+			<basic name="userName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.wikilegis.model.impl.EstruturaModelImpl">
+		<attributes>
+			<id name="estruturaId" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="texto" />
+			<basic name="ordem" />
+			<basic name="paiEstruturaId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.gov.camara.edemocracia.portlets.wikilegis.model.impl.ArtigoImpl" name="Artigo">
+		<table name="CDWL_Artigo" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.wikilegis.model.impl.ContribuicaoImpl" name="Contribuicao">
+		<table name="CDWL_Contribuicao" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.wikilegis.model.impl.EstruturaImpl" name="Estrutura">
+		<table name="CDWL_Estrutura" />
+		<attributes />
+	</entity>
+</entity-mappings>

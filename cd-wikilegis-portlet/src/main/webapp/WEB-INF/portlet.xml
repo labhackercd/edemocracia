@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<portlet-app version="2.0"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+	<portlet>
+		<portlet-name>wl</portlet-name>
+		<display-name>Wikilegis</display-name>
+		<portlet-class>org.apache.wicket.protocol.http.portlet.WicketPortlet</portlet-class>
+		<init-param>
+			<name>wicketFilterPath</name>
+			<value>/app</value>
+		</init-param>
+		<init-param>
+			<name>editPage</name>
+			<value>/app/edit</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Wikilegis</title>
+			<short-title>Wikilegis</short-title>
+			<keywords>Wiki,Legislação,Editor</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+</portlet-app>
