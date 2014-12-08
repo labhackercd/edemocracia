@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.gov.camara.edemocracia.portlets.priorizacao.model.Configuracao" />
+	<import class="br.gov.camara.edemocracia.portlets.priorizacao.model.Eixo" />
+	<import class="br.gov.camara.edemocracia.portlets.priorizacao.model.Priorizacao" />
+	<import class="br.gov.camara.edemocracia.portlets.priorizacao.model.Proposta" />
+	<import class="br.gov.camara.edemocracia.portlets.priorizacao.model.Voto" />
+	<class name="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.ConfiguracaoImpl" table="PR_Configuracao">
+		<cache usage="read-write" />
+		<id name="configuracaoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="maximoVotos" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="maxVotosProposta" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="votacaoAberta" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.EixoImpl" table="PR_Eixo">
+		<cache usage="read-write" />
+		<id name="eixoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="categoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="titulo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sumario" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ordem" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.PropostaImpl" table="PR_Proposta">
+		<cache usage="read-write" />
+		<id name="propostaId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="eixoId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="identificador" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ementa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="texto" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="threadId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.VotoImpl" table="PR_Voto">
+		<cache usage="read-write" />
+		<id name="votoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="propostaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="numeroVotos" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="votosDisponiveis" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="data" type="org.hibernate.type.TimestampType" column="data_" />
+	</class>
+</hibernate-mapping>

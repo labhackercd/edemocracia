@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.ConfiguracaoLocalService" class="br.gov.camara.edemocracia.portlets.priorizacao.service.impl.ConfiguracaoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.ConfiguracaoPersistence" class="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.ConfiguracaoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.EixoLocalService" class="br.gov.camara.edemocracia.portlets.priorizacao.service.impl.EixoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.EixoPersistence" class="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.EixoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.PriorizacaoService" class="br.gov.camara.edemocracia.portlets.priorizacao.service.impl.PriorizacaoServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.PropostaLocalService" class="br.gov.camara.edemocracia.portlets.priorizacao.service.impl.PropostaLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.PropostaPersistence" class="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.PropostaPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.PropostaFinder" class="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.PropostaFinderImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.VotoLocalService" class="br.gov.camara.edemocracia.portlets.priorizacao.service.impl.VotoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.VotoPersistence" class="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.VotoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.VotoFinder" class="br.gov.camara.edemocracia.portlets.priorizacao.service.persistence.VotoFinderImpl" parent="basePersistence" />
+</beans>

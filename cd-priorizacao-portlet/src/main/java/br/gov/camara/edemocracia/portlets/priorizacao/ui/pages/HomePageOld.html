@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização</title>
+</head>
+
+<body>
+
+	<wicket:container wicket:id="menu"></wicket:container>
+	<div class="separator article-separator" ></div>
+	
+	<wicket:container wicket:id="eixos">
+		<wicket:enclosure child="propostas">
+		<h3 wicket:id="titulo">Nome do eixo</h3>
+		<p  wicket:id="sumario">Descrição do eixo</p>
+		<div class="results-grid">
+			<table class="taglib-search-iterator" >
+				<tbody> 
+				<tr class="portlet-section-header results-header">
+					<th style="width: 80px;">Proposta</th>
+					<th>Resumo</th>
+				</tr>
+				<tr class="portlet-section-body results-row" wicket:id="propostas">
+					<td class="align-left col-2 valign-middle "  >
+						<a href="#" wicket:id="link"><wicket:container wicket:id="identificador">Identificador</wicket:container></a>
+					</td >
+					<td class="align-left col-2 valign-middle" wicket:id="ementa">Ementa</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<br />
+		</wicket:enclosure>
+	</wicket:container>
+
+</body>
+
+</html>

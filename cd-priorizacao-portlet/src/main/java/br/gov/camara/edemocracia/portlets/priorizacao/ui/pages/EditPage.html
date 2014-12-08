@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização de propostas</title>
+</head>
+<body>
+	
+	<span wicket:id="feedback" />	
+	
+	<form wicket:id="form">
+
+		Digite o texto do link de ajuda
+		<br />
+		<input type="text" wicket:id="mensagem"
+			style="width: 350px;" />
+		<br />
+		<br />
+		Digite a URL para a página de ajuda
+		<br />
+		<input type="text" wicket:id="url"
+			style="width: 350px;" />
+
+		<input type="submit" value="Gravar" />
+		<input type="submit" wicket:id="voltar" value="Voltar" />
+	</form>
+</body>
+</html>

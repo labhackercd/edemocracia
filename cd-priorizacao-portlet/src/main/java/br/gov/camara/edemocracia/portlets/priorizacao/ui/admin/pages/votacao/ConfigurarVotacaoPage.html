@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização Admin</title>
+<link rel="stylesheet" type="text/css" href="css/mensagenspriorizacao.css" />
+</head>
+
+<body>
+	<wicket:container wicket:id="menuPriorizacao"></wicket:container>
+	<div class="separator article-separator" ></div>
+	<span wicket:id="mensagensFeedback" />
+	<form wicket:id="formConfiguracao" class="vForm" >	
+		<label>Quantidade máxima de votos</label><br />
+		<input wicket:id="maximoVotos" type="text" />
+		<br />
+		<span style="font-size: 9px" >Valor padrão: 20</span>
+		<br />
+		<br />
+		<label>Quantidade de votos por proposta</label><br />		
+		<input wicket:id="maximoVotosProposta"  type="text" />
+		<br />
+		<span style="font-size: 9px">Valor padrão: 5</span>
+		<br />
+		<br />
+		<input wicket:id="votacaoAberta" type="checkbox" />
+		<label>Votação aberta?</label>
+		<input class="submit" type="submit"  value="Gravar" /> 
+	</form>
+</body>
+
+</html>

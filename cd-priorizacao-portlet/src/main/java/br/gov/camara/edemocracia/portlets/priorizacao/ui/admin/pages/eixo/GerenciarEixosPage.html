@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização Admin</title>
+<link rel="stylesheet" type="text/css" href="css/mensagenspriorizacao.css" />
+</head>
+
+<body>
+	<wicket:container wicket:id="menuPriorizacao"></wicket:container>
+	<div class="separator article-separator" ></div>
+	<div class="aui-button-holder">
+		<span class="aui-button" >
+			<span class="aui-button-content" >
+				<input type="button" wicket:id="adicionarEixo" value="Adicionar Eixo" />			
+			</span>
+		</span>
+	</div>
+	<div class="separator article-separator" ></div>
+	<div>
+	<span wicket:id="mensagensFeedback" />
+	</div>
+	<div class="results-grid">
+			<table wicket:id="eixosContainer" class="taglib-search-iterator" >
+				<tbody> 
+					<tr class="portlet-section-header results-header">
+						<th>Eixo</th>
+						<th>Ações</th>
+					</tr>
+					<tr wicket:id="eixos" >
+						<td class="col-1" style="width: 75%;" ><span wicket:id="titulo">[titulo]</span><br /><span wicket:id="categoria" style="font-size:9px " >[categoria]</span></td>		
+						<td><a wicket:id="update" ><span><img class="icon" src="/html/themes/control_panel/images/common/edit.png" alt="Editar" title="Editar" style="cursor: pointer;"/>Editar</span></a>
+							<span><a wicket:id="excluir" ><img class="icon" src="/html/themes/control_panel/images/common/delete.png" alt="Excluir" title="Excluir" style="cursor: pointer;"/>Excluir</a></span></td>			
+					</tr>
+				</tbody>
+			</table>
+	</div>
+	
+</body>
+
+</html>

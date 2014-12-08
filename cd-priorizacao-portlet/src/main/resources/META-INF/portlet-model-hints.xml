@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.gov.camara.edemocracia.portlets.priorizacao.model.Configuracao">
+		<field name="configuracaoId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="maximoVotos" type="int" />
+		<field name="maxVotosProposta" type="int" />
+		<field name="votacaoAberta" type="boolean" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.priorizacao.model.Eixo">
+		<field name="eixoId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="categoryId" type="long" />
+		<field name="titulo" type="String">
+			<hint name="max-length">3900</hint>
+		</field>
+		<field name="sumario" type="String">
+			<hint name="max-length">3900</hint>
+		</field>
+		<field name="ordem" type="int" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.priorizacao.model.Proposta">
+		<field name="propostaId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="eixoId" type="long" />
+		<field name="identificador" type="String" />
+		<field name="ementa" type="String">
+			<hint name="max-length">3900</hint>
+		</field>
+		<field name="texto" type="String">
+			<hint name="max-length">1000000</hint>
+		</field>
+		<field name="threadId" type="long" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.priorizacao.model.Voto">
+		<field name="votoId" type="long" />
+		<field name="propostaId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="numeroVotos" type="int" />
+		<field name="votosDisponiveis" type="int" />
+		<field name="data" type="Date" />
+	</model>
+</model-hints>

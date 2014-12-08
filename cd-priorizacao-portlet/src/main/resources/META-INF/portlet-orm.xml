@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.ConfiguracaoModelImpl">
+		<attributes>
+			<id name="configuracaoId" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="maximoVotos" />
+			<basic name="maxVotosProposta" />
+			<basic name="votacaoAberta" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.EixoModelImpl">
+		<attributes>
+			<id name="eixoId" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="categoryId" />
+			<basic name="titulo" />
+			<basic name="sumario" />
+			<basic name="ordem" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.PropostaModelImpl">
+		<attributes>
+			<id name="propostaId" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="eixoId" />
+			<basic name="identificador" />
+			<basic name="ementa" />
+			<basic name="texto" />
+			<basic name="threadId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.VotoModelImpl">
+		<attributes>
+			<id name="votoId" />
+			<basic name="propostaId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="numeroVotos" />
+			<basic name="votosDisponiveis" />
+			<basic name="data">
+				<column name="DATA_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.ConfiguracaoImpl" name="Configuracao">
+		<table name="PR_Configuracao" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.EixoImpl" name="Eixo">
+		<table name="PR_Eixo" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.PropostaImpl" name="Proposta">
+		<table name="PR_Proposta" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.priorizacao.model.impl.VotoImpl" name="Voto">
+		<table name="PR_Voto" />
+		<attributes />
+	</entity>
+</entity-mappings>

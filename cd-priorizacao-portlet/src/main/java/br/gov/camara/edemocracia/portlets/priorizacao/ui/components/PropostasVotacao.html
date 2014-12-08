@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="results-grid">
+			<form wicket:id="form">
+				<table  class="taglib-search-iterator"  >
+					<tr  class="portlet-section-header results-header">
+						<th style="width:20%;">Proposta</th>
+						<th>Resumo</th>
+						<th style="width:130px;" wicket:id="votos"></th>
+					</tr>
+					<tr class="portlet-section-body results-row" wicket:id="propostas">
+						<td class="align-left col-2 valign-middle "><a href="#" wicket:id="proposta.identificadorLink" title="Ver texto da proposta" ><span wicket:id="proposta.identificador">id1</span></a><span wicket:id="proposta.identificadorSPAN">id1</span></td>
+						<td wicket:id="proposta.ementa">Nome da proposta</td>
+						<wicket:enclosure child="votosUsuario">
+							<td>
+								<a href="#" wicket:id="cancelarVoto"><img src="html/imagens/ico_menos.png" wicket:id="icone"/></a>
+								<img src="#" alt="texto" wicket:id="votosUsuario" />
+								<a href="#" wicket:id="votar"><img src="html/imagens/ico_mais.png" wicket:id="icone"/></a>							
+							</td>
+						</wicket:enclosure>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<br />
+	</wicket:panel>
+</body>
+</html>

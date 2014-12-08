@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização</title>
+</head>
+
+<body>
+
+	<script>
+function toggle(obj) {
+	var secao = $(obj).parent().next(".eixo");
+	secao.slideToggle("fast");
+	$(obj).toggleClass('menuAberto');
+	// Altera ícone (+ / -)
+	if ($(obj).hasClass('menuAberto')) {
+		$(obj).html("<img src='" + themeDisplay.getPathThemeImages() + "/custom/iconeRecolher.gif' />");
+	}
+	else {
+		$(obj).html("<img src='" + themeDisplay.getPathThemeImages() + "/custom/iconeExpandir.gif' />");
+	}
+	
+}
+	</script>
+	<wicket:container wicket:id="menu"></wicket:container>
+	<div class="separator article-separator"></div>
+
+	<div class="caixa-seus-pontos" wicket:id="votos">
+		<div class="check-icon"><img src="html/imagens/ico_checktitle.png"/></div>
+		<div class="titulo-seus-pontos">Seus Pontos</div> 
+		<div class="texto-pontos" align="right">
+			<ul class="lista-pontos">
+				<li wicket:id="votosDisponiveis">x ponto(s) disponível(is)</li>
+				<li wicket:id="totalVotos">x ponto(s) usado(s)</li>
+			</ul>
+		</div>
+		<div class="div-ajuda-pontos">
+			<a href="#" class="link-ajuda-pontos" wicket:id="link"><wicket:container wicket:id="mensagem">O que é isso?</wicket:container></a>
+		</div>
+	</div>
+	<wicket:container wicket:id="eixos">
+		<wicket:enclosure child="propostas">
+			<h3 style="clear: both;">
+				<a href="#" onclick="toggle(this); return false;"><img src="#" wicket:id="abrir" /></a>
+				<wicket:container wicket:id="titulo">Nome do eixo</wicket:container>
+			</h3>
+			<div class="eixo" style="display: none;">
+				<p wicket:id="sumario">Descrição do eixo</p>
+				<wicket:container wicket:id="propostas">
+					Propostas
+				</wicket:container>
+			</div>
+		</wicket:enclosure>
+	</wicket:container>
+
+</body>
+
+</html>

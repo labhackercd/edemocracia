@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização Admin</title>
+<link rel="stylesheet" type="text/css" href="css/mensagenspriorizacao.css" />
+</head>
+
+<body>
+	<wicket:container wicket:id="menuPriorizacao"></wicket:container>
+	<div class="separator article-separator" ></div>
+	<div class="aui-button-holder">
+		<span class="aui-button">
+			<span class="aui-button-content" >
+				<input type="button" wicket:id="adicionarProposta" value="Adicionar Proposta" />			
+			</span>
+		</span>
+	</div>
+	<div class="separator article-separator" ></div>
+	<span wicket:id="mensagensFeedback" />
+	<div>
+		<fieldset class="vForm">
+			<legend>Selecione o eixo:</legend>
+			<select wicket:id="eixos"><option>Eixo 1</option></select>
+		</fieldset>
+	</div>
+	<br />
+	<fieldset class="vForm">
+	<legend>Propostas</legend>
+	<div class="results-grid">
+	
+		<table wicket:id="propostasContainer" class="taglib-search-iterator" >
+			<tbody>
+				<wicket:enclosure child="propostas">
+				<tr class="portlet-section-header results-header">
+					<th>Proposta</th>
+					<th>Resumo</th>
+					<th>Ações</th>
+				</tr>
+				<tr wicket:id="propostas" >
+					<td class="col-1"><span wicket:id="identificador">[identificador]</span><br /><span wicket:id="topico" style="font-size:9px " >[topico]</span></td>		
+					<td class="col-1" style="width:60%;" ><span wicket:id="ementa">[ementa]</span></td>		
+					<td style="width:20%;" ><a href="#" wicket:id="updateProposta" ><span><img class="icon" src="/html/themes/control_panel/images/common/edit.png" alt="Editar" title="Editar" style="cursor: pointer;"/>Editar</span></a>
+						<span><a href="#" wicket:id="excluirProposta" ><img class="icon" src="/html/themes/control_panel/images/common/delete.png" alt="Excluir" title="Excluir" style="cursor: pointer;"/>Excluir</a></span></td>			
+				</tr>
+				</wicket:enclosure>
+			</tbody>
+		</table>
+		<span wicket:id="propostaVazia" >
+			<ul class="feedbackPanel">
+				<li class="feedbackPanelWARNING">
+					<span class="feedbackPanelWARNING" style="margin: 0px;" >Nenhuma proposta cadastrada para o eixo selecionado.</span>
+				</li>
+			</ul>
+		</span>	
+	</div>
+	</fieldset>
+</body>
+
+</html>

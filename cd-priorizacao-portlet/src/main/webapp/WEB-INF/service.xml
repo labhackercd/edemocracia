@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="br.gov.camara.edemocracia.portlets.priorizacao">
+	<author>robson</author>
+	<namespace>PR</namespace>
+
+	<!-- Eixo -->
+	<entity name="Eixo" local-service="true" remote-service="false">
+		<column name="eixoId" type="long" primary="true" />
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="categoryId" type="long" />	<!-- Categoria associada -->
+		<column name="titulo" type="String" />
+		<column name="sumario" type="String" />
+		<column name="ordem" type="int" />
+
+		<finder return-type="Collection" name="G">
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+
+	<!-- Proposta -->
+	<entity name="Proposta" local-service="true" remote-service="false">
+		<column name="propostaId" type="long" primary="true" />
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="eixoId" type="long" />
+
+		<column name="identificador" type="String" />
+		<column name="ementa" type="String" />
+		<column name="texto" type="String" />
+
+		<column name="threadId" type="long" />	<!-- Forum associado -->
+
+		<finder return-type="Collection" name="E">
+			<finder-column name="eixoId" />
+		</finder>
+		<finder return-type="Collection" name="G">
+			<finder-column name="groupId" />
+		</finder>
+		<finder return-type="Collection" name="I_G">
+			<finder-column name="identificador" />		
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+
+	<!-- Voto -->
+	<entity name="Voto" local-service="true" remote-service="false">
+		<column name="votoId" type="long" primary="true" />
+		<column name="propostaId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="numeroVotos" type="int" />
+		<column name="votosDisponiveis" type="int" />
+		<column name="data" type="Date" />
+
+		<finder return-type="Collection" name="P">
+			<finder-column name="propostaId" />
+		</finder>
+		<finder return-type="Voto" name="P_U" unique="true">
+			<finder-column name="propostaId" />
+			<finder-column name="userId" />
+		</finder>
+		<finder return-type="Collection" name="U">
+			<finder-column name="userId" />
+		</finder>
+	</entity>
+
+	<entity name="Configuracao" local-service="true" remote-service="false">
+		<column name="configuracaoId" type="long" primary="true" />
+		<column name="companyId" type="long"  />
+		<column name="groupId" type="long" />
+		<column name="maximoVotos" type="int" />
+		<column name="maxVotosProposta" type="int" />
+		<column name="votacaoAberta" type="boolean" />
+		
+		<finder return-type="Configuracao" name="G" unique="true">
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+
+	<entity name="Priorizacao" local-service="false" remote-service="true">
+	</entity>
+	
+	
+</service-builder>

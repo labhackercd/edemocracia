@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização Admin</title>
+<link rel="stylesheet" type="text/css" href="css/mensagenspriorizacao.css" />
+</head>
+<body>
+
+    <div class="taglib-header">
+		<h3><span wicket:id="cabecalho" >[cabeçalho]</span></h3>
+	</div>
+	<span wicket:id="mensagensFeedback" />
+	<form wicket:id="form" class="vForm" >	
+		<label wicket:for="titulo">Título</label><br />
+		<input type="text" size="50" maxlength="100"  wicket:id="titulo"/>
+		<br />
+		<br />
+		<label wicket:for="sumario">Sumário</label><br />
+		<input wicket:id="sumario" size="50" maxlength="200" type="text" />
+		<br /><br />
+		<fieldset class="vForm">
+			<legend>Categoria</legend>
+			<select wicket:id="categorias" ><option>Categoria 1</option></select>
+		</fieldset>
+		<br />
+		<fieldset class="vForm">
+			<legend>Posicionar eixo: </legend>
+			<select wicket:id="eixos" ><option>Eixo 1</option></select>
+		</fieldset>
+		<div class="aui-button-holder" >
+				<span style="margin-right:5px;  float:left;">
+					<input class="submit,aui-button-input" type="submit"  value="Enviar" /> 
+				</span>
+				<span style="float:left;">
+					<input class="aui-button-input" wicket:id="cancelar" type="submit" value="Cancelar" />
+				</span>
+		</div>
+	</form>
+	
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title>Priorização</title>
+<style>
+.bloco1 
+{
+	width:67%;
+	min-height:130px;
+	float:left;
+	padding:20px 20px 20px 20px;
+	background:rgba(243, 243, 243, .85);
+	border: 1px #E5E5E5 solid;
+}
+.bloco2
+{
+	float:right;
+	width:23%;
+	height:130px; 
+	padding:20px 20px 20px 20px;
+	background:rgba(243, 243, 243, .85);
+	border: 1px #E5E5E5 solid;
+}
+</style>
+</head>
+
+<body>
+
+	<wicket:container wicket:id="menu"></wicket:container>
+	<div class="separator article-separator" ></div>
+	<div style="float: right; width:100%; heigth:20%;" align="right">
+	<a class="portlet-icon-back" wicket:id="voltar" >Retornar para página de propostas</a>
+	<h3 align="left" ><wicket:container wicket:id="proposta.identificador">Identificador</wicket:container></h3>
+	<p align="left"  ><i><wicket:container wicket:id="eixo.titulo">Eixo</wicket:container></i></p>
+	</div>
+	<div class="bloco2" >
+		<div wicket:id="votacaoContainer">
+			<div wicket:id="feedbackPanel">Panel</div>
+			<wicket:enclosure child="totalVotos" ><p>Esta proposta possui <wicket:container wicket:id="totalVotos">5</wicket:container> votos</p></wicket:enclosure>
+<!-- 			<wicket:enclosure child="votosUsuario" ><p>Você já votou <wicket:container wicket:id="votosUsuario">0</wicket:container> vez(es) nesta proposta</p></wicket:enclosure> -->
+			<wicket:enclosure child="votosDisponiveis" ><p>Você possui <wicket:container wicket:id="votosDisponiveis">20</wicket:container> votos disponíveis</p></wicket:enclosure>
+			
+			<form wicket:id="form">
+				<wicket:enclosure child="votosUsuario">
+					<div style="text-align: center;" >
+						<a href="#" wicket:id="cancelarVoto"><img src="html/imagens/ico_menos.png" wicket:id="icone"/></a>
+						<img src="#" alt="texto" wicket:id="votosUsuario" />
+						<a href="#" wicket:id="votar"><img src="html/imagens/ico_mais.png" wicket:id="icone"/></a>							
+					</div>
+				</wicket:enclosure>
+			</form>
+<!-- 			<input type="button" wicket:id="votarProposta" value="Votar" /> -->
+		</div>
+	</div>
+	<div class="bloco1" >
+		<p wicket:id="proposta.texto">
+			Texto da proposta
+		</p>
+	</div>
+</body>
+
+</html>
