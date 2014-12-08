@@ -14,7 +14,7 @@ Funcionalidades<br/><br/>
 •	Wikilegis – espaço colaborativo para propor alterações a projetos de lei em discussão ou construir novo texto. Após fazer sugestões, proposta pode ser salva para visualização e contribuição;<br/>
 •	Informações produzidas pelo sistema podem ser sintetizadas em relatórios e enviadas aos deputados.<br/><br/>
 Como acessar: <br/><br/>
-Pela internet: http://edemocracia.camara.gov.br/<br/>
+Pela internet: http://edemocracia.camara.leg.br/<br/>
 Facebook: https://www.facebook.com/edemocraciacamara <br/>
 Twitter: https://twitter.com/Edemocracia<br/>
 YouTube: http://www.youtube.com/user/edemocraciacd/featured <br/>
