@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+
+<portlet-app
+	version="2.0"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+>
+	<portlet>
+		<portlet-name>cd-minhas-comunidades-portlet</portlet-name>
+		<display-name>Minhas Comunidades</display-name>
+		<portlet-class>br.gov.camara.edemocracia.portlets.comunidades.portlet.MinhasComunidades</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-jsp</name>
+			<value>/html/edit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Minhas Comunidades</title>
+			<short-title>Minhas Comunidades</short-title>
+			<keywords>Comunidades</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>cd-outras-comunidades-portlet</portlet-name>
+		<display-name>Outras Comunidades</display-name>
+		<portlet-class>br.gov.camara.edemocracia.portlets.comunidades.portlet.OutrasComunidades</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-jsp</name>
+			<value>/html/edit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Outras Comunidades</title>
+			<short-title>Outras Comunidades</short-title>
+			<keywords>Comunidades</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>cd-todas-comunidades-portlet</portlet-name>
+		<display-name>Todas as Comunidades</display-name>
+		<portlet-class>br.gov.camara.edemocracia.portlets.comunidades.portlet.TodasComunidades</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/view_todas_comunidades.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-jsp</name>
+			<value>/html/edit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Todas as Comunidades</title>
+			<short-title>Todas as Comunidades</short-title>
+			<keywords>Comunidades</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>cd-topo-comunidade-portlet</portlet-name>
+		<display-name>Outras Comunidades</display-name>
+		<portlet-class>br.gov.camara.edemocracia.portlets.comunidades.portlet.TopoComunidade</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/topo.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-jsp</name>
+			<value>/html/edit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>
+			<value>false</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Topo Comunidade</title>
+			<short-title>Topo Comunidade</short-title>
+			<keywords>Comunidades</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>cd-compartilhamento-portlet</portlet-name>
+		<display-name>Compartilhamento</display-name>
+		<portlet-class>br.gov.camara.edemocracia.portlets.CompartilheEstaPaginaPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/view_compartilhamento.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Compartilhamento</title>
+			<short-title>Compartilhamento</short-title>
+			<keywords>Compartilhamento</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>cd-inscricao-comunidade-portlet</portlet-name>
+		<display-name>Inscrição na Comunidade </display-name>
+		<portlet-class>br.gov.camara.edemocracia.portlets.comunidades.portlet.InscricaoComunidade</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/inscricao_comunidade.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Inscrição na Comunidade</title>
+			<short-title>Inscrição na Comunidade</short-title>
+			<keywords>Inscrição na Comunidade</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+</portlet-app>

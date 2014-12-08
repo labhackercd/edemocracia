@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<servlet-mapping>
+		<servlet-name>cdminhascomunidadesportlet Servlet</servlet-name>
+		<url-pattern>/cd-minhas-comunidades-portlet/*</url-pattern>
+	</servlet-mapping>
+	
+	
+
+	<servlet-mapping>
+		<servlet-name>cdoutrascomunidadesportlet Servlet</servlet-name>
+		<url-pattern>/cd-outras-comunidades-portlet/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>cdtodascomunidadesportlet Servlet</servlet-name>
+		<url-pattern>/cd-todas-comunidades-portlet/*</url-pattern>
+	</servlet-mapping>
+	
+	
+
+	<servlet-mapping>
+		<servlet-name>cdtopocomunidadeportlet Servlet</servlet-name>
+		<url-pattern>/cd-topo-comunidade-portlet/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>cdcompartilhamentoportlet Servlet</servlet-name>
+		<url-pattern>/cd-compartilhamento-portlet/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>cdinscricaocomunidadeportlet Servlet</servlet-name>
+		<url-pattern>/cd-inscricao-comunidade-portlet/*</url-pattern>
+	</servlet-mapping>
+	
+	
+
+</web-app>
