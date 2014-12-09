@@ -1,0 +1,40 @@
+Liferay.Service.register("Liferay.Service.CDChat", "br.gov.camara.edemocracia.portlets.chat.service", "cd-chat-portlet");
+
+Liferay.Service.registerClass(
+	Liferay.Service.CDChat, "ChatRoom",
+	{
+		addChatRoom: true,
+		deleteChatRoom: true,
+		canModerate: true,
+		canJoin: true,
+		canSpy: true,
+		getUsersCountInChatRoom: true,
+		getChatRoomCommunityName: true,
+		addChatUser: true,
+		addAnonUser: true,
+		addSpyUser: true,
+		approveMessage: true,
+		banUser: true,
+		findAllInGroup: true,
+		findOpenRoomsInGroup: true,
+		findOpenAndEnterableClosedRoomsInCompany: true,
+		findScheduledRoomsInGroup: true,
+		findScheduledRoomsInCompany: true,
+		findExportedRoomsInGroup: true,
+		findExportedRoomsInCompany: true,
+		getJSONUpdate: true,
+		getMessagesForExport: true,
+		findAllChatRoomParticipants: true,
+		getUserCount: true,
+		saveExportedMessages: true,
+		getMessagesWithIds: true,
+		getRoom: true,
+		getChatUserFromPortalUser: true,
+		getUsersInChatRoom: true,
+		openChatRoom: true,
+		closeChatRoom: true,
+		postMessage: true,
+		removeChatUser: true,
+		updateChatRoom: true
+	}
+);

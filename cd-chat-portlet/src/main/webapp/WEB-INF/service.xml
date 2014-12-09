@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+<service-builder
+	package-path="br.gov.camara.edemocracia.portlets.chat">
+	<author>Ricardo Lima</author>
+	<namespace>CDChat</namespace>
+
+	<entity local-service="true" remote-service="false" name="ChatRoomUser">
+        <column name="chatUserId" type="long" primary="true" />
+        <column name="chatRoomId" type="long" />
+        <column name="userId" type="long" />
+        <column name="userName" type="String" />
+	    <column name="userImgId" type="long" />
+        <column name="userUF" type="long" />
+        <column name="userEmail" type="String" />
+        <column name="banned" type="boolean" />
+        <column name="userType" type="int" />
+        <column name="joinedTS" type="Date" />
+
+        <order>
+        	<order-column name="userType" order-by="desc" />
+            <order-column name="userName" order-by="asc" />
+        </order>
+        <finder return-type="Collection" name="CR_U">
+        	<finder-column name="chatRoomId" />
+        	<finder-column name="userId" />
+        </finder>
+        <finder return-type="Collection" name="CR">
+        	<finder-column name="chatRoomId" />
+        </finder>
+        
+        <!-- Fábio Póvoa: Consultas acrescentadas para possibilitar validação de apelido e email do usuário anônimo-->
+         <finder return-type="Collection" name="Name">
+         	<finder-column name="chatRoomId" />
+        	<finder-column name="userName" />
+        </finder>
+        <finder return-type="Collection" name="Email">
+         	<finder-column name="chatRoomId" />
+        	<finder-column name="userEmail" />
+        </finder>
+        
+    </entity>
+    <entity local-service="true" remote-service="false" name="ChatRoomMessage">
+        <column name="chatMessageId" type="long" primary="true" />
+        <column name="parentMessageId" type="long" />
+        <column name="chatRoomId" type="long" />
+        <column name="exportedPosition" type="long" />
+        <column name="exportedRemoved" type="boolean" />
+        <column name="messageType" type="int" />
+        <column name="messageStatus" type="int" />
+        <column name="senderId" type="long" />
+        <column name="senderName" type="String" />
+        <column name="senderUF" type="long" />
+        <column name="senderEmail" type="String" />
+        <column name="senderType" type="int" />
+        <column name="messageText" type="String" />
+        <column name="textType" type="int" />
+        <column name="messageTS" type="Date" />
+        <column name="messagePublic" type="boolean" />
+        <column name="adminMessage" type="boolean" />
+        <column name="recipientUserId" type="long" />
+        <column name="recipientUserName" type="String" />
+        <order by="asc">
+            <order-column name="messageTS" />
+        </order>
+        <finder return-type="Collection" name="Public">
+        	<finder-column name="messagePublic" />
+        	<finder-column name="messageTS" />
+        </finder>
+        <finder return-type="Collection" name="PrivateUser">
+        	<finder-column name="messagePublic" />
+        	<finder-column name="recipientUserId" />
+        	<finder-column name="messageTS" />
+        </finder>
+    </entity>
+ 
+    <entity local-service="true" remote-service="true" name="ChatRoom">
+        <column name="roomId" type="long" primary="true" />
+        <column name="roomName" type="String" />
+        <column name="description" type="String" />
+        <column name="openPolicy" type="int" />
+        <column name="status" type="int" />
+        <column name="openFrom" type="Date" />
+        <column name="openUntil" type="Date" />
+        <column name="moderated" type="boolean" />
+        <column name="capacity" type="int" />
+        <column name="maxSimultaneousUsersSpying" type="int"/>
+        <column name="maxSimultaneousUsers" type="int"/>
+        <column name="anonymousAllowed" type="boolean" />
+        <column name="guestId" type="long" />
+        <column name="guestName" type="String" />
+        <column name="companyId" type="long" />
+        <column name="groupId" type="long" />
+        <column name="usePolicyEnabled" type="boolean" />
+        <column name="usePolicyURL" type="String" />
+        <column name="users" type="Collection" entity="ChatRoomUser" mapping-key="chatRoomId" /> 
+        <column name="messages" type="Collection" entity="ChatRoomMessage" mapping-key="chatRoomId" />
+        <column name="imageId" type="long"/>
+        <column name="videoLiveId" type="long" />
+        <column name="videoRecordedId" type="long" />
+        <column name="createDate" type="Date" />
+        
+        <order >
+        	<order-column name="createDate" order-by="desc" />
+            <order-column name="roomId" order-by="desc" />            
+        </order>
+        <finder name="CompanyId" return-type="Collection">
+            <finder-column name="companyId" />
+        </finder>
+        <finder name="GroupRoomName" return-type="Collection">
+            <finder-column name="roomName" />
+            <finder-column name="groupId" />
+        </finder>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId" />
+        </finder>
+    </entity>
+    
+    <entity local-service="true" remote-service="false" name="ChatRoomTwitter">
+        <column name="twitterId" type="long" primary="true" />
+        <column name="twitterTitle" type="String"/>
+        <column name="twitterDescription" type="String"/>
+        <column name="twitterEnabled" type="boolean" />
+        <column name="twitterHashtag" type="String" />
+        <column name="twitterDataWidgetId" type="String" />
+    </entity>
+    
+    <entity local-service="true" remote-service="false" name="ChatRoomVideo">
+         <column name="videoId" type="long" primary="true" />
+         <column name="videoTitle" type="String"/>
+      	 <column name="videoSubtitle" type="String"/>
+         <column name="videoDescription" type="String"/>	
+         <column name="videoEnabled" type="boolean"/>
+         <column name="videoUrl" type="String"/>
+         <column name="videoType" type="String"/>
+    </entity>
+    
+</service-builder>

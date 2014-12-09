@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+.iconSecaoFechada span {
+    background: url("/e-democracia-theme/images/arrows/05_right.png") no-repeat scroll right center transparent;
+    padding-right: 1em;
+}
+
+.iconSecaoAberta span {
+    background: url("/e-democracia-theme/images/arrows/05_down.png") no-repeat scroll right center transparent;
+    padding-right: 1em;
+}
+
+.botoesFinais {
+	margin-top:10px;
+}
+
+.botoesFinais input {
+	margin-right: 5px;
+}
+
+.painelToggle {
+	display:none; 
+	margin-top: 10px; 
+	margin-bottom: 10px; 
+	margin-left: 15px;
+}
+
+.imagemSala {
+	margin-top: 5px;
+	margin-bottom: 5px; 
+	max-width: 103px; 
+	max-height: 103px;
+}
+
+.painelOpcoes {
+	margin-left:19px; 
+	cellpadding:20px;
+}
+
+.mensagemAjuda {
+	margin-top:5px; 
+	font-size: 0.8em;
+}
+
+.painelConvidadoEspecial {
+	margin-bottom: 15px;
+}
+
+.painelConvidadoEspecial input {
+	width: 487px;
+}
+
+table.painelOpcoes tr td:FIRST-CHILD {
+	width: 100px;
+	
+}	
+
+.painelInfoParticipacoes {
+	margin-bottom: 15px;
+	margin-top:15px;
+}
+
+.painelInfoParticipacoes table tr {
+	height: 23px;
+}
+
+.coluna1 {
+	padding-left: 20px;
+}
+
+.coluna2 {
+	padding-left: 20px;
+}

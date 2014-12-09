@@ -1,0 +1,30 @@
+<%@page import="org.apache.commons.lang.StringUtils"%>
+<%@page import="com.liferay.portal.kernel.util.WebKeys"%>
+<%@page import="com.liferay.portal.theme.ThemeDisplay"%>
+<%@page
+	import="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomTwitter"%>
+<%@page
+	import="br.gov.camara.edemocracia.portlets.chat.portlet.ChatPortletConstants"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="com.liferay.portal.kernel.util.HtmlUtil"%>
+
+<%
+	ChatRoomTwitter twitter = (ChatRoomTwitter) request.getAttribute("twitter");
+%>
+
+<h2 class="tituloSecundario">
+	<%=HtmlUtil.escape(twitter.getTwitterTitle())%>
+</h2>
+
+<div>
+	<a class="twitter-timeline"  data-widget-id="<%=twitter.getTwitterDataWidgetId()%>" data-chrome="nofooter noborders noheader transparent" ></a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+<p>
+	<small><%=twitter.getTwitterDescription()%></small>
+</p>
+
+
+
+

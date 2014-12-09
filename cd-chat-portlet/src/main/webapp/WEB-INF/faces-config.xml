@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+    version="2.1">
+    
+    <application>
+    	<resource-handler>br.gov.camara.edemocracia.portlets.chat.portlet.ChatResourceHandler</resource-handler>
+    </application>
+    
+	<navigation-rule>
+		<from-view-id>/xhtml/admin/edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>ok</from-outcome>
+			<to-view-id>/xhtml/admin/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/xhtml/admin/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{adminBean.novaSala}</from-action>
+			<to-view-id>/xhtml/admin/edit.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>xhtml/admin/export.xhtml</display-name>
+		<from-view-id>/xhtml/admin/export.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{historyExport.save}</from-action>
+			<to-view-id>/xhtml/admin/index.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.gov.camara.edemocracia.portlets.chat.model.ChatRoom" />
+	<import class="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage" />
+	<import class="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomTwitter" />
+	<import class="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomUser" />
+	<import class="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomVideo" />
+	<class name="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomImpl" table="CDChat_ChatRoom">
+		<cache usage="read-write" />
+		<id name="roomId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="roomName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="openPolicy" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="openFrom" type="org.hibernate.type.TimestampType" />
+		<property name="openUntil" type="org.hibernate.type.TimestampType" />
+		<property name="moderated" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="capacity" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="maxSimultaneousUsersSpying" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="maxSimultaneousUsers" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="anonymousAllowed" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="guestId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="guestName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="usePolicyEnabled" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="usePolicyURL" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="imageId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="videoLiveId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="videoRecordedId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomMessageImpl" table="CDChat_ChatRoomMessage">
+		<cache usage="read-write" />
+		<id name="chatMessageId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="parentMessageId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="chatRoomId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="exportedPosition" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="exportedRemoved" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="messageType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="messageStatus" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="senderId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="senderName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="senderUF" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="senderEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="senderType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="messageText" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="textType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="messageTS" type="org.hibernate.type.TimestampType" />
+		<property name="messagePublic" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="adminMessage" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="recipientUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="recipientUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomTwitterImpl" table="CDChat_ChatRoomTwitter">
+		<cache usage="read-write" />
+		<id name="twitterId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="twitterTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="twitterDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="twitterEnabled" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="twitterHashtag" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="twitterDataWidgetId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomUserImpl" table="CDChat_ChatRoomUser">
+		<cache usage="read-write" />
+		<id name="chatUserId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="chatRoomId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userImgId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userUF" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="banned" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="userType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="joinedTS" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomVideoImpl" table="CDChat_ChatRoomVideo">
+		<cache usage="read-write" />
+		<id name="videoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="videoTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="videoSubtitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="videoDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="videoEnabled" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="videoUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="videoType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

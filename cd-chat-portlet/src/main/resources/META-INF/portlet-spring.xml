@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.ChatRoomLocalService" class="br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.ChatRoomService" class="br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomPersistence" class="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomFinder" class="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomFinderImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.ChatRoomMessageLocalService" class="br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomMessageLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomMessagePersistence" class="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomMessagePersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.ChatRoomTwitterLocalService" class="br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomTwitterLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomTwitterPersistence" class="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomTwitterPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.ChatRoomUserLocalService" class="br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomUserLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomUserPersistence" class="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomUserPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.ChatRoomVideoLocalService" class="br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomVideoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomVideoPersistence" class="br.gov.camara.edemocracia.portlets.chat.service.persistence.ChatRoomVideoPersistenceImpl" parent="basePersistence" />
+</beans>

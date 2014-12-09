@@ -1,0 +1,611 @@
+@CHARSET "UTF-8";
+
+.cabecalho {
+	overflow: hidden;
+	width: 100%;
+}
+
+.cabecalho img {
+	float: left;
+	width: 70px;
+	height: 70px;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+
+.cabecalho h1 {
+	margin-bottom: 0.2em;
+}
+
+.cdchat_navbar .instrucao {
+	border: 1px dotted;
+	border-bottom: none;
+	width: 150px;
+	padding: 3px 10px;
+	margin-bottom: 0;
+}
+
+.cdchat_navbar form {
+	margin-bottom: 12px;
+}
+
+
+/* Listas de usuários */
+ul.cdchat_usrlist,ul.cdchat_moderatorusrlist,ul.cdchat_moderatorbanuserlist
+	{
+	overflow: auto;
+	height: 238px;
+	width: 150px;
+	border: 1px dotted;
+	margin: 0;
+	padding: 10px;
+}
+
+ul.cdchat_usrlist,ul.cdchat_moderatorusrlist {
+	margin-bottom: 10px;
+}
+
+div.cdchat_navbar { /*	height: 584px; */
+	float: left;
+	width: 180px;
+	margin-top: 0px;
+	margin-left: 0px;
+}
+
+div.cdchat_cleardiv {
+	clear: right;
+}
+
+p.cdchat_vizinho_autoscroll {
+	margin-bottom: 0px;
+}
+
+p.cdchat_autoscroll_chkbox {
+	max-width: 746px;
+	text-align: right;
+	margin: 0;
+}
+
+p.cdchat_autoscroll_chkbox input,p.cdchat_autoscroll_chkbox_adm input {
+	margin-right: 5px;
+}
+
+p.cdchat_autoscroll_chkbox_adm {
+	float: right;
+	text-align: right;
+	margin: 0;
+}
+
+ul.cdchat_moderatorbanuserlist {
+	height: 255px;
+/* 	margin-top: 10px; */
+}
+
+li.cdchat_user {
+	list-style-type: none;
+	list-style-position: inside;
+	padding-left: 3px;
+	padding-top: 3px;
+}
+
+li.cdchat_moderator {
+	color: navy;
+}
+
+li.cdchat_special_guest {
+	color: olive;
+	font-weight: bold;
+}
+
+li.cdchat_banned_user {
+	list-style-type: none;
+	list-style-position: inside;
+	padding-left: 3px;
+	padding-top: 3px;
+}
+
+li.cdchat_selected_user {
+	background-color: #a8d6ed;
+}
+
+li.cdchat_selected_banned_user {
+	background-color: #a8d6ed;
+}
+
+ul.cdchat_msglist {
+	overflow: auto;
+	height: 300px;
+	/* 	height: 540px; */
+	max-width: 738px;
+	border-width: 1px;
+	border-style: dotted;
+	margin: 0px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+ul.cdchat_audience_msglist {
+	overflow: auto;
+	height: 366px;
+	max-width: 738px;
+	border-width: 1px;
+	border-style: dotted;
+	margin: 0px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+ul.cdchat_expmsglist {
+	overflow: auto;
+	height: 300px;
+	/* 	border-width: 1px;  */
+	/* 	border-style: dotted;  */
+	/* 	margin-left: 0px;  */
+	margin: 0 0 10px 0;
+	border: 1px solid #D1E3AF;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+ul.cdchat_admmsglist {
+	overflow: auto;
+	height: 200px;
+	border-width: 1px;
+	border-style: dotted;
+	margin: 0;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+ul.cdchat_msglist li,ul.cdchat_audience_msglist li {
+	list-style-type: none;
+}
+
+ul.cdchat_expmsglist li {
+	list-style-type: none;
+}
+
+ul.cdchat_expmsglist li.cdchat_removed_message span {
+	text-decoration: line-through;
+}
+
+ul.cdchat_msglist li.cdchat_rejected {
+	list-style-type: none;
+	text-decoration: line-through;
+}
+
+ul.cdchat_admmsglist li {
+	list-style-type: none;
+}
+
+ul.cdchat_msglist em,ul.cdchat_audience_msglist em {
+	font-size: larger;
+}
+
+ul.cdchat_admmsglist em {
+	font-size: larger;
+}
+
+.cdchat_msgForm {
+	margin-top: 10px;
+}
+
+.cdchat_msgForm input[type="text"] {
+	margin-right: 5px;
+}
+
+.cdchat_msgForm p {
+	margin-bottom: 0.2em;
+}
+
+.cdchat_msgForm .cdchat_private {
+	display: block;
+	margin-top: 5px;
+}
+
+.cdchat_msgForm .cdchat_private input {
+	margin-right: 5px;
+}
+
+.cdchat_msg-container { /* 	margin-left: 185px; */
+	overflow: hidden;
+}
+
+/* .cdchat_msg-container.salaEspiar UL { */
+/* 	height:638px; */
+/* } */
+.cdchat_twitter-video {
+	border: 1px solid #D1E3AF;
+	width: 230px;
+	float: right;
+	margin-left: 8px;
+	padding: 10px;
+}
+
+.acessoBatePapo .cdchat_twitter-video {
+	width: 205px;
+	margin: 0;
+	border: none;
+}
+
+.acessoBatePapo .twtr-doc {
+	width: 100% !important;
+}
+
+.acessoBatePapo .twtr-timeline {
+	height: 390px !important;
+}
+
+.acessoBatePapo .size2of5.last-cell {
+	margin-left: -1px;
+	border-left: 1px solid #CCC;
+}
+
+.acessoBatePapo .videoFlash IFRAME {
+	width: 335px !important;
+	height: 295px !important;
+}
+
+.acessoBatePapo .videoFlash EMBED {
+	width: 335px !important;
+	height: 295px !important;
+}
+
+.acessoBatePapo .videoMediaPlayer OBJECT,.acessoBatePapo .videoMediaPlayer EMBED
+	{
+	width: 340px !important;
+	height: 362px !important;
+}
+
+.acessoBatePapo .cdchat_twitter-video-horizontal {
+	border-top: 1px solid #CCC;
+	margin-top: 30px;
+	padding-top: 30px;
+}
+
+.cdchat_adm-msg-container {
+	margin-left: 185px;
+	/* 	clear: left; */
+	border-top: 1px dotted #666666;
+	margin-top: 10px;
+}
+
+#_cdchatroom_WAR_cdchatportlet_msg,#_cdchatroom_WAR_cdchatportlet_admmsg
+	{
+	width: 80%;
+}
+
+#admin-bate-papo-container .col-3 {
+	word-break: break-all;
+}
+
+#portlet_cdchatroom_WAR_cdchatportlet .portlet-body {
+	max-width: 940px;
+}
+
+.acessoBatePapo .titulo h2 {
+	font-weight: normal;
+	margin: 0 0 0.5em;
+	float: left;
+	width: 700px;
+}
+
+.acessoBatePapo .titulo a {
+	float: right;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/*                Modificadores do Acesso do Bate-papo com termo de uso                */
+/* ----------------------------------------------------------------------------------- */
+.acessoBatePapo .entrar { /* 	border-left: 1px solid #ccc; */
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.acessoBatePapo .entrar input[type='text'] {
+	width: 98% !important;
+}
+
+.acessoBatePapo .entrar form>ul {
+	overflow: hidden;
+	margin: 0 0 15px 0;
+}
+
+.acessoBatePapo .entrar form>ul li input[type='submit'] {
+	float: right;
+	margin-top: 18px;
+}
+
+.acessoBatePapo .entrar .uf {
+	float: left;
+}
+
+.acessoBatePapo .espiar {
+	border-top: 1px dotted #CCC;
+	margin-left: 1em;
+	margin-right: 1em;
+	padding-top: 10px;
+	clear: both;
+	overflow: hidden;
+}
+
+.acessoBatePapo .espiar .ajuda {
+	font-size: 0.9em;
+	float: left;
+	width: 250px;
+	margin-bottom: 0;
+}
+
+.acessoBatePapo .espiar a.botao {
+	float: right;
+	background-color: #fdd37f;
+	border: 1px solid #ffa302;
+	color: #b4510e;
+	font-weight: bold;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	padding: 5px;
+	text-decoration: none;
+	/* extras */
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.acessoBatePapo .politicaDeUso {
+	margin-top: 11px;
+	background: #FFF7D9
+		URL('/e-democracia-theme/images/custom/ico_info_acesso_bp.png')
+		no-repeat 12px center;
+	padding: 10px 10px 10px 48px;
+	margin: 1.8em 1em 0 1em;
+	font-size: 0.9em;
+}
+
+.acessoBatePapo .politicaDeUso p {
+	margin: 0;
+	padding: 0;
+}
+
+.lista_bp_abertos .col-entrar,.lista_bp_abertos .col-espiar {
+	width: 7%;
+	text-align: center;
+}
+
+.lista_bp_abertos h3.modificado {
+	float:left;
+	margin-top:12px;
+}
+
+.lista_bp_abertos a.modificado {
+	float:right;
+}
+
+.lista_bp_abertos h3,.lista_bp_fechados h3,.lista_bp_agendados h3 {
+	font-size: 1.2em;
+	margin-bottom: 5px;
+	color: #B65210;
+}
+
+.lista_bp_abertos {
+	margin-top: 25px;
+}
+
+.lista_bp_fechados, .lista_bp_agendados {
+	margin-top: 25px;
+}
+
+/* lista bate-papos abertos */
+.lista_bp_abertos .col-nome {
+	/*width: 350px;*/
+	width:38%;
+}
+
+.lista_bp_abertos .col-situa-ccedil-atilde-o {
+	/*width: 290px;*/
+}
+
+.lista_bp_abertos .col-nº-participantes {
+	width: 14%;
+}
+
+.lista_bp_fechados .center,.lista_bp_abertos .center, .lista_bp_agendados .center {
+	text-align: center !important;
+}
+
+/* lista bate-papos fechados */
+.lista_bp_fechados .col-nome {
+	/*width: 350px;*/
+	width:38%;
+}
+
+.lista_bp_fechados .col-situa-ccedil-atilde-o {
+	/*width: 470px;*/
+}
+
+.lista_bp_fechados .col-ver-historico {
+	width: 10%;
+	text-align: center;
+}
+
+.lista_bp_historico {
+	margin-top: 2em;
+}
+
+.lista_bp_historico a {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #666;
+	text-decoration: none;
+	display: block;
+	padding: 1.5em 1em 1.5em 3.5em;
+	border: 1px solid #ccc;
+	float: left;
+	background: 10px 50% no-repeat scroll url("/cd-chat-portlet/html/images/ico_bp_arquivo.png");
+	float:left;
+}
+
+.lista_bp_historico a:hover {
+	text-decoration: underline;
+}
+
+.lista_bp_agendados .col-nome {
+	/*width: 350px;*/
+	width:38%;}
+
+.lista_bp_agendados .col-situa-ccedil-atilde-o {
+	/*width: 470px;*/
+}
+
+.lista_bp_agendados .col-entrar, .lista_bp_agendados .col-detalhes, .lista_bp_agendados .col-agendar {
+	width: 10%;
+	text-align: center;
+}
+
+.ui-widget-header {
+	border: 1px solid #aaaaaa;
+	background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png)
+		50% 50% repeat-x;
+	color: #333;
+	font-weight: bold;
+}
+
+.ui-widget-content{
+	background: #FFF;
+}
+
+.ui-widget-content .ui-icon {
+    background-image: url(images/ui-icons_222222_256x240.png);
+}
+
+ul.cdchatadmin_actionslist {
+	width:80px;
+	margin:0px;
+}
+
+ul.cdchatadmin_actionslist li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	float: left;
+}
+
+ul.cdchatadmin_actionslist a {
+	text-decoration: none;
+}
+
+ul.cdchatadmin_actionslist a:HOVER {
+	text-decoration: underline;
+}
+
+ul.cdchatadmin_actionslist li img {
+	margin-right: 3px;
+}
+
+.cdchat_room-controls {
+	text-align: right;
+}
+
+.cabecalho .descricao {
+	margin-bottom:15px;
+}
+span.lnk-botao a
+{
+	color: #b4510e;
+	text-shadow: none !important;
+	text-decoration: none;
+}
+
+
+.lista_bp_abertos table,
+.lista_bp_agendados table,
+.lista_bp_fechados table {
+table-layout:fixed;
+word-wrap:break-word;
+}
+
+.lista_bp_abertos table .ui-widget-content,
+.lista_bp_agendados table .ui-widget-content,
+.lista_bp_fechados table .ui-widget-content {
+border: none;
+}
+
+/* Definindo larguras das th da lista de bp abertos */
+.lista_bp_abertos thead th:nth-child(1) { width:39%; }
+.lista_bp_abertos thead th:nth-child(2) { width:24%; }
+.lista_bp_abertos thead th:nth-child(3) { width:10%; }
+.lista_bp_abertos thead th:nth-child(4) { width:14%; }
+.lista_bp_abertos thead th:nth-child(5) { width:6%; }
+.lista_bp_abertos thead th:nth-child(6) { width:6%; }
+
+/* Definindo larguras das th da lista de bp agendados */
+.lista_bp_agendados thead th:nth-child(1) { width:39%; }
+.lista_bp_agendados thead th:nth-child(2) { width:20%; }
+.lista_bp_agendados thead th:nth-child(3) { width:25%; }
+.lista_bp_agendados thead th:nth-child(4) { width:8%; }
+.lista_bp_agendados thead th:nth-child(5) { width:8%; }
+
+/* Definindo larguras das th da lista de bp fechados */
+.lista_bp_fechados thead th:nth-child(1) { width:40%; }
+.lista_bp_fechados thead th:nth-child(2) { width:20%; }
+.lista_bp_fechados thead th:nth-child(3) { width:28%; }
+.lista_bp_fechados thead th:nth-child(4) { width:12%; }
+
+.tabelaPrimefaces .ui-paginator {
+background: none;
+border: none;
+color:#666666;
+}
+
+.tabelaPrimefaces .ui-paginator .ui-paginator-current {
+font-weight:normal;
+}
+
+.tabelaPrimefaces .ui-paginator .ui-corner-left {
+-moz-border-radius-topleft: 0;
+-webkit-border-top-left-radius: 0;
+border-top-left-radius: 0;
+-moz-border-radius-bottomleft: 0;
+-webkit-border-bottom-left-radius: 0;
+border-bottom-left-radius: 0;
+}
+
+.tabelaPrimefaces .ui-paginator .ui-state-default {
+background:none;
+font-weight:normal;
+color:#000;
+}
+
+.tabelaPrimefaces .ui-paginator .ui-state-hover {
+border-color:#ccc;
+background:none;
+}
+
+
+.tabelaPrimefaces tr.ui-datatable-odd, .tabelaPrimefaces tr.ui-datatable-even {
+	background: #fff;
+}
+
+.tabelaPrimefaces table thead th {
+	text-align: left;
+}
+
+.preferencias {
+	margin-top: 20px;
+}
+
+.mensagens ul {
+	margin-left:0px !important;
+}
+
+.painelEntrar {
+	margin-top: 20px; 
+	border-top: 1px dotted #CCC; 
+	padding-top: 17px; 
+	width: 100%;
+}
+
+.colunaAgendar {
+	overflow: inherit !important;
+}

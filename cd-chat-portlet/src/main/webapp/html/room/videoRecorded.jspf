@@ -1,0 +1,88 @@
+<%@page
+	import="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomVideo"%>
+<%@page import="br.gov.camara.edemocracia.portlets.chat.portlet.ChatRoomView"%>
+<%@page import="br.gov.camara.edemocracia.portlets.chat.portlet.ChatPortletConstants"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="com.liferay.portal.kernel.util.HtmlUtil"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstl"%>
+<%@ taglib uri="http://java.sun.com/portlet" prefix="portlet" %>
+
+<portlet:defineObjects />
+
+<%
+	ChatRoomVideo video = (ChatRoomVideo) request
+			.getAttribute("videoRecorded");
+%>
+
+<portlet:renderURL var="helpViewURL" >
+	<portlet:param name="<%=ChatPortletConstants.VIEW_PARAM %>" value="<%=ChatRoomView.HELP.getUrlParamValue() %>"/>
+	<portlet:param name="<%=ChatPortletConstants.ROOM_ID_PARAM %>" value="${room.roomId}" />
+	<portlet:param name="<%=ChatPortletConstants.BACK_VIEW_PARAM %>" value="<%=request.getParameter(ChatPortletConstants.VIEW_PARAM)%>" />
+</portlet:renderURL>
+
+<h2 class="tituloSecundario">
+	<%=HtmlUtil.escape(video.getVideoTitle())%>
+</h2>
+<p class="subtitulo"><%=HtmlUtil.escape(video.getVideoSubtitle())%></p>
+<%
+	if (video.getVideoType().equals("youtube")) {
+%>
+<div class="videoFlash">
+	<%=video.getVideoUrl()%>
+</div>
+<p>
+	<small><%=video.getVideoDescription()%></small>
+</p>
+<%
+	} else if (video.getVideoType().equals("wmv")) {
+%>
+<div class="videoMediaPlayer">
+	<OBJECT id='mediaPlayer' width="230" height="255"
+		classid='CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95'
+		codebase='http://activex.microsoft.com/activex/controls/ mplayer/en/nsmp2inf.cab#Version=5,1,52,701'
+		type='application/x-oleobject'>
+		<param name='fileName' value='<%=video.getVideoUrl()%>'>
+		<param name='animationatStart' value='1'>
+		<param name='autoStart' value='1'>
+		<param name='ShowControls' value='1'>
+		<param name='ShowDisplay' value='0'>
+		<param name='ShowStatusBar' value='0'>
+		<param name='loop' value='0'>
+		<param name="wmode" value="opaque" >
+		<param name="windowlessVideo" value="true" >
+		<EMBED type='application/x-mplayer2' width="230" height="255" transparentatstart="1" windowlessVideo="true"
+			wmode="opaque" pluginspage='http://microsoft.com/windows/mediaplayer/en/download/'
+			id='mediaPlayerEmbed' name='mediaPlayer' displaysize='4' autosize='0'
+			bgcolor='darkblue' showcontrols='1' showtracker='1' showdisplay='0'
+			showstatusbar='0' videoborder3d='0' src='<%=video.getVideoUrl()%>'
+			autostart='1' designtimesp='5311' loop='0' />
+	</OBJECT>
+</div>
+<p>
+	<small> Dificuldades para assistir o vídeo? Tente o <a
+		href='<%=video.getVideoUrl()%>' target='_blank'>link direto</a> ou
+		leia a <a id="linkAjuda" href="${helpViewURL}">ajuda</a>. <br /> <%=video.getVideoDescription()%>
+	</small>
+</p>
+<%
+	} else {
+%>
+<div class="videoFlash">
+	<object>
+		<param name="movie" value="<%=video.getVideoUrl()%>"></param>
+		<param name="allowFullScreen" value="true"></param>
+		<param name="allowscriptaccess" value="always"></param>
+		<param name="wmode" value="transparent"></param>
+		<embed src="<%=video.getVideoUrl()%>" width="230" height="200"
+			pluginspage="http://www.macromedia.com/go/getflashplayer"
+			type="application/x-shockwave-flash" allowscriptaccess="always"
+			allowfullscreen="true" wmode="transparent"></embed>
+	</object>
+</div>
+<p>
+	<small><%=video.getVideoDescription()%></small>
+</p>
+<%
+	}
+%>

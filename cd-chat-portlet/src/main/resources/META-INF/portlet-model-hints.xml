@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<hint-collection name="TEXTAREA">
+		<hint name="max-length">3900</hint>
+	</hint-collection>
+	<model name="br.gov.camara.edemocracia.portlets.chat.model.ChatRoom">
+		<field name="roomId" type="long" />
+		<field name="roomName" type="String" />
+		<field name="description" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="openPolicy" type="int" />
+		<field name="status" type="int" />
+		<field name="openFrom" type="Date" />
+		<field name="openUntil" type="Date" />
+		<field name="moderated" type="boolean" />
+		<field name="capacity" type="int" />
+		<field name="maxSimultaneousUsersSpying" type="int" />
+		<field name="maxSimultaneousUsers" type="int" />
+		<field name="anonymousAllowed" type="boolean" />
+		<field name="guestId" type="long" />
+		<field name="guestName" type="String" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="usePolicyEnabled" type="boolean" />
+		<field name="usePolicyURL" type="String">
+			<hint name="max-length">300</hint>
+		</field>
+		<field name="imageId" type="long" />
+		<field name="videoLiveId" type="long" />
+		<field name="videoRecordedId" type="long" />
+		<field name="createDate" type="Date" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage">
+		<field name="chatMessageId" type="long" />
+		<field name="parentMessageId" type="long" />
+		<field name="chatRoomId" type="long" />
+		<field name="exportedPosition" type="long" />
+		<field name="exportedRemoved" type="boolean" />
+		<field name="messageType" type="int" />
+		<field name="messageStatus" type="int" />
+		<field name="senderId" type="long" />
+		<field name="senderName" type="String" />
+		<field name="senderUF" type="long" />
+		<field name="senderEmail" type="String" />
+		<field name="senderType" type="int" />
+		<field name="messageText" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="textType" type="int" />
+		<field name="messageTS" type="Date" />
+		<field name="messagePublic" type="boolean" />
+		<field name="adminMessage" type="boolean" />
+		<field name="recipientUserId" type="long" />
+		<field name="recipientUserName" type="String" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomTwitter">
+		<field name="twitterId" type="long" />
+		<field name="twitterTitle" type="String" />
+		<field name="twitterDescription" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="twitterEnabled" type="boolean" />
+		<field name="twitterHashtag" type="String" />
+		<field name="twitterDataWidgetId" type="String" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomUser">
+		<field name="chatUserId" type="long" />
+		<field name="chatRoomId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="userImgId" type="long" />
+		<field name="userUF" type="long" />
+		<field name="userEmail" type="String" />
+		<field name="banned" type="boolean" />
+		<field name="userType" type="int" />
+		<field name="joinedTS" type="Date" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.chat.model.ChatRoomVideo">
+		<field name="videoId" type="long" />
+		<field name="videoTitle" type="String" />
+		<field name="videoSubtitle" type="String" />
+		<field name="videoDescription" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="videoEnabled" type="boolean" />
+		<field name="videoUrl" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="videoType" type="String" />
+	</model>
+</model-hints>

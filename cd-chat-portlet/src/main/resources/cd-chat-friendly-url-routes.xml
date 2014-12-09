@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.1.0//EN" "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_1_0.dtd">
+
+<routes>
+    <route>
+        <pattern>/lista</pattern>
+         <implicit-parameter name="javax.portlet.action">listChatRooms</implicit-parameter>
+         <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/ajuda</pattern>
+        <implicit-parameter name="view">help</implicit-parameter>
+        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/guest/{roomId}</pattern>
+        <implicit-parameter name="view">anon</implicit-parameter>
+        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/sala/{roomId}</pattern>
+        <implicit-parameter name="view">view</implicit-parameter>
+        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/entrar/{roomId}</pattern>
+        <implicit-parameter name="javax.portlet.action">enterChatRoom</implicit-parameter>
+        <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
+    </route>
+      <route>
+        <pattern>/detalhes/{roomId}</pattern>
+        <implicit-parameter name="view">details</implicit-parameter>
+        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/espiar/{roomId}</pattern>
+        <implicit-parameter name="javax.portlet.action">enterChatSpy</implicit-parameter>
+        <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/historico/{roomId}</pattern>
+        <implicit-parameter name="view">history</implicit-parameter>
+        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+    </route>
+</routes>

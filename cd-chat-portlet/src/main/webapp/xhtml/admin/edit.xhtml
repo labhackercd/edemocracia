@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:aui="http://liferay.com/faces/aui" xmlns:ls="http://liferay.com/faces/security"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:bridge="http://liferay.com/faces/bridge" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+	xmlns:component="http://java.sun.com/jsf/composite/component">
+
+	<h:head>
+	</h:head>
+
+	<h:body>
+		<h:outputScript name="locale.js" library="js" />
+		<h:outputScript name="toggle-script.js" library="js" />
+				
+		<h:form id="formGeral">
+			<h:messages id="mensagens" errorClass="portlet-msg-error" fatalClass="portlet-msg-error" infoClass="portlet-msg-info" warnClass="portlet-msg-warn" />
+
+			<p>
+				Nome* <br />
+				<h:inputText value="#{editBean.name}" size="45" maxlength="75" />
+			</p>
+			<p>
+				Descrição* <br />
+				<p:editor value="#{editBean.description}" id="descrição" height="150"
+					controls="bold italic underline link rule font size color highlight bullets numbering alignleft center alignright justify removeformat">
+					<f:converter converterId="br.gov.camara.edemocracia.SafeRichTextConverter" />
+				</p:editor>
+				<span class="mensagemAjuda">*Limite de 3900 caracteres incluindo as tags de formatação.</span>
+			</p>
+			
+			<p>
+				<h:selectBooleanCheckbox value="#{editBean.twitter.twitterEnabled}">
+					<f:ajax execute="@form" render="twitterPanel twitterDataWidgetId twitterTitle twitterDescription" />
+				</h:selectBooleanCheckbox>
+				Habilitar twitter
+
+				<h:panelGroup id="twitterPanel" layout="block">
+					<ui:fragment rendered="#{editBean.twitter.twitterEnabled}">
+						<h:panelGrid class="painelOpcoes" columns="2" border="0" >
+							<h:outputText value="Título*" />
+							<h:inputText id="twitterTitle" value="#{editBean.twitter.twitterTitle}" size="60" disabled="#{!editBean.twitter.twitterEnabled}" maxlength="75" />
+							<h:outputText value="DataWidgetId* " />
+							<h:inputText id="twitterDataWidgetId" value="#{editBean.twitter.twitterDataWidgetId}" size="60" disabled="#{!editBean.twitter.twitterEnabled}" maxlength="75" />
+							<h:outputText value="Descrição" />
+							<h:inputTextarea id="twitterDescription" value="#{editBean.twitter.twitterDescription}" style="width:326px; height:63px;" maxlength="3500"
+								disabled="#{!editBean.twitter.twitterEnabled}" />
+						</h:panelGrid>
+					</ui:fragment>
+				</h:panelGroup>
+			</p>
+
+			<p>
+				<component:videoPainel label="Habilitar vídeo ao vivo na sala de bate papo" videoEnabled="#{editBean.videoLive.videoEnabled}" videoTitle="#{editBean.videoLive.videoTitle}"
+					videoSubtitle="#{editBean.videoLive.videoSubtitle}" videoType="#{editBean.videoLive.videoType}" videoUrl="#{editBean.videoLive.videoUrl}"
+					videoDescription="#{editBean.videoLive.videoDescription}" />
+			</p>
+
+			<p>
+				<component:videoPainel label="Habilitar vídeo no histórico do bate papo" videoEnabled="#{editBean.videoRecorded.videoEnabled}" videoTitle="#{editBean.videoRecorded.videoTitle}"
+					videoSubtitle="#{editBean.videoRecorded.videoSubtitle}" videoType="#{editBean.videoRecorded.videoType}" videoUrl="#{editBean.videoRecorded.videoUrl}"
+					videoDescription="#{editBean.videoRecorded.videoDescription}" showWebCamaraOption="false"/>
+			</p>
+
+			<p>
+				<h:selectBooleanCheckbox value="#{editBean.usePolicyEnabled}">
+					<f:ajax execute="@form" render="usePolicyPanel usePolicyURL" />
+				</h:selectBooleanCheckbox>
+				Especificar política de uso
+
+				<h:panelGroup id="usePolicyPanel" layout="block">
+					<ui:fragment rendered="#{editBean.usePolicyEnabled}">
+						<h:panelGrid class="painelOpcoes"  columns="2" border="0" >
+							<h:outputText value="URL*" />
+							<h:inputText id="usePolicyURL" value="#{editBean.usePolicyURL}" disabled="#{!editBean.usePolicyEnabled}" size="60" maxlength="300" />
+							<h:outputText value="" />
+							<h:outputText class="mensagemAjuda" value="Para endereços externos utilize 'http://' no início da url." />
+
+						</h:panelGrid>
+					</ui:fragment>
+				</h:panelGroup>
+			</p>
+
+			<p>
+				<h:panelGroup id="painelImagem">
+				
+					Imagem da sala <br />
+					<ui:fragment rendered="#{editBean.imageUrl != ''}">
+						<img class="imagemSala" src="#{editBean.imageUrl}" />
+					</ui:fragment>
+					<br />
+					<h:commandButton id="btnAlterarImagem" onclick="dlgUploadImagem.show();" type="button" value="Alterar imagem..." />
+
+					<ui:fragment rendered="#{editBean.imageUrl != ''}">
+						<h:commandButton action="#{editBean.removeImage}" immediate="true" value="Remover imagem" />
+					</ui:fragment>
+
+				</h:panelGroup>
+			</p>
+			<p>
+				Abre <br />
+				<h:selectOneMenu value="#{editBean.openPolicy}">
+					<f:selectItems value="#{helperBean.openPolicies}" var="openPolicy" itemLabel="#{i18n[openPolicy.msg]}" />
+					<f:ajax event="change" render="policyScheduled" execute="@this" />
+				</h:selectOneMenu>
+			</p>
+
+			<h:panelGroup id="policyScheduled" layout="block">
+				<ui:fragment rendered="#{editBean.openPolicy == 'Scheduled'}">
+					<p class="cdchat_policyScheduled">
+						Aberta de <br />
+						<p:calendar pattern="#{helperBean.datePattern}" timeZone="#{helperBean.timezone}" value="#{editBean.openFrom.date}" />
+						<h:selectOneMenu value="#{editBean.openFrom.hour}">
+							<f:selectItems value="#{helperBean.hours}" />
+						</h:selectOneMenu>
+						<h:selectOneMenu value="#{editBean.openFrom.minute}">
+							<f:selectItems value="#{helperBean.minutes}" />
+						</h:selectOneMenu>
+					</p>
+					<p class="cdchat_policyScheduled">
+						Aberta até <br />
+						<p:calendar pattern="#{helperBean.datePattern}" timeZone="#{helperBean.timezone}" value="#{editBean.openUntil.date}" locale="pt_BR" />
+						<h:selectOneMenu value="#{editBean.openUntil.hour}">
+							<f:selectItems value="#{helperBean.hours}" />
+						</h:selectOneMenu>
+						<h:selectOneMenu value="#{editBean.openUntil.minute}">
+							<f:selectItems value="#{helperBean.minutes}" />
+						</h:selectOneMenu>
+					</p>
+				</ui:fragment>
+			</h:panelGroup>
+			
+			<a href="#" onclick="return false;" class="lnk-mais-opcoes iconSecaoFechada" ><span>Mais opções</span></a>
+				  
+			<div class="painelToggle" >
+					<p>
+						<h:selectBooleanCheckbox value="#{editBean.anonymousAllowed}" />
+						Aceita usuários anônimos<br />
+					</p>
+					<p>
+						<h:selectBooleanCheckbox value="#{editBean.moderated}" />
+						Moderada <br />
+					</p>
+					<p>
+						Capacidade* <br />
+						<h:inputText value="#{editBean.capacity}" size="4" />
+					</p>
+					<div class="painelConvidadoEspecial">
+						Convidado Especial <br />
+						<p:autoComplete value="#{autocompleteUserBean.convidado}" completeMethod="#{autocompleteUserBean.complete}" />
+				</div>
+			</div>
+
+			<p class="botoesFinais">
+				<h:commandButton value="Gravar" action="#{editBean.saveRoom}" />
+				<h:commandButton value="Cancelar" action="#{editBean.cancel}" immediate="true" />
+			</p>
+		</h:form>
+
+		<p:dialog id="dlgUploadImagem" header="Selecionar imagem" widgetVar="dlgUploadImagem" modal="true" height="175" width="633">
+			<h:form enctype="multipart/form-data">
+
+				<p:fileUpload id="imagem" mode="advanced" sizeLimit="1048576" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" label="Escolha"
+					fileUploadListener="#{roomImage.imageUploaded}" fileLimit="1" auto="true" update=":formGeral:painelImagem :formGeral:mensagens" showButtons="false"
+					immediate="true" oncomplete="dlgUploadImagem.hide();" invalidSizeMessage="O tamanho do arquivo excedeu o limite permitido (1MB)"
+					invalidFileMessage="Arquivo com extensão inválida (gif,jpeg,png)" />
+
+			</h:form>
+		</p:dialog>
+
+	</h:body>
+</f:view>

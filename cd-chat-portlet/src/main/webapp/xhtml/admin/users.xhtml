@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:aui="http://liferay.com/faces/aui"
+	xmlns:ls="http://liferay.com/faces/security"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:bridge="http://liferay.com/faces/bridge"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:aui-cc="http://liferay.com/faces/aui-cc"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:portlet="http://java.sun.com/portlet_2_0">
+
+	<h:head>
+	</h:head>
+
+	<h:body>
+		<h:messages errorClass="portlet-msg-error"
+			fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+			warnClass="portlet-msg-warn" />
+		<h1 style="margin-bottom: 21px; ">Lista de Participações</h1>
+		<span> 
+			<h:link class="lnk-botao" outcome="/xhtml/admin/index.xhtml">Sair</h:link>
+		</span>
+		<div class="painelInfoParticipacoes">
+			<table>
+				<tr>
+					<th>Capacidade</th>
+					<td class="coluna1">#{participantes.capacidade}</td>
+					<td class="coluna2"><img src="/e-democracia-theme/images/portlet/help.png" onclick="helpCapacidade.show();" style="cursor: pointer;"> </img></td>
+				</tr>
+				<tr>
+					<th>Máximo de usuários simultâneos</th>
+					<td class="coluna1">#{participantes.maxUsuariosSimultaneos}</td>
+					<td class="coluna2"><img src="/e-democracia-theme/images/portlet/help.png" onclick="helpUsuarios.show();" style="cursor: pointer;"> </img></td>
+				</tr>
+				<tr>
+					<th>Máximo de visitantes simultâneos</th>
+					<td class="coluna1">#{participantes.maxUsuariosEspiandoSimultaneos}</td>
+					<td class="coluna2"><img src="/e-democracia-theme/images/portlet/help.png" onclick="helpVisitantes.show();" style="cursor: pointer;"> </img></td>
+				</tr>
+				<tr>
+					<th>Total de participantes</th>
+					<td class="coluna1">
+						#{participantes.totalParticipantes}</td>
+					<td class="coluna2"><img src="/e-democracia-theme/images/portlet/help.png" onclick="helpParticipantes.show();" style="cursor: pointer;"> </img></td>	
+				</tr>
+				<tr>
+					<th>Total de participações</th>
+					<td class="coluna1">
+						#{participantes.totalParticipacoes}</td>
+					<td class="coluna2"><img src="/e-democracia-theme/images/portlet/help.png" onclick="helpParticipacoes.show();" style="cursor: pointer;"> </img></td>	
+				</tr>
+			</table>
+		</div>
+
+		<ui:fragment rendered="#{participantes.lista != null}">
+			<ui:fragment rendered="#{empty participantes.lista}">
+				#{i18n['no-users-chat-room']}
+			</ui:fragment>
+
+			<ui:fragment rendered="#{not empty participantes.lista}">
+				<div class="lfr-search-container">
+					<div class="aui-component aui-searchcontainer">
+						<div class="results-grid aui-searchconteiner-content">
+							<table class="taglib-search-iterator">
+								<tbody>
+									<tr class="portlet-section-header results-header">
+										<th class="col-1 first">Nome</th>
+										<th class="col-2">E-Mail</th>
+										<th class="col-3 last">UF</th>
+									</tr>
+									<tr class="lfr-template portlet-section-body results-row">
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<ui:repeat var="participante" value="#{participantes.lista}"
+										varStatus="status">
+										<tr
+											class="#{status.even?'portlet-section-body':'portlet-section-alternate'} results-row #{status.last?'last':''}">
+											<td class="col-1">#{participante.userName}</td>
+											<td class="col-2">#{participante.userEmail}</td>
+											<td class="col-3 last">#{participante.userUF}</td>
+										</tr>
+									</ui:repeat>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-top: 10px;" align="left">
+					<input type="button" value="Exportar"
+						onclick="window.location.href='#{resource[participantes.recursoParticipantes]}'; return false" />
+				</div>
+			</ui:fragment>
+		</ui:fragment>
+		
+		<p:dialog widgetVar="helpCapacidade" modal="true" draggable="false" width="300px"	closable="true" resizable="false" header="Capacidade" closeOnEscape="true">
+			<div style="padding: 15px;">
+				<p>Quantidade de usuários que podem entrar na sala ao mesmo tempo. Obs.: Quando a sala de batepapo chegar a esse limite, só será oferecida aos usuários a opção de Espiar </p>
+			</div>
+		</p:dialog>
+		<p:dialog widgetVar="helpUsuarios" modal="true" draggable="false" width="300px"	closable="true" resizable="false" header="Máximo de Usuários Simultâneos" closeOnEscape="true">
+			<div style="padding: 15px;">
+				<p>Maior quantidade de usuários que estiveram na sala simultaneamente</p>
+			</div>
+		</p:dialog>
+		<p:dialog widgetVar="helpVisitantes" modal="true" draggable="false" width="300px"	closable="true" resizable="false" header="Máximo de Visitantes Simultâneos " closeOnEscape="true">
+			<div style="padding: 15px;">
+				<p>Maior quantidade de usuários que estiveram espiando simultaneamente</p>
+			</div>
+		</p:dialog>
+		<p:dialog widgetVar="helpParticipantes" modal="true" draggable="false" width="300px"	closable="true" resizable="false" header="Total de participantes" closeOnEscape="true">
+			<div style="padding: 15px;">
+				<p>Quantidade de usuários diferentes que entraram na sala (mesmo indicador utilizado no histórico do chat)</p>
+			</div>
+		</p:dialog>
+		<p:dialog widgetVar="helpParticipacoes" modal="true" draggable="false" width="300px"	closable="true" resizable="false" header="Total de participações" closeOnEscape="true">
+			<div style="padding: 15px;">
+				<p>Quantidade de usuários que entraram na sala. Um usuário que houver entrado mais de uma vez com dados diferentes será contabilizado várias vezes</p>
+			</div>
+		</p:dialog>
+		
+	</h:body>
+</f:view>

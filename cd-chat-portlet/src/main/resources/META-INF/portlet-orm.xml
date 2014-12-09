@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomModelImpl">
+		<attributes>
+			<id name="roomId" />
+			<basic name="roomName" />
+			<basic name="description" />
+			<basic name="openPolicy" />
+			<basic name="status" />
+			<basic name="openFrom">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="openUntil">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="moderated" />
+			<basic name="capacity" />
+			<basic name="maxSimultaneousUsersSpying" />
+			<basic name="maxSimultaneousUsers" />
+			<basic name="anonymousAllowed" />
+			<basic name="guestId" />
+			<basic name="guestName" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="usePolicyEnabled" />
+			<basic name="usePolicyURL" />
+			<basic name="imageId" />
+			<basic name="videoLiveId" />
+			<basic name="videoRecordedId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomMessageModelImpl">
+		<attributes>
+			<id name="chatMessageId" />
+			<basic name="parentMessageId" />
+			<basic name="chatRoomId" />
+			<basic name="exportedPosition" />
+			<basic name="exportedRemoved" />
+			<basic name="messageType" />
+			<basic name="messageStatus" />
+			<basic name="senderId" />
+			<basic name="senderName" />
+			<basic name="senderUF" />
+			<basic name="senderEmail" />
+			<basic name="senderType" />
+			<basic name="messageText" />
+			<basic name="textType" />
+			<basic name="messageTS">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="messagePublic" />
+			<basic name="adminMessage" />
+			<basic name="recipientUserId" />
+			<basic name="recipientUserName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="recipientUserUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomTwitterModelImpl">
+		<attributes>
+			<id name="twitterId" />
+			<basic name="twitterTitle" />
+			<basic name="twitterDescription" />
+			<basic name="twitterEnabled" />
+			<basic name="twitterHashtag" />
+			<basic name="twitterDataWidgetId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomUserModelImpl">
+		<attributes>
+			<id name="chatUserId" />
+			<basic name="chatRoomId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="userImgId" />
+			<basic name="userUF" />
+			<basic name="userEmail" />
+			<basic name="banned" />
+			<basic name="userType" />
+			<basic name="joinedTS">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="chatUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomVideoModelImpl">
+		<attributes>
+			<id name="videoId" />
+			<basic name="videoTitle" />
+			<basic name="videoSubtitle" />
+			<basic name="videoDescription" />
+			<basic name="videoEnabled" />
+			<basic name="videoUrl" />
+			<basic name="videoType" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomImpl" name="ChatRoom">
+		<table name="CDChat_ChatRoom" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomMessageImpl" name="ChatRoomMessage">
+		<table name="CDChat_ChatRoomMessage" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomTwitterImpl" name="ChatRoomTwitter">
+		<table name="CDChat_ChatRoomTwitter" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomUserImpl" name="ChatRoomUser">
+		<table name="CDChat_ChatRoomUser" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.chat.model.impl.ChatRoomVideoImpl" name="ChatRoomVideo">
+		<table name="CDChat_ChatRoomVideo" />
+		<attributes />
+	</entity>
+</entity-mappings>

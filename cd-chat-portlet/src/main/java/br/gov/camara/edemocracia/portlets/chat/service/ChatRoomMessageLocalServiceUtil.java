@@ -1,0 +1,371 @@
+package br.gov.camara.edemocracia.portlets.chat.service;
+
+import com.liferay.portal.kernel.bean.PortletBeanLocatorUtil;
+import com.liferay.portal.kernel.util.ReferenceRegistry;
+import com.liferay.portal.service.InvokableLocalService;
+
+/**
+ * The utility for the chat room message local service. This utility wraps {@link br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomMessageLocalServiceImpl} and is the primary access point for service operations in application layer code running on the local server.
+ *
+ * <p>
+ * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+ * </p>
+ *
+ * @author Ricardo Lima
+ * @see ChatRoomMessageLocalService
+ * @see br.gov.camara.edemocracia.portlets.chat.service.base.ChatRoomMessageLocalServiceBaseImpl
+ * @see br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomMessageLocalServiceImpl
+ * @generated
+ */
+public class ChatRoomMessageLocalServiceUtil {
+    private static ChatRoomMessageLocalService _service;
+
+    /*
+     * NOTE FOR DEVELOPERS:
+     *
+     * Never modify this class directly. Add custom service methods to {@link br.gov.camara.edemocracia.portlets.chat.service.impl.ChatRoomMessageLocalServiceImpl} and rerun ServiceBuilder to regenerate this class.
+     */
+
+    /**
+    * Adds the chat room message to the database. Also notifies the appropriate model listeners.
+    *
+    * @param chatRoomMessage the chat room message
+    * @return the chat room message that was added
+    * @throws SystemException if a system exception occurred
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage addChatRoomMessage(
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage chatRoomMessage)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().addChatRoomMessage(chatRoomMessage);
+    }
+
+    /**
+    * Creates a new chat room message with the primary key. Does not add the chat room message to the database.
+    *
+    * @param chatMessageId the primary key for the new chat room message
+    * @return the new chat room message
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage createChatRoomMessage(
+        long chatMessageId) {
+        return getService().createChatRoomMessage(chatMessageId);
+    }
+
+    /**
+    * Deletes the chat room message with the primary key from the database. Also notifies the appropriate model listeners.
+    *
+    * @param chatMessageId the primary key of the chat room message
+    * @return the chat room message that was removed
+    * @throws PortalException if a chat room message with the primary key could not be found
+    * @throws SystemException if a system exception occurred
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage deleteChatRoomMessage(
+        long chatMessageId)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().deleteChatRoomMessage(chatMessageId);
+    }
+
+    /**
+    * Deletes the chat room message from the database. Also notifies the appropriate model listeners.
+    *
+    * @param chatRoomMessage the chat room message
+    * @return the chat room message that was removed
+    * @throws SystemException if a system exception occurred
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage deleteChatRoomMessage(
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage chatRoomMessage)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().deleteChatRoomMessage(chatRoomMessage);
+    }
+
+    public static com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery() {
+        return getService().dynamicQuery();
+    }
+
+    /**
+    * Performs a dynamic query on the database and returns the matching rows.
+    *
+    * @param dynamicQuery the dynamic query
+    * @return the matching rows
+    * @throws SystemException if a system exception occurred
+    */
+    @SuppressWarnings("rawtypes")
+    public static java.util.List dynamicQuery(
+        com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().dynamicQuery(dynamicQuery);
+    }
+
+    /**
+    * Performs a dynamic query on the database and returns a range of the matching rows.
+    *
+    * <p>
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+    * </p>
+    *
+    * @param dynamicQuery the dynamic query
+    * @param start the lower bound of the range of model instances
+    * @param end the upper bound of the range of model instances (not inclusive)
+    * @return the range of matching rows
+    * @throws SystemException if a system exception occurred
+    */
+    @SuppressWarnings("rawtypes")
+    public static java.util.List dynamicQuery(
+        com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
+        int end) throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().dynamicQuery(dynamicQuery, start, end);
+    }
+
+    /**
+    * Performs a dynamic query on the database and returns an ordered range of the matching rows.
+    *
+    * <p>
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+    * </p>
+    *
+    * @param dynamicQuery the dynamic query
+    * @param start the lower bound of the range of model instances
+    * @param end the upper bound of the range of model instances (not inclusive)
+    * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+    * @return the ordered range of matching rows
+    * @throws SystemException if a system exception occurred
+    */
+    @SuppressWarnings("rawtypes")
+    public static java.util.List dynamicQuery(
+        com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
+        int end,
+        com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService()
+                   .dynamicQuery(dynamicQuery, start, end, orderByComparator);
+    }
+
+    /**
+    * Returns the number of rows that match the dynamic query.
+    *
+    * @param dynamicQuery the dynamic query
+    * @return the number of rows that match the dynamic query
+    * @throws SystemException if a system exception occurred
+    */
+    public static long dynamicQueryCount(
+        com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().dynamicQueryCount(dynamicQuery);
+    }
+
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage fetchChatRoomMessage(
+        long chatMessageId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().fetchChatRoomMessage(chatMessageId);
+    }
+
+    /**
+    * Returns the chat room message with the primary key.
+    *
+    * @param chatMessageId the primary key of the chat room message
+    * @return the chat room message
+    * @throws PortalException if a chat room message with the primary key could not be found
+    * @throws SystemException if a system exception occurred
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage getChatRoomMessage(
+        long chatMessageId)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().getChatRoomMessage(chatMessageId);
+    }
+
+    public static com.liferay.portal.model.PersistedModel getPersistedModel(
+        java.io.Serializable primaryKeyObj)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().getPersistedModel(primaryKeyObj);
+    }
+
+    /**
+    * Returns a range of all the chat room messages.
+    *
+    * <p>
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+    * </p>
+    *
+    * @param start the lower bound of the range of chat room messages
+    * @param end the upper bound of the range of chat room messages (not inclusive)
+    * @return the range of chat room messages
+    * @throws SystemException if a system exception occurred
+    */
+    public static java.util.List<br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage> getChatRoomMessages(
+        int start, int end)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().getChatRoomMessages(start, end);
+    }
+
+    /**
+    * Returns the number of chat room messages.
+    *
+    * @return the number of chat room messages
+    * @throws SystemException if a system exception occurred
+    */
+    public static int getChatRoomMessagesCount()
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().getChatRoomMessagesCount();
+    }
+
+    /**
+    * Updates the chat room message in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
+    *
+    * @param chatRoomMessage the chat room message
+    * @return the chat room message that was updated
+    * @throws SystemException if a system exception occurred
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage updateChatRoomMessage(
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage chatRoomMessage)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().updateChatRoomMessage(chatRoomMessage);
+    }
+
+    /**
+    * Updates the chat room message in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
+    *
+    * @param chatRoomMessage the chat room message
+    * @param merge whether to merge the chat room message with the current session. See {@link com.liferay.portal.service.persistence.BatchSession#update(com.liferay.portal.kernel.dao.orm.Session, com.liferay.portal.model.BaseModel, boolean)} for an explanation.
+    * @return the chat room message that was updated
+    * @throws SystemException if a system exception occurred
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage updateChatRoomMessage(
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage chatRoomMessage,
+        boolean merge)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().updateChatRoomMessage(chatRoomMessage, merge);
+    }
+
+    /**
+    * Returns the Spring bean ID for this bean.
+    *
+    * @return the Spring bean ID for this bean
+    */
+    public static java.lang.String getBeanIdentifier() {
+        return getService().getBeanIdentifier();
+    }
+
+    /**
+    * Sets the Spring bean ID for this bean.
+    *
+    * @param beanIdentifier the Spring bean ID for this bean
+    */
+    public static void setBeanIdentifier(java.lang.String beanIdentifier) {
+        getService().setBeanIdentifier(beanIdentifier);
+    }
+
+    public static java.lang.Object invokeMethod(java.lang.String name,
+        java.lang.String[] parameterTypes, java.lang.Object[] arguments)
+        throws java.lang.Throwable {
+        return getService().invokeMethod(name, parameterTypes, arguments);
+    }
+
+    /**
+    * Obtém uma mensagem vazia
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage getNullMessage() {
+        return getService().getNullMessage();
+    }
+
+    /**
+    * Cria uma nova mensagem
+    *
+    * @param type
+    * @param room
+    * @param timestamp
+    * @param message
+    * @param pub
+    * @param admin
+    * @param textType
+    * @param chatUserId
+    * @param roomId
+    * @param recipientUser
+    * @throws SystemException
+    * @throws PortalException
+    */
+    public static void postMessage(
+        br.gov.camara.edemocracia.portlets.chat.model.impl.MessageType type,
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomUser sender,
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoom room,
+        java.util.Date timestamp, java.lang.String message, boolean pub,
+        boolean admin,
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomUser recipient,
+        int textType)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        getService()
+            .postMessage(type, sender, room, timestamp, message, pub, admin,
+            recipient, textType);
+    }
+
+    /**
+    * Aprova uma mensagem
+    *
+    * @param message
+    * @param timestamp
+    * @param approved
+    * @throws SystemException
+    */
+    public static void approveMessage(
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage message,
+        java.util.Date timestamp, boolean approved)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        getService().approveMessage(message, timestamp, approved);
+    }
+
+    /**
+    * Obtém mensagens desde um determinado momento
+    *
+    * @param room
+    Sala de bate-papo
+    * @param user
+    Usuário para obter as mensagens. Se for null, retorna apenas
+    as mensagens públicas
+    * @throws SystemException
+    */
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage[] getMessagesForUserSince(
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoom room,
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomUser user,
+        java.util.Date since)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().getMessagesForUserSince(room, user, since);
+    }
+
+    public static br.gov.camara.edemocracia.portlets.chat.model.ChatRoomMessage[] getMessagesForUserUntil(
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoom room,
+        br.gov.camara.edemocracia.portlets.chat.model.ChatRoomUser user,
+        java.util.Date until)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().getMessagesForUserUntil(room, user, until);
+    }
+
+    public static void clearService() {
+        _service = null;
+    }
+
+    public static ChatRoomMessageLocalService getService() {
+        if (_service == null) {
+            InvokableLocalService invokableLocalService = (InvokableLocalService) PortletBeanLocatorUtil.locate(ClpSerializer.getServletContextName(),
+                    ChatRoomMessageLocalService.class.getName());
+
+            if (invokableLocalService instanceof ChatRoomMessageLocalService) {
+                _service = (ChatRoomMessageLocalService) invokableLocalService;
+            } else {
+                _service = new ChatRoomMessageLocalServiceClp(invokableLocalService);
+            }
+
+            ReferenceRegistry.registerReference(ChatRoomMessageLocalServiceUtil.class,
+                "_service");
+        }
+
+        return _service;
+    }
+
+    /**
+     * @deprecated
+     */
+    public void setService(ChatRoomMessageLocalService service) {
+    }
+}

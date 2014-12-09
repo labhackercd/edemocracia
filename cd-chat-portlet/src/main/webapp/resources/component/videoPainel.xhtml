@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="videoPainel">
+
+	<composite:attribute name="label" required="true" />
+	<composite:attribute name="videoEnabled" type="java.lang.Boolean" required="true" />
+	<composite:attribute name="videoTitle" required="true" />
+	<composite:attribute name="videoSubtitle" required="true" />
+	<composite:attribute name="videoType" required="true" />
+	<composite:attribute name="videoUrl" required="true" />
+	<composite:attribute name="videoDescription" required="true" />
+	<composite:attribute name="showWebCamaraOption" type="java.lang.Boolean" required="false" default="true" />
+
+</composite:interface>
+
+
+<composite:implementation>
+
+
+	<h:selectBooleanCheckbox value="#{cc.attrs.videoEnabled}">
+		<f:ajax execute="@form" render="videoPanel videoUrlYoutube videoUrlWebCam videoUrl videoType videoTitle videoSubtitle videoDescription " />
+	</h:selectBooleanCheckbox>
+
+	<h:outputText value=" #{cc.attrs.label}" />
+
+	<h:panelGroup id="videoPanel" layout="block">
+		<ui:fragment rendered="#{cc.attrs.videoEnabled}">
+			<h:panelGrid columns="2" border="0" class="painelOpcoes">
+				<h:outputText value="Título* " />
+				<h:inputText id="videoTitle" value="#{cc.attrs.videoTitle}" size="60" disabled="#{!cc.attrs.videoEnabled}" maxlength="75" />
+
+				<h:outputText value="Subtítulo " />
+				<h:inputText id="videoSubtitle" value="#{cc.attrs.videoSubtitle}" size="60" disabled="#{!cc.attrs.videoEnabled}" maxlength="75" />
+
+				<h:outputText value="Descrição " />
+				<h:inputTextarea id="videoDescription" value="#{cc.attrs.videoDescription}" disabled="#{!cc.attrs.videoEnabled}" style="width:326px; height:63px;" maxlength="3500" />
+
+				<h:outputText value="Tipo* " />
+				<h:selectOneMenu id="videoType" value="#{cc.attrs.videoType}" disabled="#{!cc.attrs.videoEnabled}" binding="#{cc.attributes.selectTipo}">
+
+					<f:selectItems value="#{cc.attributes.videoTypes}" />
+					<f:ajax event="change" render="helpMessagesVideo panelUrlVideo panelLabelVideo" execute="@this" />
+				</h:selectOneMenu>
+
+				<h:panelGroup id="panelLabelVideo">
+					<h:outputText value="#{cc.attributes.panelLabelVideoValue}" />
+				</h:panelGroup>
+				
+				<h:panelGroup id="panelUrlVideo">
+					<h:inputText rendered="#{cc.isInputTextRender()}" id="videoUrl" value="#{cc.attrs.videoUrl}" style="width:326px; " disabled="#{!cc.attrs.videoEnabled}"
+						maxlength="3500" />
+					<h:inputTextarea rendered="#{cc.isTextAreaRender()}" id="videoUrlYoutube" name="videoUrl" value="#{cc.attrs.videoUrl}" style="width:326px; height:63px;"
+						disabled="#{!cc.attrs.videoEnabled}" maxlength="3500" />
+					<h:selectOneMenu rendered="#{cc.isSelectBoxRender()}" id="videoUrlWebCam" name="videoUrl" value="#{cc.attrs.videoUrl}" style="width:326px;"
+						disabled="#{!cc.attrs.videoEnabled}">
+						<f:selectItems value="#{cc.canais}" var="canal" itemLabel="#{canal.nomCanal}" itemValue="#{canal.nomPontoAlta}" />
+					</h:selectOneMenu>
+				</h:panelGroup>
+
+				<h:panelGroup />
+				<h:panelGroup id="helpMessagesVideo" layout="block">
+					<h:outputText value="#{cc.attributes.helpMessagesVideo}" escape="false" class="mensagemAjuda" />
+				</h:panelGroup>
+			</h:panelGrid>
+		</ui:fragment>
+	</h:panelGroup>
+
+</composite:implementation>
+
+</html>

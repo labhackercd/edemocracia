@@ -1,0 +1,62 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+<%@ taglib uri="http://java.sun.com/portlet" prefix="portlet"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<%@page import="br.gov.camara.edemocracia.portlets.chat.model.ChatRoom"%>
+<%@page import="org.apache.commons.lang.StringEscapeUtils"%>
+<%@page import="java.util.Date"%>
+
+<liferay-theme:defineObjects />
+<portlet:defineObjects />
+
+<script type="text/javascript" src="http://js.addthisevent.com/atemay.js"></script>
+<link href="<%=request.getContextPath() %>/css/addthisdefault.css" rel="stylesheet" type="text/css"></link>
+
+<c:set value='<%=renderRequest.getPreferences().getValue("addthis_texto_descricao", "") %>' var="texto_descricao" scope="request" />
+<c:set value='<%=renderRequest.getPreferences().getValue("addthis_utilizar_link_para_sala", "true") %>' var="usar_link_sala_no_evento" scope="request" />
+
+<portlet:actionURL name="enterChatRoom" var="enterBatepapoURL">
+	<portlet:param name="roomId" value="<%=String.valueOf(room.getRoomId())%>" />
+</portlet:actionURL>
+
+<c:if test="<%=room != null && room.getOpenFrom() != null && room.getOpenFrom().after(new Date())%>">
+	<div class="painelEntrar">
+		<a href="http://edemocracia.camara.gov.br" class="addthisevent"
+			style="float: right;" title="Marcar este evento na agenda">
+			Adicionar à agenda 
+			<span class="_start">
+				<fmt:formatDate type="both" dateStyle="short" timeStyle="medium" timeZone="<%=themeDisplay.getUser().getTimeZone()%>" value="<%=room.getOpenFrom()%>" />
+			</span> 
+			<span class="_end">
+				<fmt:formatDate type="both" dateStyle="short" timeStyle="medium" timeZone="<%=themeDisplay.getUser().getTimeZone()%>" value="<%=room.getOpenUntil()%>" />
+			</span> 
+			<span class="_zonecode">24</span>
+			<span class="_summary">Chat: <%=StringEscapeUtils.escapeHtml(room.getRoomName())%></span>
+			<span class="_description">
+				<c:choose>
+		  			 <c:when test="${not empty texto_descricao}">
+		     				${texto_descricao}
+		   			</c:when>
+		   			<c:otherwise>
+						Bate-papo agendado no portal edemocracia. Para mais detalhes acesse:
+		   			</c:otherwise>
+				</c:choose>
+				<c:if test="${usar_link_sala_no_evento eq 'true' or empty usar_link_sala_no_evento}">
+						${enterBatepapoURL}
+				</c:if>
+				
+			</span> 
+			<span class="_location">Brasilia - DF, Brasil</span> 
+			<span class="_organizer">e-Democracia</span> 
+			<span class="_organizer_email">edemocracia@camara.gov.br</span>
+			<span class="_facebook_event"></span> 
+			<span class="_all_day_event">false</span>
+			<span class="_date_format">DD/MM/YYYY</span>
+		</a>
+		<div style="clear: both;"></div>
+	</div>
+</c:if>
