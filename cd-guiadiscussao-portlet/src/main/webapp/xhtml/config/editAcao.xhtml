@@ -1,0 +1,60 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:component="http://java.sun.com/jsf/composite/component">
+
+
+	<p:dialog header="Editar ação" widgetVar="editAcaoPainel" modal="true"
+		resizable="false">
+		<div class="painelEdicaoAcao">
+			<div>
+				<h:form id="formAcao">
+
+					<div style="margin-bottom: 5px;">
+						<p>Selecione o ícone:</p>
+
+						<p:selectOneMenu id="icone" style="width:314px"
+							value="#{acaoAdminBean.iconeSelecionado}" effect="fade"
+							converter="imagemConverter" var="ico">
+							<f:selectItems value="#{acaoAdminBean.icones}" var="icone"
+								itemValue="#{icone}" itemLabel="#{icone.tituloDoArquivo}" />
+							<p:column width="200" styleClass="imagem">
+								<p:graphicImage value="#{ico.urlImagem}" width="40px"
+									height="40px" />
+							</p:column>
+							<p:column>  
+	        			        #{ico.tituloDoArquivo}  
+	            			</p:column>
+						</p:selectOneMenu>
+					</div>
+					<p style="font-size: 10px;">Pasta de ícones: /icones/guia
+						(Comunidade Global)</p>
+
+					<p>Texto:</p>
+					<h:inputText id="texto" value="#{acaoAdminBean.acao.texto}"
+						maxlength="75" style="width:314px;" />
+					<br />
+					<br />
+					<component:linkPainel
+						linkExternoValue="#{acaoAdminBean.linkExterno}"
+						linkComunidadeValue="#{acaoAdminBean.linkComunidade}"
+						destinoLinkValue="#{acaoAdminBean.urlExterna}" />
+
+					<div align="center" style="margin-top: 25px;">
+
+						<h:commandButton value="Gravar" style="margin-right: 70px;"
+							action="#{acaoAdminBean.salvarAcao}"
+							onclick="editAcaoPainel.hide()">
+							<f:ajax render="@all" execute="@form" />
+						</h:commandButton>
+						<h:button value="Cancelar"
+							onclick="editAcaoPainel.hide();return false;"></h:button>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</p:dialog>
+
+</ui:composition>

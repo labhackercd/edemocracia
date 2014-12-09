@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="br.gov.camara.edemocracia.portlets.guiadiscussao">
+	<author>Robson</author>
+	<namespace>GD</namespace>
+
+	<entity name="Configuracao" remote-service="false" local-service="true">
+		<column name="configuracaoId" type="long" primary="true"/>
+		<column name="groupId" type="long" />
+		<column name="faseAtualId" type="long" />
+		<column name="textoBanner" type="String" />
+		<column name="imagemIdBanner" type="long" />
+		<column name="urlBanner" type="String" />
+		<column name="urlExterna" type="boolean" />
+		<column name="tituloBanner" type="String" />
+		
+		<finder name="GroupId" return-type="Configuracao">
+            <finder-column name="groupId" />
+        </finder>
+	</entity>
+	<entity name="Fase" remote-service="false" local-service="true">
+		<column name="faseId" type="long" primary="true"/>
+		<column name="configuracaoId" type="long" />
+		<column name="ordem" type="int" />
+		<column name="titulo" type="String" />
+		
+		<order>
+        	<order-column name="ordem" order-by="asc" />
+        </order>
+        
+		<finder name="ConfiguracaoId" return-type="Collection">
+            <finder-column name="configuracaoId" />
+        </finder>
+	</entity>
+	<entity name="Acao" remote-service="false" local-service="true">
+		<column name="acaoId" type="long" primary="true"/>
+		<column name="faseId" type="long" />
+		<column name="ordem" type="int" />
+		<column name="texto" type="String" />
+		<column name="urlExterna" type="boolean" />
+		<column name="urlLink" type="String" />
+		<column name="iconeId" type="long" />
+		
+		<order>
+        	<order-column name="ordem" order-by="asc" />
+        </order>
+		
+		<finder name="FaseId" return-type="Collection">
+            <finder-column name="faseId" />
+        </finder>
+	</entity>
+
+</service-builder>

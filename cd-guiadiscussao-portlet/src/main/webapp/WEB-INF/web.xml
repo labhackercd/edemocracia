@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>cd-guiadiscussao-portlet</display-name>
+
+
+	<!-- Usando JSF 2 na aplicação <context-param> <param-name>org.jboss.jbossfaces.WAR_BUNDLES_JSF_IMPL</param-name> 
+		<param-value>true</param-value> </context-param> -->
+
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+
+	<!-- <context-param> <param-name>org.apache.myfaces.EXPRESSION_FACTORY</param-name> 
+		<param-value>org.jboss.el.ExpressionFactoryImpl</param-value> </context-param> -->
+
+	<context-param>
+		<param-name>com.sun.faces.expressionFactory</param-name>
+		<param-value>org.jboss.el.ExpressionFactoryImpl</param-value>
+	</context-param>
+
+	<context-param>
+	    <param-name>primefaces.skin</param-name>
+	    <param-value>none</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+	</listener>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Facelet View XHTML</web-resource-name>
+			<url-pattern>*.xhtml</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>nobody</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-role>
+		<role-name>nobody</role-name>
+	</security-role>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+        	<servlet-name>guiadiscussaoportlet Servlet</servlet-name>
+	        <url-pattern>/cd-guia-discussao-portlet/*</url-pattern>
+ 	</servlet-mapping>
+
+	<servlet-mapping>
+        	<servlet-name>guiadiscussaoconfigportlet Servlet</servlet-name>
+	        <url-pattern>/cd-guia-discussao-config-portlet/*</url-pattern>
+ 	</servlet-mapping>
+
+</web-app>

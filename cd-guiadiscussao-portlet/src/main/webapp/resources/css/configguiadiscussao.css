@@ -1,0 +1,108 @@
+.faseAtual{
+	background-color: #FFF2D8;
+	border-color: #FDD37F !important;
+}
+
+.visibleFalse{
+	display: none;
+}
+
+.painelFases {
+/* 	width: 685px;  */
+	width:	703px;
+	margin-top: 25px;
+	margin-bottom: 16px;
+}
+
+.painelAcoes {
+	float: left;
+	min-width: 484px; 
+	min-height: 115px;
+	padding-left: 27px;
+}
+
+.containerFase{
+	width: 540px; 
+	height: 100%; 
+	float: left;
+	border: 1px solid #999999;
+}
+
+.tituloFase{
+	float: left; 
+	width: 400px;
+	margin-top: 12px;
+	font-weight: bold;
+}
+
+.botoesControleFase{
+	float: left; margin: 10px;
+}
+
+.botoesControleFase input[type="submit"] {
+	margin-bottom: 4px;width:117px;
+}
+
+.painelEdicaoAcao {
+	width: 353px; 
+	height: 292px;
+	margin-left: 24px;
+	margin-top: 15px;
+}
+
+.painelEdicaoBanner {
+	width: 353px; 
+	height: 352px;
+	margin-left: 24px;
+	margin-top: 15px;
+}
+
+.botaoEditarBanner {
+	float: right;
+	margin-right: 34px;
+}
+
+
+.ui-orderlist .ui-orderlist-list {
+	min-width: 485px;
+	min-height: 126px !important ;
+	height:initial !important;
+	background: transparent;
+	border-color: transparent;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+	background: transparent;
+	color: #4f4f4f;
+	text-shadow: none;	
+}
+
+li.ui-orderlist-item.ui-corner-all.ui-state-highlight {
+	background: none !important;
+	color: #4f4f4f;
+	text-shadow: none;
+	border-color: none !important;
+}
+
+li.ui-orderlist-item.ui-corner-all.ui-state-hover {
+	background: none !important;
+	color: #4f4f4f;
+	text-shadow: none;
+	border-color: none !important;
+}
+
+tr.ui-selectonemenu-item.ui-selectonemenu-row.ui-widget-content.ui-state-hover {
+	background: #85b2cb -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.4)));
+	color: #1C4257;
+	text-shadow: none;
+	cursor: pointer;
+	border: 1px solid #a8a8a8;
+}
+
+tr.ui-selectonemenu-item.ui-selectonemenu-row.ui-widget-content.ui-state-highlight { 
+	background: #85b2cb -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.4)));
+	color: #1C4257;
+	text-shadow: none;	
+	cursor: pointer;
+	border: 1px solid #a8a8a8;
+}

@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:orderList value="#{dados.acoes}" var="acao" iconOnly="true"
+		rendered="#{not empty dados.acoes}" effect="clip"
+		itemValue="#{acao.acaoId}" converter="acaoConverter"
+		controlsLocation="none">
+		<p:column style="width:90%;">
+			<div style="float: left; margin-right: 10px;vertical-align: middle;">
+				<h:graphicImage value="#{acaoAdminBean.getUrlIconeAcao(acao.iconeId)}" width="30px" height="30px" />
+			</div>
+			<div style="line-height: 30px; height: 33px;">
+				<p><h:outputText value="#{acao.texto}" /></p>
+			</div>
+		</p:column>
+		<p:column>
+			<h:commandLink action="#{acaoAdminBean.editarAcao}"
+				style="float: right;" onclick="editAcaoPainel.show();">
+				<img class="icon" src="/e-democracia-theme/images/common/edit.png"
+					alt="Editar" title="Editar Ação" />
+				<f:ajax execute="@this" render=":formAcao" />
+				<f:param name="acaoId" value="#{acao.acaoId}" />
+			</h:commandLink>
+		</p:column>
+		<p:column >
+			<h:commandLink action="#{acaoAdminBean.excluirAcao}"
+				style="float: right;" immediate="true">
+				<img class="icon" src="/e-democracia-theme/images/common/delete.png"
+					alt="Excluir" title="Excluir Ação" />
+				<f:param name="acaoId" value="#{acao.acaoId}" />
+				<f:ajax execute="@form" render="@all" />
+			</h:commandLink>
+		</p:column>
+	</p:orderList>
+
+	<h:commandLink
+		style="float: right; margin-top: 5px; margin-bottom: 8px;text-decoration: none;margin-right: 3px;"
+		title="Salvar ordem das ações" type="button"
+		rendered="#{not empty dados.acoes}"
+		action="#{acaoAdminBean.salvarOrdenacao}">Gravar ordem
+		<img class="icon" src="/e-democracia-theme/images/common/export.png"
+			style="margin-bottom: 3px;" alt="Excluir"
+			title="Salvar ordem das ações" />
+		<f:param name="acaoId" value="#{acao.acaoId}" />
+		<f:setPropertyActionListener
+			target="#{faseAdminBean.dadosFaseSelecionada}" value="#{dados}" />
+		<f:ajax render="@form " execute="@form" />
+	</h:commandLink>
+
+</ui:composition>

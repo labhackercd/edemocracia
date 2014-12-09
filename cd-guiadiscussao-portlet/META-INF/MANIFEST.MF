@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: cd-guiadiscussao-portlet
+Bundle-SymbolicName: cd-guiadiscussao-portlet
+Bundle-Version: 1.0.0.qualifier
+Export-Package: br.gov.camara.edemocracia.portlets.guiadiscussao,
+ br.gov.camara.edemocracia.portlets.guiadiscussao.model,
+ br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl,
+ br.gov.camara.edemocracia.portlets.guiadiscussao.service,
+ br.gov.camara.edemocracia.portlets.guiadiscussao.service.base,
+ br.gov.camara.edemocracia.portlets.guiadiscussao.service.impl,
+ br.gov.camara.edemocracia.portlets.guiadiscussao.service.messaging,
+ br.gov.camara.edemocracia.portlets.guiadiscussao.service.persistence

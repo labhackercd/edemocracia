@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="linkPainel">
+
+	<composite:attribute name="linkComunidadeValue" required="true" />
+	<composite:attribute name="linkExternoValue" required="true" />
+	<composite:attribute name="destinoLinkValue" type="java.lang.Boolean"
+		required="true" />
+
+</composite:interface>
+
+<composite:implementation>
+
+	<div>
+		<p style="float: left; margin-right: 34px;">Destino do link:</p>
+		<div style="float: left;">
+			<h:selectOneRadio converter="javax.faces.Boolean"
+				value="#{cc.attrs.destinoLinkValue}" style="width:192px;">
+				<f:selectItems value="#{cc.linkExternoValues}" />
+				<f:ajax render="painelLink" execute="@this" />
+			</h:selectOneRadio>
+		</div>
+	</div>
+
+	<h:panelGroup id="painelLink">
+		<h:inputText value="#{cc.attrs.linkExternoValue}" style="width:314px;"
+			rendered="#{cc.attrs.destinoLinkValue}" maxlength="300"></h:inputText>
+		<h:selectOneMenu value="#{cc.attrs.linkComunidadeValue}"
+			rendered="#{!cc.attrs.destinoLinkValue}" style="width:314px;">
+			<f:selectItems value="#{cc.paginasComunidade}" var="pagina"
+				itemLabel="#{pagina.friendlyURL}" itemValue="#{pagina.plid}" />
+		</h:selectOneMenu>
+	</h:panelGroup>
+
+</composite:implementation>
+
+</html>

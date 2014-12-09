@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource-action-mapping>
+	<portlet-resource>
+		<portlet-name>guiadiscussaoconfigportlet</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>VIEW</action-key>
+				<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+			</supports>
+			<community-defaults>
+				<action-key>VIEW</action-key>
+			</community-defaults>
+			<guest-defaults >
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+			</guest-unsupported>
+		</permissions>
+	</portlet-resource>
+</resource-action-mapping>

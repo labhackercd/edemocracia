@@ -1,0 +1,285 @@
+/* ============================== */
+/*             Slider             */
+/* ============================== */
+.slider .jcarousel-container {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+   border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;
+}
+.slider .jcarousel-direction-rtl {
+ direction: rtl;
+}
+ 
+.slider .jcarousel-container-horizontal {
+    width: 570px;
+    padding: 0;
+}
+ 
+.slider .jcarousel-clip {
+    overflow: hidden;
+}
+ 
+.slider .jcarousel-clip-horizontal {
+    width:  570px;
+    /*height: 56px;*/
+}
+ 
+.slider .jcarousel-item {
+    width: 189px;
+    height: 51px;
+}
+ 
+.slider .jcarousel-item-horizontal {
+ margin-left: 0;
+    margin-right: 10px;
+}
+ 
+.slider .jcarousel-direction-rtl .jcarousel-item-horizontal {
+ margin-left: 10px;
+    margin-right: 0;
+}
+ 
+.slider .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+ 
+/* ============================== */
+/*             Slider             */
+/* ============================== */
+ 
+.sliderBanner {
+ display: table;
+ border:1px solid #CCC;
+ height:1%;
+}
+ 
+/* conteúdo */
+ 
+.sliderBanner .sliderComunidade {
+ display: table-cell;
+ vertical-align: top;
+ *float: left;
+}
+ 
+.sliderBanner .sliderComunidade .conteudo {
+ width:651px;
+ border-right:1px solid #CCC;
+ margin:0;
+ padding: 0 !important;
+}
+ 
+.sliderBanner .sliderComunidade .conteudo li {
+ padding: 15px;
+ display: none;
+ background: none;
+ margin: 0;
+}
+ 
+.sliderBanner .sliderComunidade .conteudo li.selecionado {
+ display:block;
+}
+ 
+.sliderBanner .sliderComunidade .conteudo li a {
+ text-decoration: none;
+ display: block;
+ font-size: 1.5em;
+ padding: 22px;
+}
+ 
+.sliderBanner .sliderComunidade .conteudo li a:hover {
+ text-decoration:underline;
+}
+ 
+.sliderBanner .sliderComunidade .conteudo .atividades li {
+ border-bottom: 1px dotted #CCC;
+ display: block;
+ height: auto;
+ min-height:auto;
+ padding: 0;
+}
+ 
+/* icones atividades */
+ 
+.sliderBanner .sliderComunidade .conteudo .atividades li.icone a {
+ padding-left:70px;
+ background-repeat:no-repeat;
+ background-position:left 8px;
+}
+
+/* abas */
+ 
+.sliderBanner .sliderComunidade .abas {
+ /*border-bottom:1px solid #CCC;*/
+ margin:0;
+ padding:0 !important;
+ height:52px;
+}
+ 
+.sliderBanner .sliderComunidade .abas::after {
+ clear: both;
+ content: ".";
+ display: block;
+ height: 0;
+ visibility: hidden;
+}
+ 
+.sliderBanner .sliderComunidade .abas li {
+ background-color: #f2f2f2;
+ border-bottom: 1px solid #CCC;
+ border-left: 1px solid #CCC;
+ float: left;
+ background-image: none;
+ list-style: none;
+ overflow: hidden;
+ margin: 0;
+ padding: 0;
+}
+ 
+.sliderBanner .sliderComunidade .abas li a {
+ border-top: 3px solid #f2f2f2;
+ color:#999999;
+ display:block;
+ height: 30px;
+ /*padding: 10px 10px 12px 10px;*/
+ padding:8px 10px 10px 10px;
+ width: 169px;
+ text-decoration:none;
+}
+ 
+.sliderBanner .sliderComunidade .abas li a:hover {
+ background-color: #E6E6E6;
+ border-top: 3px solid #E6E6E6;
+}
+ 
+.sliderBanner .sliderComunidade .abas li.selecionada {
+ /*margin:-3px 0 0 0;*/
+ border-bottom: none;
+}
+ 
+.sliderBanner .sliderComunidade .abas li.selecionada a:hover {
+ background-color: #FFF !important;
+}
+ 
+.sliderBanner .sliderComunidade .abas li.ultima {
+ border-right:1px solid #CCC;
+}
+ 
+.sliderBanner .sliderComunidade a.setaEsq{
+ background-color: #FFF;
+ width:40px;
+ height:51px;
+ float:left;
+ border-bottom:1px solid #CCC;
+}
+.sliderBanner .sliderComunidade a.setaDir {
+ background-color: #FFF;
+ width:40px;
+ height:51px;
+ float:right;
+ position:absolute;
+ top:0;
+ border-bottom: 1px solid #CCC;
+ border-left: 1px solid #CCC;
+ right: 1px;
+}
+ 
+.sliderBanner .sliderComunidade a.setaEsq,
+.sliderBanner .sliderComunidade a.setaDir  {
+ background-repeat: no-repeat;
+ background-position: center center;
+ display:block;
+}
+ 
+.sliderBanner .sliderComunidade .setaEsq {
+ background-image: url(../images/ico_seta_esq.jpg);
+}
+ 
+.sliderBanner .sliderComunidade .setaDir {
+ background-image: url(../images/ico_seta_dir.jpg);
+}
+ 
+.sliderBanner .sliderComunidade .setaEsq:hover {
+ background-color: #FFF;
+ background-position: 8px center;
+}
+ 
+.sliderBanner .sliderComunidade .setaDir:hover {
+ background-color: #FFF;
+ background-position: 15px center;
+}
+ 
+.sliderBanner .sliderComunidade .setaDir.desabilitado,
+.sliderBanner .sliderComunidade .setaEsq.desabilitado {
+   pointer-events: none;
+   cursor: default;
+}
+ 
+.sliderBanner .sliderComunidade .setaDir.desabilitado:hover,
+.sliderBanner .sliderComunidade .setaEsq.desabilitado:hover {
+   background-position: center center;
+}
+ 
+.sliderBanner .sliderComunidade .setaDir.desabilitado {
+   background-image: url(../images/ico_seta_dir_off.jpg);
+}
+ 
+.sliderBanner .sliderComunidade .setaEsq.desabilitado {
+   background-image: url(../images/ico_seta_esq_off.jpg);
+}
+ 
+.sliderBanner .sliderComunidade .abas li.selecionada a {
+ background-color: #FFF;
+ border-top: 3px solid #B65210;
+ color: #666;
+ height: 31px;
+}
+ 
+.sliderBanner .sliderComunidade .abas li.selecionada a .numeroFase {
+ color:#666666;
+}
+ 
+.sliderBanner .sliderComunidade .abas li a .numeroFase {
+ color:#CCC;
+ float: left;
+ line-height: 0.8em;
+ *line-height: 1.2em;
+ *margin-top:-5px;
+ display: block;
+ font-size: 3em;
+ font-weight: bold;
+ margin-right: 5px;
+}
+ 
+.sliderBanner .sliderComunidade .abas li a .fase {
+ font-weight: normal;
+ vertical-align: top;
+ display:block;
+ font-size: 0.8em;
+}
+ 
+.sliderBanner .sliderComunidade .abas li a .nomeFase {
+ display:block;
+ font-size:1.2em;
+ font-weight: bold;
+ vertical-align: top;
+}
+ 
+/* ============================== */
+/*             Banner             */
+/* ============================== */
+ 
+.sliderBanner .banner {
+ display:table-cell;
+ vertical-align: top;
+ text-align:center;
+ *float: left;
+}
+ 
+.sliderBanner .banner .border {
+ border-left: 1px solid #CCC;
+ margin-left: -1px;
+ padding: 10px;
+}

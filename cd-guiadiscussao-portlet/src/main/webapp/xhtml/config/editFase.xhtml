@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:dialog header="Editar fase" widgetVar="editFasePainel" modal="true"
+		resizable="false" style="width:275px;">
+		<div style="height: 113px;">
+			<div align="left" style="margin-top: 10px;">
+				<p style="font-weight: bold;">Nome:</p>
+			</div>
+			<div>
+				<h:form id="formFase">
+					<h:inputText value="#{faseAdminBean.fase.titulo}"
+						style="width: 200px;" required="true" maxlength="75" requiredMessage="#{i18n['nome-fase-obrigatorio']}"/>
+					<br />
+					<br />
+					<div align="center">
+						<h:commandButton value="Gravar" action="#{faseAdminBean.saveFase}"
+							style="margin-right: 24px" onclick="editFasePainel.hide();">
+							<f:ajax render=":formFases @form " execute="@form" />
+						</h:commandButton>
+						<h:button value="Cancelar"
+							onclick="editFasePainel.hide();return false;">
+						</h:button>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</p:dialog>
+
+</ui:composition>

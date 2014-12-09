@@ -1,0 +1,67 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:component="http://java.sun.com/jsf/composite/component">
+
+	<p:dialog header="Editar banner" widgetVar="editBannerPainel"
+		modal="true" resizable="false">
+		<div class="painelEdicaoBanner">
+			
+			<div>
+				<h:form id="formBanner">
+
+					<div style="margin-bottom: 3px;">
+						<p>Selecione a imagem:</p>
+
+						<p:selectOneMenu id="imagem" style="width:314px"
+							value="#{bannerAdminBean.imagemSelecionada}" effect="fade"
+							converter="imagemConverter" var="img">
+							<f:selectItems value="#{bannerAdminBean.imagens}" var="imagem"
+								itemValue="#{imagem}" itemLabel="#{imagem.tituloDoArquivo}" />
+							<p:column width="40">
+								<p:graphicImage value="#{img.urlImagem}" width="40px"
+									height="40px" />
+							</p:column>
+							<p:column>
+	        			        #{img.tituloDoArquivo}  
+	            			</p:column>
+						</p:selectOneMenu>
+					</div>
+					<p style="font-size: 10px;">A imagem deve ter a dimensão: 265 x 200 </p>
+						
+					<p>Título:</p>
+					<h:inputText id="titulo" value="#{bannerAdminBean.tituloBanner}"
+						maxlength="75" style="width:314px;" />
+
+					<br />
+					<br />
+
+					<p>Descrição:</p>
+					<h:inputText id="texto" value="#{bannerAdminBean.textoBanner}"
+						maxlength="75" style="width:314px;" />
+					<br />
+					<br />
+
+					<component:linkPainel
+						linkExternoValue="#{bannerAdminBean.linkExterno}"
+						linkComunidadeValue="#{bannerAdminBean.linkComunidade}"
+						destinoLinkValue="#{bannerAdminBean.urlExterna}" />
+
+					<div align="center" style="margin-top: 25px;">
+
+						<h:commandButton value="Gravar" style="margin-right: 70px;"
+							action="#{bannerAdminBean.salvarBanner}"
+							onclick="editBannerPainel.hide()">
+							<f:ajax render="@all" execute="@form" />
+						</h:commandButton>
+						<h:button value="Cancelar"
+							onclick="editBannerPainel.hide();return false;"></h:button>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</p:dialog>
+
+</ui:composition>

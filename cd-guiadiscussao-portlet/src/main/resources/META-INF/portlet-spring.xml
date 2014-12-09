@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.gov.camara.edemocracia.portlets.guiadiscussao.service.AcaoLocalService" class="br.gov.camara.edemocracia.portlets.guiadiscussao.service.impl.AcaoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.guiadiscussao.service.persistence.AcaoPersistence" class="br.gov.camara.edemocracia.portlets.guiadiscussao.service.persistence.AcaoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.guiadiscussao.service.ConfiguracaoLocalService" class="br.gov.camara.edemocracia.portlets.guiadiscussao.service.impl.ConfiguracaoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.guiadiscussao.service.persistence.ConfiguracaoPersistence" class="br.gov.camara.edemocracia.portlets.guiadiscussao.service.persistence.ConfiguracaoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.guiadiscussao.service.FaseLocalService" class="br.gov.camara.edemocracia.portlets.guiadiscussao.service.impl.FaseLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.guiadiscussao.service.persistence.FasePersistence" class="br.gov.camara.edemocracia.portlets.guiadiscussao.service.persistence.FasePersistenceImpl" parent="basePersistence" />
+</beans>

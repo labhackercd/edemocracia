@@ -1,0 +1,99 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="formFases">
+
+		<h:panelGroup id="painelMensagens" styleClass="mensagens">
+			<h:messages errorClass="portlet-msg-error"
+				fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+				warnClass="portlet-msg-warn" />
+		</h:panelGroup>
+		
+		<div>
+			<h:commandButton id="novaFaseButton" onclick="editFasePainel.show();"
+				type="button" class="botaoAdicionar" value="Nova Fase" />
+			<h:commandButton id="editarBannerButton" action="#{bannerAdminBean.carregarDadosBanner}" onclick="editBannerPainel.show();"
+				type="button"  class="botaoEditarBanner" value="Configurar Banner" >
+					<f:ajax execute="@form" render=":formBanner"  />
+			</h:commandButton>
+		</div>
+
+		<h:panelGroup id="painelFases" layout="block">
+			<ui:fragment rendered="#{not empty faseAdminBean.dadosDisplay}">
+				<ui:repeat id="fases" var="dados"
+					value="#{faseAdminBean.dadosDisplay}" varStatus="status">
+
+					<div class="painelFases">
+						<div
+							class="containerFase #{configuracaoAdminBean.config.faseAtualId eq dados.fase.faseId ? 'faseAtual':''}">
+							<div style="float: left;">
+
+								<h2 style="float: left; margin: 8px;">#{dados.fase.ordem}</h2>
+								<p class="tituloFase">
+									<h:outputText value="#{dados.fase.titulo}" />
+									<h:commandLink
+										action="#{faseAdminBean.editarFase(dados.fase.faseId)}"
+										style="text-decoration:none;" onclick="editFasePainel.show();">
+										<f:ajax execute="@this" render="@form :formFase " />
+										<img class="icon" style="margin-bottom: 2px;"
+											src="/e-democracia-theme/images/common/edit.png" alt="Editar"
+											title="Editar Fase" />
+									</h:commandLink>
+								</p>
+								<h:commandButton id="novaAcaoButton"
+									style="float:right;margin: 8px;"
+									action="#{acaoAdminBean.novaAcao(dados.fase.faseId)}"
+									value="Nova Ação" onclick="editAcaoPainel.show();">
+									<f:ajax execute="@this" render=":formAcao" />
+								</h:commandButton>
+							</div>
+
+							<!-- Exibição de ações -->
+							<div class="painelAcoes">
+								<ui:include src="exibeAcoes.xhtml" />
+							</div>
+							<!-- FIM Exibição de ações -->
+
+						</div>
+
+						<!--  Botões de controle da fase -->
+						<div class="botoesControleFase">
+							<h:commandButton value="Mover para cima" title="Mover fase para cima"
+								action="#{faseAdminBean.moverParaCima(dados.fase.faseId)}"
+								disabled="#{status.first}">
+								<f:ajax render="@form " execute="@form" />
+							</h:commandButton>
+							<br />
+							<h:commandButton value="Mover para baixo" title="Mover fase para baixo"
+								action="#{faseAdminBean.moverParaBaixo(dados.fase.faseId)}"
+								disabled="#{status.last}">
+								<f:ajax render="@form " execute="@form" />
+							</h:commandButton>
+							<br />
+							<h:commandButton value="Excluir" title="Excluir fase"
+								action="#{faseAdminBean.excluir(dados.fase.faseId)}">
+								<f:ajax render="@form " execute="@form" />
+							</h:commandButton>
+							<br />
+							<h:commandButton value="Marcar como atual" title="Marcar fase como atual"
+								action="#{configuracaoAdminBean.marcarAtual(dados.fase.faseId)}"
+								disabled="#{dados.fase.faseId eq configuracaoAdminBean.config.faseAtualId}">
+								<f:ajax render="@form " execute="@form" />
+							</h:commandButton>
+							<br />
+
+						</div>
+						<!-- FIM  Botões de controle da fase  -->
+
+						<div style="clear: both;"></div>
+
+					</div>
+				</ui:repeat>
+			</ui:fragment>
+		</h:panelGroup>
+	</h:form>
+
+</ui:composition>

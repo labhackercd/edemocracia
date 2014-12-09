@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.Acao" />
+	<import class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.Configuracao" />
+	<import class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.Fase" />
+	<class name="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.AcaoImpl" table="GD_Acao">
+		<cache usage="read-write" />
+		<id name="acaoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="faseId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="ordem" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="texto" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="urlExterna" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="urlLink" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="iconeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.ConfiguracaoImpl" table="GD_Configuracao">
+		<cache usage="read-write" />
+		<id name="configuracaoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="faseAtualId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="textoBanner" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="imagemIdBanner" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="urlBanner" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="urlExterna" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="tituloBanner" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.FaseImpl" table="GD_Fase">
+		<cache usage="read-write" />
+		<id name="faseId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="configuracaoId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="ordem" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="titulo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<hint-collection name="LINK">
+		<hint name="max-length">300</hint>
+	</hint-collection>
+	<model name="br.gov.camara.edemocracia.portlets.guiadiscussao.model.Acao">
+		<field name="acaoId" type="long" />
+		<field name="faseId" type="long" />
+		<field name="ordem" type="int" />
+		<field name="texto" type="String" />
+		<field name="urlExterna" type="boolean" />
+		<field name="urlLink" type="String">
+			<hint-collection name="LINK" />
+		</field>
+		<field name="iconeId" type="long" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.guiadiscussao.model.Configuracao">
+		<field name="configuracaoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="faseAtualId" type="long" />
+		<field name="textoBanner" type="String" />
+		<field name="imagemIdBanner" type="long" />
+		<field name="urlBanner" type="String">
+			<hint-collection name="LINK" />
+		</field>
+		<field name="urlExterna" type="boolean" />
+		<field name="tituloBanner" type="String" />
+	</model>
+	<model name="br.gov.camara.edemocracia.portlets.guiadiscussao.model.Fase">
+		<field name="faseId" type="long" />
+		<field name="configuracaoId" type="long" />
+		<field name="ordem" type="int" />
+		<field name="titulo" type="String" />
+	</model>
+</model-hints>

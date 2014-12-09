@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.AcaoModelImpl">
+		<attributes>
+			<id name="acaoId" />
+			<basic name="faseId" />
+			<basic name="ordem" />
+			<basic name="texto" />
+			<basic name="urlExterna" />
+			<basic name="urlLink" />
+			<basic name="iconeId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.ConfiguracaoModelImpl">
+		<attributes>
+			<id name="configuracaoId" />
+			<basic name="groupId" />
+			<basic name="faseAtualId" />
+			<basic name="textoBanner" />
+			<basic name="imagemIdBanner" />
+			<basic name="urlBanner" />
+			<basic name="urlExterna" />
+			<basic name="tituloBanner" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.FaseModelImpl">
+		<attributes>
+			<id name="faseId" />
+			<basic name="configuracaoId" />
+			<basic name="ordem" />
+			<basic name="titulo" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.AcaoImpl" name="Acao">
+		<table name="GD_Acao" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.ConfiguracaoImpl" name="Configuracao">
+		<table name="GD_Configuracao" />
+		<attributes />
+	</entity>
+	<entity class="br.gov.camara.edemocracia.portlets.guiadiscussao.model.impl.FaseImpl" name="Fase">
+		<table name="GD_Fase" />
+		<attributes />
+	</entity>
+</entity-mappings>

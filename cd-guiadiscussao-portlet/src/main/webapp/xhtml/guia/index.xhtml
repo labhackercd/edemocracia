@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:aui="http://liferay.com/faces/aui"
+	xmlns:liferay-ui="http://liferay.com/faces/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:bridge="http://liferay.com/faces/bridge"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+	</h:head>
+
+	<h:body>
+		<h:outputScript library="js" name="jquery.jcarousel.min.js" />
+		<script>
+		//	<![CDATA[
+		  	         
+	var faseAtual = #{guiaDiscussaoBean.indexFaseAtual};
+	
+	function selecionaConteudo(posicao){
+		$("ul.conteudo > li").removeClass("selecionado");
+		$("ul.conteudo > li:eq(" + (posicao - 1) + ")").addClass("selecionado");
+	}
+
+	function mycarousel_initCallback(carousel, state) {
+	
+		$('.setaDir').bind('click', function() {
+			carousel.next();
+			$(".abas li").removeClass('selecionada');
+			return false;
+		});
+	
+		$('.setaEsq').bind('click', function() {
+			carousel.prev();
+			$(".abas li").removeClass('selecionada');
+			return false;
+		});
+		
+		$('.abas a').bind('click', function() {
+
+			if($(this).parent("li").hasClass('selecionada')!= true){
+				if(state == "init"){
+					$(".abas li").removeClass('selecionada');
+		
+					var indexElem = $.jcarousel.intval($(this).text());
+							
+					carousel.scroll(indexElem);
+					setTimeout(function() {
+					
+						$(this).parent("li").addClass("selecionada");
+		
+					}, 10);
+				}
+				return false;
+			}
+		
+		});
+		
+		
+	};
+	/*function mycarousel_itemFirstOutCallback(carousel, item, idx, state) {
+	
+    	var indexNextElem = idx + 2;
+		$('#slider ul li[jcarouselindex='+ indexNextElem + ']').addClass('selecionada');
+		if(state == "prev")
+			selecionaConteudo(idx-1, "2");
+			
+		return false;
+		
+	};*/
+	
+	function mycarousel_itemFirstOutCallback(carousel, item, idx, state) {
+		var indexNextElem = idx + 2;
+		
+		$('#slider ul li[jcarouselindex='+ indexNextElem + ']').addClass('selecionada');
+		if(state == "prev")
+			selecionaConteudo(idx-1);
+	
+	};
+	
+	function mycarousel_itemLastOutCallback(carousel, item, idx, state) {
+	
+		var indexNextElem = idx - 2;
+		
+		$('#slider ul li[jcarouselindex='+ indexNextElem + ']').addClass('selecionada');
+		if(state == "next")
+			selecionaConteudo(idx-1);
+			
+		return false;
+		
+	};
+	function mycarousel_buttonNextCallback(carousel, button, enabled) {
+		if(enabled == true)
+			$('.setaDir').removeClass("desabilitado");
+		if(enabled == false)
+			$('.setaDir').addClass("desabilitado");
+	};
+	function mycarousel_buttonPrevCallback(carousel, button, enabled) {
+		if(enabled == true)
+			$('.setaEsq').removeClass("desabilitado");
+		if(enabled == false)
+			$('.setaEsq').addClass("desabilitado");
+	};
+
+	$(document).ready(function() {
+		$("#slider").jcarousel({
+			scroll: 1,
+			initCallback: mycarousel_initCallback,
+			itemFirstOutCallback: {
+	            onAfterAnimation:  mycarousel_itemFirstOutCallback
+        	},
+			itemLastOutCallback:  mycarousel_itemLastOutCallback,
+			
+			buttonNextCallback:   mycarousel_buttonNextCallback,
+    	    buttonPrevCallback:   mycarousel_buttonPrevCallback,
+			buttonNextHTML: null,
+			buttonPrevHTML: null,
+			start: faseAtual
+		});
+		
+		selecionaConteudo(faseAtual);
+		
+	});
+				
+			     
+				//]]>
+		</script>
+		<div class="sliderBanner">
+			<div class="sliderComunidade">
+				<div id="slider" class="slider">
+				
+					<a href="#" class="setaEsq" title="Anterior"></a>
+					<ul class="abas">
+						<li></li>
+						<ui:repeat var="fase" value="#{guiaDiscussaoBean.fases}">
+							<li class='#{guiaDiscussaoBean.classeFase(fase)}'><a
+								href="#"> <span class="numeroFase">#{fase.ordem}</span> <span
+									class="fase">#{guiaDiscussaoBean.tipoFase(fase)}</span> <span
+									class="nomeFase">#{fase.titulo}</span>
+							</a></li>
+						</ui:repeat>
+						<li></li>
+					</ul>
+					<a class="setaDir" href="#" title="Próximo"></a>
+					
+					<ul class="conteudo">
+						<ui:repeat var="fase" value="#{guiaDiscussaoBean.fases}">
+							<li>
+								<ul class="atividades">
+									<ui:repeat var="acao"
+										value="#{guiaDiscussaoBean.getAcoesPorFase(fase)}">
+										<li class="icone"><a
+											href="#{guiaDiscussaoBean.constroiUrlAcao(acao)}"
+											style="background-image: URL('#{guiaDiscussaoBean.urlImagem(acao)}')">#{acao.texto}</a>
+										</li>
+									</ui:repeat>
+								</ul>
+							</li>
+						</ui:repeat>
+					</ul>
+					
+				</div>
+			</div>
+
+			<div class="banner">
+				<div class="border">
+					<a href="#{bannerBean.linkBanner}"> <img
+						style="height: 200px; width: 265px;" src="#{bannerBean.urlImagem}" />
+						<!-- 265 x 200 -->
+					</a>
+					<h2>#{bannerBean.titulo}</h2>
+					<p>#{bannerBean.texto}</p>
+
+				</div>
+			</div>
+		</div>
+	</h:body>
+</f:view>
