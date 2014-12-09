@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+	</h:head>
+
+	<h:body>
+
+		<h:form id="form">
+			
+			<h:panelGroup layout="block" styleClass="mensagens" rendered="#{initBean.configurarPortlet}" >
+				<ul>
+					<li class="portlet-msg-info" >
+						Para utilizar este portlet configure-o no menu de preferências.
+					</li>
+				</ul>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" styleClass="taglib-header" rendered="#{!initBean.configurarPortlet}">
+				<h3 style="color:#B65210;" >#{initBean.tituloDoPortlet}</h3> 
+			</h:panelGroup>
+
+			<ui:include src="/views/dashboard/tabela.xhtml" />
+			<ui:include src="/views/dashboard/grafico.xhtml" />
+			
+			<h:panelGroup layout="block" styleClass="painelInformacoes" rendered="#{!initBean.configurarPortlet}" >
+				<h:outputText value="Último(s) #{initBean.config.periodoEmDias} dia(s)" /> 
+			</h:panelGroup>
+
+		</h:form>
+	</h:body>
+</f:view>

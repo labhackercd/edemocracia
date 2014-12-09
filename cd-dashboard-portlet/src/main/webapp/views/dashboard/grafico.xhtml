@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:outputScript library="js" name="dashboard-grafico.js" />
+
+	<h:panelGroup rendered="#{graficoBean.visualizacaoGrafico}" >
+
+		<h:panelGroup styleClass="mensagens">
+				<h:messages errorClass="portlet-msg-error"
+					fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+					warnClass="portlet-msg-warn" />
+		</h:panelGroup>
+		
+		<h:panelGroup rendered="#{graficoBean.possuiDados}" >
+
+			<p:pieChart id="grafico" value="#{graficoBean.dadosGrafico}"
+				legendPosition="e" fill="true" showDataLabels="true"
+				sliceMargin="5" diameter="350" styleClass="#{graficoBean.classeCssGrafico}"  >
+		
+				<p:ajax event="itemSelect" listener="#{graficoBean.itemSelect}"
+					update="detalheGrafico" oncomplete="setSelectedItemColor('#{liferay.themeDisplay.portletDisplay.namespace}')"   />
+		
+			</p:pieChart>
+		
+			<h:panelGroup layout="block" styleClass="informacoesGrafico" id="detalheGrafico" >
+				<h:outputText id="ajuda" value="Clique sobre a área do gráfico para obter mais detalhes." rendered="#{!graficoBean.exibeDetalhes}" />
+				
+				<h:panelGroup layout="block" rendered="#{graficoBean.exibeDetalhes}" >
+					<div class="bordaPainelCor"> 
+						<div class="painelCorRecursoSelecionado">
+						</div>
+					</div>
+					
+					<div>
+						<p> 
+							<h:outputText value="Comunidade: " />
+							<h:outputText value="#{graficoBean.recursoSelecionado.tituloComunidade}" />
+						</p>
+						<p> 
+							<h:panelGroup rendered="#{!initBean.recurso.quantitativoGeral}" >
+								<h:outputText value="#{initBean.recurso.label}: " />
+								<h:outputText value="#{graficoBean.recursoSelecionado.titulo}" />
+							</h:panelGroup>
+						</p>
+						<p> 
+							<h:outputText value="#{initBean.recurso.medida}: " />
+							<h:outputText value="#{graficoBean.recursoSelecionado.quantidade}" />
+						</p>
+						<p> 
+							<h:outputText value="Total de #{initBean.recurso.medida}: " />
+							<h:outputText value="#{graficoBean.totalDePostagens}" />
+						</p>
+					</div>
+				</h:panelGroup>
+				
+				<h:inputHidden value="#{graficoBean.indexRecursoSelecionado}" />		
+				
+			</h:panelGroup>
+		
+		</h:panelGroup>
+
+		<h:outputText value="Nenhum dado encontrado." rendered="#{!graficoBean.possuiDados}" />
+
+	</h:panelGroup>
+		
+</ui:composition>

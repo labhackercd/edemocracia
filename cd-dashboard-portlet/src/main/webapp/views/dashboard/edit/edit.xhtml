@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	>
+	<h:head >
+	</h:head>
+	
+	<h:body>
+		<h:form id="form" class="vForm">
+			
+			<h:panelGroup id="painelMensagens" styleClass="mensagens">
+				<h:messages errorClass="portlet-msg-error"
+					fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+					warnClass="portlet-msg-warn" />
+			</h:panelGroup>
+
+			
+			<div>
+				<div class="configPainelEsq">
+			
+					<p>
+						<h:outputLabel value="Recurso:" />
+					</p>
+					
+					<h:selectOneMenu value="#{configBean.config.recurso}" converter="javax.faces.Integer">
+						<f:selectItems value="#{configBean.recursos}" var="recurso" itemLabel="#{recurso.labelConfiguracao}" itemValue="#{recurso.id}" />
+						<f:ajax event="change" render="painelAjuda" execute="@this" listener="#{configBean.exibirAjuda}" />			
+					</h:selectOneMenu>
+					
+					<h:panelGroup id="painelAjuda" layout="block" styleClass="configPainelAjuda" >
+						<p>
+							<h:outputText value="#{configBean.textoAjuda}" />
+						</p>
+					</h:panelGroup>
+					
+					<br />
+		
+					<p>
+						<h:outputLabel value="Comunidade:" />
+					</p>
+			
+					<h:selectOneMenu value="#{configBean.config.comunidadeSelecionada}" converter="javax.faces.Long">
+								
+						<f:selectItem itemLabel="Todas" itemValue="0" />
+						<f:selectItem itemLabel="Somente comunidades públicas" itemValue="-1" />
+						<f:selectItem itemLabel="Somente comunidades privadas" itemValue="-2" />
+						<f:selectItem itemLabel="Somente comunidades restritas" itemValue="-3" />
+						
+						<f:selectItems value="#{configBean.comunidades}" var="comunidade" 
+							itemLabel="#{comunidade.name}" itemValue="#{comunidade.groupId}" />
+										
+					</h:selectOneMenu>
+					
+					<br />
+					
+					<p>
+						<h:outputLabel value="Quantidade de recursos:" />
+					</p>
+			
+					<h:selectOneMenu value="#{configBean.config.qtdDeRecursos}" converter="javax.faces.Integer">
+								
+						<f:selectItem itemLabel="5" itemValue="5" />
+						<f:selectItem itemLabel="10" itemValue="10" />
+						<f:selectItem itemLabel="15" itemValue="15" />
+								
+					</h:selectOneMenu>
+					
+					<br />
+					
+					<p>
+						<h:outputLabel value="Período em dias:" />
+					</p>
+					
+		 			<h:inputText value="#{configBean.config.periodoEmDias}" class="inputDias" >
+		 				<f:validateLongRange minimum="1" maximum="1000000000" />
+		 			</h:inputText> 
+					
+					<br />
+					
+					<p>
+						<h:outputLabel value="Modo de visualização dos dados:" />
+					</p>
+			
+					<h:selectOneMenu value="#{configBean.config.modoVisualizacao}" converter="javax.faces.Integer">
+						<f:selectItems value="#{configBean.modosVisualizacao}" var="visualizacao" itemLabel="#{visualizacao.label}" itemValue="#{visualizacao.value}" />						
+					</h:selectOneMenu>
+										
+					<br />
+			
+				</div>
+			</div>
+			<div class="configPainelAcao" >		
+				<h:commandButton value="Gravar configurações" action="#{configBean.gravarConfiguracoes}" />
+			</div> 	
+						
+		</h:form>
+
+	</h:body>
+</f:view>

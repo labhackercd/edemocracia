@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<h:panelGroup rendered="#{tabelaBean.visualizacaoTabela}">
+
+		<h:panelGroup styleClass="mensagens">
+			<h:messages errorClass="portlet-msg-error"
+				fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+				warnClass="portlet-msg-warn" />
+		</h:panelGroup>
+
+		<p:dataTable id="dataTableTopicos" var="dados"
+			value="#{tabelaBean.dados}"
+			emptyMessage="Nenhum tópico encontrado."
+			tableStyleClass="tabelaTopicos taglib-search-iterator"
+			paginator="true" rows="15"
+			paginatorTemplate="{CurrentPageReport} Itens por página {RowsPerPageDropdown} Página {JumpToPageDropdown}  {FirstPageLink} Primeiro {PreviousPageLink} Anterior   Próximo {NextPageLink} Último {LastPageLink}"
+			currentPageReportTemplate=" Mostrando {startRecord} - {endRecord} de {totalRecords} resultados."
+			paginatorPosition="bottom" rowsPerPageTemplate="5,10,20,30,50,75"
+			paginatorAlwaysVisible="false"  rendered="#{tabelaBean.possuiDados}" >
+
+			<p:column>
+				<f:facet name="header" >
+					<h:outputText value="" />
+				</f:facet>
+				<h:outputText value="#{dados.classificacao}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Comunidade" />
+				</f:facet>
+				<h:outputText value="#{dados.tituloComunidade}" />
+			</p:column>
+
+			<p:column rendered="#{!initBean.recurso.quantitativoGeral}" >
+			
+				<f:facet name="header">
+					<h:outputText value="#{initBean.recurso.label}" />
+				</f:facet>
+				<h:outputText value="#{dados.titulo}" />
+			
+			</p:column>
+
+			<p:column styleClass="colunaPartipacao " >
+				<f:facet name="header">
+					<h:outputText value="#{initBean.recurso.medida}" />
+				</f:facet>
+				<h:outputText value="#{dados.quantidade}" />
+			</p:column>
+
+
+		</p:dataTable>
+		
+		<h:outputText value="Nenhum dado encontrado." rendered="#{!tabelaBean.possuiDados}" />
+
+	</h:panelGroup>
+
+</ui:composition>

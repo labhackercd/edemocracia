@@ -1,0 +1,134 @@
+.comboComunidades {
+	width: 700px;
+	height: 117px;
+}
+
+.inputDias {
+	width: 38px;
+}
+
+.jqplot-series-canvas {
+	background-color: #FFF;
+}
+
+.mensagens UL {
+	margin: 0px 0px 0px 0px;
+}
+
+.jqplot-table-legend {
+	font-size: 0.92em !important;
+}
+
+.lgTopico {
+	margin-left: 15px;
+}
+
+.lgLabel {
+	margin-left: 4px;
+	font-size: 1.3em ;
+}
+
+.lgLabel15 {
+	margin-left: 4px;
+	font-size: 1.2em ;
+}
+
+table.jqplot-table-legend {
+	border: none !important;
+}
+
+.informacoesGrafico {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #9E9E9E;
+	width: 903px;
+	margin: 0px 9px;
+	padding: 8px;
+}
+
+.tabelaTopicos thead tr {
+	background-color: #FFF2D8;
+}
+
+.tabelaTopicos thead tr th {
+	background: none;
+	color: #B4510E;
+	border: none;
+	text-align: left;
+	padding: 6px;
+}
+
+.tabelaTopicos tbody {
+	border: none !important;
+}
+
+.tabelaTopicos tbody tr {
+	border: none !important;
+}
+
+.tabelaTopicos tbody td {
+	border: none !important;
+	padding: 6px !important;
+}
+
+.colunaPartipacao {
+	width: 0.05em;
+}
+
+.painelInformacoes {
+	margin-top: 20px;
+	text-align: right;
+	font-style: italic;
+	font-size: smaller;
+}
+
+.configPainelEsq {
+	float: left;
+/* 	width: 40%; */
+}
+
+.configPainelAjuda {
+	background-color: #F0F5F7;
+	margin-top: 10px;
+	padding: 5px 5px 1px 5px;
+	width: 256px;
+}
+
+.configPainelAjuda p {
+	font-style: italic;
+}
+
+.configPainelAcao {
+	clear: both;
+}
+
+.painelGrafico {
+/* 	width:940px; */
+	height:450px;
+}
+
+.painelGraficoGrd {
+/* 	width:940px; */
+	height:510px;
+}
+
+.painelCorRecursoSelecionado {
+	width: 0px;
+	height: 0px;
+	border-top-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 6px;
+	border-right-width: 6px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+}
+
+.bordaPainelCor {
+	float:left;
+	border: 1px solid #CCC;
+	padding: 1px;
+	margin-right: 10px;
+	margin-bottom: 80px;
+}
