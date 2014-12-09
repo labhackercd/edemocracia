@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:aui="http://liferay.com/faces/aui"
+	xmlns:ls="http://liferay.com/faces/security"
+	xmlns:liferay-ui="http://liferay.com/faces/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:bridge="http://liferay.com/faces/bridge"
+	xmlns:ace="http://www.icefaces.org/icefaces/components"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+	</h:head>
+
+	<h:body>
+		<ice:outputStyle href="/css/portlet.css" />
+
+		<!-- 	Formulário de Pesquisa	 -->
+
+		<h:form>
+			<h:panelGroup id="painelMensagens" styleClass="mensagens">
+				<h:messages errorClass="portlet-msg-error"
+					fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+					warnClass="portlet-msg-warn" />
+			</h:panelGroup>
+
+			<p>
+				<label>Selecione as comunidades:</label>
+			</p>
+
+			<h:panelGrid id="panelGrid" columns="1" cellspacing="30">
+				<h:panelGroup layout="block">
+					<h:selectManyMenu
+						value="#{dadosParticipacao.comunidadesSelecionadas}"
+						converter="javax.faces.Long" style="width:700px;height:117px;">
+						<f:selectItems value="#{dadosParticipacao.comunidadesDisponiveis}"
+							var="comunidade" itemLabel="#{comunidade.name}"
+							itemValue="#{comunidade.groupId}" />
+					</h:selectManyMenu>
+				</h:panelGroup>
+			</h:panelGrid>
+
+			<p style="margin-top: 5px; font-size: 0.9em; margin-bottom: 20px;">*
+				Mantenha a tecla CTRL pressionada para selecionar mais de uma
+				comunidade</p>
+
+			<p>
+				<h:panelGroup layout="block">
+					<h:selectBooleanCheckbox id="intervalo"
+						value="#{relatorio.periodoEnabled}">
+						<f:ajax execute="@this" render="painelData" />
+					</h:selectBooleanCheckbox> Especificar período
+				</h:panelGroup>
+
+				<h:panelGroup id="painelData" layout="block"
+					style="margin-top: 14px;margin-left: 18px;">
+					<ui:fragment rendered="#{relatorio.periodoEnabled}">
+						<div>
+							<h:outputLabel for="minIn" value="Data inicial: " />
+							<ace:dateTimeEntry id="minIn" value="#{relatorio.dataInicio}"
+								timeZone="America/Sao_Paulo" pattern="dd/MM/yyyy"
+								maxdate="#{relatorio.dataFim}" navigator="true"
+								readOnlyInputText="true" renderAsPopup="true">
+								<ace:ajax event="dateSelect"
+									listener="#{relatorio.dataInicioListener}" />
+							</ace:dateTimeEntry>
+
+							<h:outputLabel for="maxIn" value="Data final: " />
+							<ace:dateTimeEntry id="maxIn" value="#{relatorio.dataFim}"
+								timeZone="America/Sao_Paulo" pattern="dd/MM/yyyy"
+								mindate="#{relatorio.dataInicio}" navigator="true"
+								readOnlyInputText="true" renderAsPopup="true">
+								<ace:ajax event="dateSelect"
+									listener="#{relatorio.dataFimListener}" />
+							</ace:dateTimeEntry>
+
+						</div>
+					</ui:fragment>
+				</h:panelGroup>
+			</p>
+
+			<div style="float: right;">
+				<h:commandButton style="align:right;" value="Visualizar dados"
+					action="#{dadosParticipacao.obterDados}">
+					<f:ajax render="painelResultado painelMensagens" execute="@form" />
+				</h:commandButton>
+			</div>
+
+			<!--    FIM	Formulário de Pesquisa	 -->
+
+			<br />
+			<br />
+
+			<hr />
+
+			<!-- 		Painel de Exibição de Resultados 		-->
+
+			<h:panelGroup id="painelResultado" layout="block">
+
+				<ui:fragment
+					rendered="#{not empty dadosParticipacao.dadosComunidade}">
+					<div class="btnExportar">
+						<input type="button" value="Exportar"
+							onclick="window.location.href='#{resource[relatorio.recursoParticipacao]}'; return false;" />
+					</div>
+					<ui:repeat id="dados" var="comunidade"
+						value="#{dadosParticipacao.dadosComunidade}">
+						<br />
+						<div class="lfr-search-container">
+							<div class="aui-component aui-searchcontainer">
+								<div class="results-grid aui-searchconteiner-content">
+									<h2>#{comunidade.nomeComunidade}</h2>
+
+									<ui:fragment rendered="#{empty comunidade.listaDadosUsuario}">
+										<p>Não foi encontrada nenhuma participação para esta
+											comunidade</p>
+									</ui:fragment>
+
+									<ui:fragment
+										rendered="#{not empty comunidade.listaDadosUsuario}">
+										<table class="taglib-search-iterator tbResultados"
+											style="width: 100%; table-layout: fixed;">
+											<thead>
+												<tr class="portlet-section-header results-header">
+													<th class="col-1 first"
+														style="width: 190px; min-width: 190px;">Usuários</th>
+													<th title="Postagens no Fórum" class="col-2 last">Fórum</th>
+													<th title="Comentários e Sugestões na Wikilégis " class="col-3 last" colspan="2" >Wikilégis</th>
+													<th title="Comentários e Alterações na Wiki" class="col-5 last" colspan="2">Wiki</th>
+													<th title="Comentários no Blog" class="col-6 last">Blogs</th>
+													<th title="Comentários em Conteúdos web" class="col-7 last">Cont. Web</th>
+													<th title="Comentários na Biblioteca de documentos" class="col-8 last">Docs</th>
+													<th title="Membro" class="col-9 last">Membro</th>
+												</tr>	
+												<tr class="portlet-section-header results-header">
+													<th class="col-1 first"
+														style="width: 190px; min-width: 190px;"><img
+														class="icon" src="/html/icons/users_admin.png"
+														alt="Usuários" title="Usuários"></img></th>
+													<th title="Postagens no Fórum" class="col-2 last"><img
+														src="/e-democracia-theme/images/common/conversation.png"
+														alt="Postagens no Fórum" title="Postagens no Fórum"
+														style="width: 16px; height: 16px;" /></th>
+													<th title="Comentários na Wikilégis" class="col-3 last"><img
+														src="/e-democracia-theme/images/common/conversation.png"
+														alt="Wikilégis" title="Comentários na Wikilégis"
+														style="width: 16px; height: 16px;" /></th>
+													<th title="Sugestões na Wikilégis" class="col-4 last"><img
+														src="/e-democracia-theme/images/common/activate.png"
+														alt="Sugestões na Wikilégis" title="Sugestões na Wikilégis"
+														style="width: 16px; height: 16px;" /></th>
+													<th title="Comentários na Wiki" class="col-5 last"><img
+														src="/e-democracia-theme/images/common/conversation.png"
+														alt="Comentários na Wiki" title="Comentários na Wiki"
+														style="width: 16px; height: 16px;" /></th>
+													<th title="Alterações na Wiki" class="col-6 last"><img
+														src="/e-democracia-theme/images/common/activate.png"
+														alt="Alterações na Wiki" title="Alteraçoes na Wiki"
+														style="width: 16px; height: 16px;" /></th>
+													<th title="Comentários no Blog" class="col-7 last"><img
+														class="icon" src="/e-democracia-theme/images/common/conversation.png" alt="Comentários no Blog"
+														title="Comentários no Blog" /></th>
+													<th title="Comentários em Conteúdos Web" class="col-8 last"><img
+														class="icon" src="/e-democracia-theme/images/common/conversation.png"
+														alt="Comentários em Conteúdos web" title="Comentários em Conteúdos web" /></th>
+													<th title="Comentários na Biblioteca de documentos" class="col-9 last"><img
+														class="icon" src="/e-democracia-theme/images/common/conversation.png"
+														alt="Comentários na Biblioteca de documentos"
+														title="Comentários na Biblioteca de documentos" /></th>
+													<th class="col-10 last"><img class="icon"
+														src="/html/icons/site_memberships_admin.png"
+														alt="Membro" title="Membro"></img></th>
+												</tr>
+											</thead>
+											<tbody>
+												<ui:repeat var="mapEntry"
+													value="#{comunidade.listaDadosUsuario.entrySet().toArray()}">
+													<tr
+														class="#{status.even?'portlet-section-body':'portlet-section-alternate'} results-row #{status.last?'last':''}">
+														<td class="ellipsis" style="font-size: 0.8em;"
+															title="#{mapEntry.value.username}">#{mapEntry.value.username}<br />
+															<span title="#{mapEntry.value.email}">#{mapEntry.value.email}</span></td>
+														<td title="Postagens no Fórum" class="col-2">#{mapEntry.value.postagensForum}</td>
+														<td title="Comentários na Wikilégis" class="col-3 last">#{mapEntry.value.comentariosWikilegis}</td>
+														<td title="Sugestões na Wikilégis" class="col-4 last">#{mapEntry.value.contribuicoesWikilegis}</td>
+														<td title="Comentários na Wiki" class="col-5 last">#{mapEntry.value.comentariosWiki}</td>
+														<td title="Alterações na Wiki" class="col-6 last">#{mapEntry.value.alteracoesWiki}</td>
+														<td title="Comentários no Blog" class="col-7 last">#{mapEntry.value.comentariosBlog}</td>
+														<td title="Comentários em Conteúdos Web" class="col-8 last">#{mapEntry.value.comentariosConteudoWeb}</td>
+														<td title="Comentários na Biblioteca de Documentos" class="col-9 last">#{mapEntry.value.comentariosDocumentos}</td>
+														<td title="Membro" class="col-1 last">#{i18n[mapEntry.value.membro
+															== true ?"yes":"no"]}</td>
+													</tr>
+												</ui:repeat>
+											</tbody>
+										</table>
+										<br />
+										<br />
+									</ui:fragment>
+
+								</div>
+							</div>
+						</div>
+					</ui:repeat>
+				</ui:fragment>
+			</h:panelGroup>
+
+			<!-- 		FIM	Painel de Exibição de Resultados 		-->
+
+		</h:form>
+
+	</h:body>
+
+</f:view>

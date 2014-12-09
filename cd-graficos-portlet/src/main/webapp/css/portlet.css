@@ -1,0 +1,35 @@
+.mensagens UL {
+	margin: 0px 0px 0px 0px ; 
+}
+
+/* To layout lists side by side if space is available */
+.inlineList {
+	font-size: 80% !important;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.tbResultados th {
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.tbResultados td {
+	text-align:center;
+}
+
+.btnExportar {
+	float: right;
+	margin-top: 5px; 
+	margin-bottom: 5px;
+}
+
+.ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+
+.results-header th {
+	word-wrap: normal;
+}

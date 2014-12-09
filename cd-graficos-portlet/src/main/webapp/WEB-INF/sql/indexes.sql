@@ -1,0 +1,1 @@
+create index IX_CF8579D8 on Graficos_ContadorAcesso (companyId, data_);

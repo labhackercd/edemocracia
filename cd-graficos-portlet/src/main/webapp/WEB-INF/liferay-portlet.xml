@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.1.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_1_0.dtd">
+
+<liferay-portlet-app>
+	<portlet>
+		<portlet-name>graficos</portlet-name>
+		<icon>/icon.png</icon>
+		<instanceable>true</instanceable>
+		<header-portlet-css>/css/portlet.css</header-portlet-css>
+		<header-portlet-css>/css/jquery.ui.all.css</header-portlet-css>
+		<footer-portlet-javascript>/js/jquery-1.4.2.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery-ui-1.8.5.custom.js</footer-portlet-javascript>
+		<footer-portlet-javascript>
+			/js/javascript.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>usuariosdata-portlet</css-class-wrapper>
+	</portlet>
+
+	<portlet>
+		<portlet-name>contadores</portlet-name>
+		<icon>/icon.png</icon>
+		<scheduler-entry>
+			<scheduler-event-listener-class>br.gov.camara.edemocracia.portlets.graficos.message.UpdateCountersJob</scheduler-event-listener-class>
+			<trigger>
+				<cron>
+					<cron-trigger-value>0 0 4 * * ?</cron-trigger-value>
+				</cron>
+			</trigger>
+		</scheduler-entry>
+		<control-panel-entry-category>portal</control-panel-entry-category>
+		<control-panel-entry-weight>2.1</control-panel-entry-weight>
+		<css-class-wrapper>contadores-portlet</css-class-wrapper>
+	</portlet>
+
+	<portlet>
+		<portlet-name>cd-participacao</portlet-name>
+		<icon>/icon.png</icon>
+		<control-panel-entry-category>portal</control-panel-entry-category>
+		<control-panel-entry-weight>2.1</control-panel-entry-weight>
+		<css-class-wrapper>participacao-portlet</css-class-wrapper>
+	</portlet>
+	
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+
+</liferay-portlet-app>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.gov.camara.edemocracia.portlets.graficos.model.ContadorAcesso">
+		<field name="contadorId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="data" type="Date" />
+		<field name="dataAtualizacao" type="Date" />
+		<field name="cache" type="String">
+			<hint-collection name="CLOB" />
+		</field>
+	</model>
+</model-hints>

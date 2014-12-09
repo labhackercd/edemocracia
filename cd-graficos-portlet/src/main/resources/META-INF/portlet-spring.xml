@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.gov.camara.edemocracia.portlets.graficos.service.ContadorAcessoLocalService" class="br.gov.camara.edemocracia.portlets.graficos.service.impl.ContadorAcessoLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.graficos.service.persistence.ContadorAcessoPersistence" class="br.gov.camara.edemocracia.portlets.graficos.service.persistence.ContadorAcessoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.gov.camara.edemocracia.portlets.graficos.service.GraficosLocalService" class="br.gov.camara.edemocracia.portlets.graficos.service.impl.GraficosLocalServiceImpl" />
+	<bean id="br.gov.camara.edemocracia.portlets.graficos.service.ParticipacaoLocalService" class="br.gov.camara.edemocracia.portlets.graficos.service.impl.ParticipacaoLocalServiceImpl" />
+</beans>

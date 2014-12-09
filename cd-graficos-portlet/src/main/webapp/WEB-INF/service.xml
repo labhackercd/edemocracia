@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder
+	package-path="br.gov.camara.edemocracia.portlets.graficos">
+	<author>Robson Miranda</author>
+	<namespace>Graficos</namespace>
+
+	<entity local-service="true" remote-service="false" name="Graficos" />
+	
+	<entity local-service="true" remote-service="false" name="Participacao" />
+	
+	<entity local-service="true" remote-service="false" name="ContadorAcesso">
+		<column name="contadorId" type="long" primary="true"/>
+		<column name="companyId" type="long" />
+		<column name="data" type="Date" />
+		<column name="dataAtualizacao" type="Date" />
+		<column name="cache" type="String" />
+		
+		<finder return-type="Collection" name="C_D">
+         	<finder-column name="companyId" />
+        	<finder-column name="data" />
+        </finder>
+	</entity>
+    
+</service-builder>
