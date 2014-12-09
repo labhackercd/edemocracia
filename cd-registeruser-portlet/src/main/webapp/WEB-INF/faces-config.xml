@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+    version="2.1">
+
+    <render-kit>
+        <renderer>
+        <display-name>HttpsFormRenderer</display-name>
+        	<component-family>javax.faces.Form</component-family>
+        	<renderer-type>javax.faces.Form</renderer-type>
+        	<renderer-class>br.gov.camara.edemocracia.renderer.HttpsForm</renderer-class>
+    	</renderer>
+    </render-kit>
+    
+    <lifecycle>
+        <phase-listener>br.gov.camara.edemocracia.listener.MultiPageMessagesSupport</phase-listener>
+    </lifecycle>  
+       
+</faces-config>

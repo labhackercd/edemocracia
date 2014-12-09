@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:aui="http://liferay.com/faces/aui"
+	xmlns:aui-cc="http://liferay.com/faces/aui-cc"
+	xmlns:liferay-ui="http://liferay.com/faces/ui"
+	xmlns:liferay-util="http://liferay.com/faces/util">
+
+<h:head>
+	<title>Título</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div class="mensagens">
+			<h:messages id="mensagens" errorClass="portlet-msg-error"
+				fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+				warnClass="portlet-msg-warn" />
+		</div>
+		<h:panelGroup rendered="#{!cadastro.cadastroCompleto and !liferay.themeDisplay.signedIn}" >
+		
+			<fieldset>
+				<div class="itensCadastro">
+					<h:outputLabel for="nome">Nome e sobrenome</h:outputLabel>
+					<br />
+					<h:inputText id="nome" value="#{cadastro.nome}" />
+				</div>
+				<div class="itensCadastro">
+					<h:outputLabel for="email">E-mail</h:outputLabel>
+					<br />
+					<h:inputText id="email" value="#{cadastro.email}" />
+				</div>
+				<div class="itensCadastro">
+					<h:outputLabel for="email2">Insira novamente o e-mail</h:outputLabel>
+					<br />
+					<h:inputText id="email2" value="#{cadastro.email2}" />
+				</div>
+				<div class="itensCadastro">
+					<h:outputLabel for="senha">Senha</h:outputLabel>
+					<br />
+					<h:inputSecret id="senha" value="#{cadastro.senha}" />
+				</div>
+				<div class="itensCadastro">
+					<h:outputLabel for="senha2">Insira novamente a senha</h:outputLabel>
+					<br />
+					<h:inputSecret id="senha2" value="#{cadastro.senha2}" />
+				</div>
+				<div class="itensCadastro">
+					<h:outputLabel for="uf">UF</h:outputLabel>
+					<br />
+					<h:selectOneMenu id="uf" value="#{cadastro.uf}">
+						<f:selectItem itemLabel="Selecione..." />
+						<f:selectItems value="#{cadastro.ufs}" />
+					</h:selectOneMenu>
+				</div>
+				<div class="itensCadastro">
+					<liferay-ui:captcha />
+					<h:outputLabel for="uf">Escreva o texto da imagem</h:outputLabel>
+					<h:inputText id="captcha" value="#{cadastro.captchaText}" />
+				</div>
+				<div class="itensCadastro">
+					<h:selectBooleanCheckbox id="termos"
+						value="#{cadastro.aceiteTermosUso}" />
+					<h:outputLabel for="termos">Li e aceito os <a
+							href="/web/public/termos">Termos de Uso</a>
+					</h:outputLabel>
+				</div>
+				<div class="itensCadastro">
+					<h:commandButton value="Cadastrar" action="#{cadastro.cadastrar}" />
+				</div>
+			</fieldset>
+			
+		</h:panelGroup>
+		<h:panelGroup rendered="#{liferay.themeDisplay.signedIn}" >
+			<h:outputText value="Você já está cadastrado no portal." />
+		</h:panelGroup>
+	</h:form>
+</h:body>
+</html>

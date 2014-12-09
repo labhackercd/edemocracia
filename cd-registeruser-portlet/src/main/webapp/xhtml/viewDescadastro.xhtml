@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:aui="http://liferay.com/faces/aui"
+	xmlns:aui-cc="http://liferay.com/faces/aui-cc"
+	xmlns:liferay-ui="http://liferay.com/faces/ui"
+	xmlns:liferay-util="http://liferay.com/faces/util">
+
+
+<h:head>
+	<title>Título</title>
+</h:head>
+<h:body>
+
+	<c:choose>
+		<c:when test="#{descadastro.mostrarConfirmacao}">
+
+			<h:form>
+
+				<div class="mensagens">
+					<h:messages id="mensagens" errorClass="portlet-msg-error"
+						fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+						warnClass="portlet-msg-warn" />
+				</div>
+		
+				<h:panelGroup id="painelConfirmacaoDescadastro" layout="block" rendered="#{descadastro.usuarioCadastrado}" >
+					<div class="itensDescadastro">
+						<h:outputLabel for="nome">Olá #{descadastro.nomeUsuario}, deseja realmente se descadastrar?</h:outputLabel>
+						<br />
+					</div>
+	
+					<h:inputHidden id="email" value="#{descadastro.email}" />
+					<h:inputHidden id="ticketKey" value="#{descadastro.ticketKey}" />
+					
+					<h:commandButton class="botaoConfirmar" value="Confirmar" action="#{descadastro.descadastrar}">
+						<f:ajax render="@form" execute="@form" />
+					</h:commandButton>
+					
+					<h:commandButton value="Cancelar" action="#{descadastro.voltarParaHome}">
+						<f:ajax render="@form" execute="@form" />
+					</h:commandButton>
+				</h:panelGroup>
+				
+			</h:form>
+
+		</c:when>
+		<c:when test="#{descadastro.mostrarMensagemLogout}">
+			<div>
+				<h:outputLabel for="nome">Olá #{descadastro.nomeUsuario}, Você deve primeiro efetuar o logout antes de continuar com o descadastramento.</h:outputLabel>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<h:form>
+			
+				<div class="mensagens">
+					<h:messages id="mensagens" errorClass="portlet-msg-error"
+						fatalClass="portlet-msg-error" infoClass="portlet-msg-info"
+						warnClass="portlet-msg-warn" />
+				</div>
+				
+				<h:panelGroup id="painelEmail" layout="block" rendered="#{!descadastro.emailEnviadoParaUsuario}" >
+					
+					<div class="itensDescadastro">
+						<h:outputLabel for="nome">Digite seu e-mail (você receberá um e-mail para confirmação do descadastro)</h:outputLabel>
+						<h:inputText id="nome" styleClass="campoGrande" value="#{descadastro.email}" />
+					</div>
+					
+					<div class="itensDescadastro">
+						<liferay-ui:captcha />
+						<h:outputLabel for="uf">Escreva o texto da imagem</h:outputLabel>
+						<br />
+						<h:inputText id="captcha" value="#{descadastro.captchaText}" />
+					</div>
+					
+					<h:commandButton value="Enviar" action="#{descadastro.enviaEmail}">
+						<f:ajax render="@form" execute="@form" />
+					</h:commandButton>
+				
+				</h:panelGroup>
+				
+			</h:form>
+		</c:otherwise>
+	</c:choose>
+</h:body>
+</html>
