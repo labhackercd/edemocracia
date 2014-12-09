@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource-action-mapping>
+	<portlet-resource>
+		<portlet-name>cd-loginuser</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>VIEW</action-key>
+				<action-key>ADD_TO_PAGE</action-key>
+			</supports>
+			<community-defaults />
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+				<action-key>ADD_TO_PAGE</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+</resource-action-mapping>
