@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+
+	<display-name>cd-movetopic-portlet</display-name>
+	<filter>
+		<filter-name>MoveTopicoApplication</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+         <init-param>
+            <param-name>detectPortletContext</param-name>
+            <param-value>true</param-value>
+        </init-param>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>br.gov.camara.edemocracia.movetopico.MoveTopicoApplication</param-value>
+		</init-param>
+		<init-param>
+			<param-name>filterMappingUrlPattern</param-name>
+			<param-value>/movetopico/*</param-value>
+		</init-param>
+	</filter>
+    <context-param>
+        <param-name>configuration</param-name>
+        <param-value>deployment</param-value>
+    </context-param>
+
+	<filter-mapping>
+		<filter-name>MoveTopicoApplication</filter-name>
+		<url-pattern>/movetopico/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
+</web-app>
