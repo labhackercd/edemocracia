@@ -1,0 +1,104 @@
+.compartilhe .addthis_toolbox .at300b,
+.compartilhe .addthis_toolbox .at300m {
+	padding: 0 3px;
+}
+
+#share {
+	min-width: 135px;
+	float: right;
+}
+.compartilhe .addthis_toolbox .at300bs {
+	width: 20px;
+	height: 20px;
+	
+	background-attachment: scroll;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+
+.compartilhe .addthis_toolbox .at15t_twitter {
+	background: url("../images/custom/addthis/ico_twitter.png");
+}
+
+.compartilhe .addthis_toolbox .at15t_facebook {
+	background: url("../images/custom/addthis/ico_facebook.png");
+}
+
+.compartilhe .addthis_toolbox .at15t_orkut {
+	background: url("../images/custom/addthis/ico_orkut.png");
+}
+
+.compartilhe .addthis_toolbox .at15t_email {
+	background: url("../images/custom/addthis/ico_email.png");
+}
+
+.compartilhe .addthis_toolbox .at15t_compact {
+	background: url("../images/custom/addthis/ico_addthis.png");
+}
+
+.compartilhe .addthis_toolbox .addthis_button_google_plusone_badge img {
+	display:none;
+}
+.compartilhe .addthis_toolbox .addthis_button_google_plusone_badge span {
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	display: block;
+	background-attachment: scroll;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background: url("../images/custom/addthis/ico_googleplus.png");
+}
+
+
+/* Popups */
+
+
+#at20mc #at15s,
+#at20mc #at16p {
+	-moz-border-radius: 0;
+	background: #d1e3af;
+	padding: 2px !important;
+}
+
+#at20mc #at15s_head,
+#at20mc #at16p #at16psf,
+#at20mc #at16p #at16pt,
+#at20mc #at16pf {
+	background-color: #f2f7e9;
+}
+
+#at20mc #at15s_head,
+#at20mc #at16p #at16psf {
+	border-bottom-color: #d1e3af; 
+}
+
+#at20mc #at16pf {
+	border-top-color: #d1e3af;
+}
+
+#at20mc #at16pf a {
+	color: #546e3e; 
+}
+
+#at_hover .at_item, 
+#at_share .at_item {
+	color: #546e3e !important;
+}
+
+#at_hover .at_item:hover,
+#at_hover .at_item.athov,
+#at_share .at_item:hover,
+#at_share .at_item.athov {
+	color: #546e3e !important;
+	background: none !important;
+	border: none;
+	margin: 1px !important;
+	text-decoration: underline;
+}
+
+#at_share .at_item:hover,
+#at_share .at_item.athov {
+	margin-right: 3px !important;
+}

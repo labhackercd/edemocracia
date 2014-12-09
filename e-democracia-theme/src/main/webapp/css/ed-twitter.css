@@ -1,0 +1,22 @@
+#content .twtr-widget .twtr-hd,
+#content .twtr-widget .twtr-ft {
+	display: none;
+}
+
+#content .twtr-widget .twtr-tweet {
+	border-bottom: none;
+}
+
+#content .twtr-widget .twtr-img img {
+	width: 40px;
+	height: 40px;
+}
+
+#content .twtr-widget .twtr-tweet a {
+	text-decoration: underline !important;
+}
+
+#content .twtr-widget .twtr-tweet-text {
+	margin-left: 50px;
+}
+

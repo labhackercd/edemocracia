@@ -1,0 +1,28 @@
+.slideshow-active {
+	position: relative;
+}
+
+/*
+ * Estilos básicos para os controles/thumbnails
+ */
+.slideshow-controls {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 285px;
+}
+
+.slideshow-controls .thumbnail img {
+	width: 145px;
+}
+
+.slideshow-controls li  {
+	width: 145px;
+	margin: 0;
+	float: left;
+	list-style: none;
+}
+
+.slideshow-controls li a {
+	display: block;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+	$theme.include($top_head_include)
+	
+	
+	<script>
+//<![CDATA[
+		var pathThemeImage = '$themeDisplay.getPathThemeImage()';
+		
+        AUI().ready('event', 'node', function(A){
+        	A.one("#menuTopo").on("change", function() {
+				var url = A.one("#menuTopo").val();
+				A.one("#menuTopo option[value='0']").attr('selected', 'selected');
+				window.location.href = url;
+			});
+        });
+//]]>
+    </script>
+    
+	<meta property="og:image" content="$caminho_img_orig"/>
+	<link rel="image_src" href="$caminho_img" />
+	
+	#if ("Guest" == $themeDisplay.getScopeGroup().getName())
+		#if ($page.getFriendlyURL() == "/home" || $page.getFriendlyURL() == "/principal")
+    		#set( $titleCommunity = "e-Democracia" )
+		#end
+	#else
+		#set( $titleCommunity = "$themeDisplay.getScopeGroup().getName() - eDemocracia" )
+	#end
+	<meta property="og:title" content="$titleCommunity" />
+	<meta property="og:description" content="$themeDisplay.getScopeGroup().getDescription()" />
+	
+	
+	##Rotina implementada para Google Analytics.
+	#if("http://intrades4.camara.gov.br" == $themeDisplay.getPortalURL() || "http://edemocracia.camara.gov.br" == $themeDisplay.getPortalURL())
+		<script src="http://www2.camara.leg.br/portal_javascripts/GoogleAnalyticsTracker.js" type="text/javascript"></script>
+	#end
+	
+</head>
+
+<body class="$css_class $classe_home">
+$theme.include($body_top_include)
+
+
+
+<div id="wrapper">
+
+	<div id="barraCamara">
+	
+		<a href="http://www2.camara.gov.br" title="Ir para o Portal da Câmara dos Deputados" class="logo">
+    		<img width="285" height="33" alt="Câmara dos Deputados" src="http://www2.camara.gov.br/logo.jpg">
+		</a>	
+		<form method="get">
+			<select name="menuTopo" id="menuTopo">
+				<option value="0" selected="selected">Servi&ccedil;os da C&acirc;mara...</option>
+				<option value="http://www2.camara.gov.br/atividade-legislativa/processolegislativo">Conhe&ccedil;a o Processo Legislativo</option>
+				<option value="http://www2.camara.gov.br/atividade-legislativa/comissoes/comissoes-permanentes/clp">Comiss&atilde;o de Legislação Participativa</option>
+				<option value="http://www2.camara.gov.br/deputados/pesquisa">Conhe&ccedil;a os Deputados</option>
+				<option value="http://www2.camara.gov.br/a-camara/ouvidoria">Ouvidoria Parlamentar</option>
+				<option value="http://www.camara.gov.br/internet/sileg/">Projetos de Lei</option>
+				<option value="http://www2.camara.gov.br/atividade-legislativa/webcamara">WebC&acirc;mara</option>
+			</select>
+			<noscript>
+				<input type="submit" value="Ir" />
+			</noscript>
+		</form>
+	</div>
+	
+	<div id="barraEdemocracia">
+		<div class="logo">
+			#if ("Guest" != $themeDisplay.getScopeGroup().getName() && ($themeDisplay.getScopeGroup().getParentGroupId() == $themeDisplay.getParentGroupId() || $themeDisplay.getScopeGroup().isCommunity()))
+				## Dentro das comunidades temáticas e do espaço livre.
+				<h1 class="comunidades">
+					<a href="/web/public/home" title="Ir para a página principal do e-Democracia">
+						<img src="/e-democracia-theme/images/custom/logo_dockbar.png" alt="e-Democracia"/>
+					</a>
+				</h1>
+			#else 
+				## Na área principal do e-Democracia, incluindo a home
+				<h1 class="principal">
+					<a href="/web/public/home" title="Ir para a página principal do e-Democracia">
+						<img src="/e-democracia-theme/images/custom/logo_geral.png" alt="e-Democracia"/>
+					</a>
+				</h1>				
+			#end
+
+			#if ($themeDisplay.getUser().isDefaultUser())
+				<a class="gotoPrincipal" href="/web/public/home" title="Ir para a página principal do e-Democracia">
+					<img src="/e-democracia-theme/images/custom/ico_home.png" alt="Página Principal" />
+				</a>
+			#else
+				<a class="gotoPrincipal" href="/web/public/home" title="Ir para a página principal do e-Democracia">
+					<img src="/e-democracia-theme/images/custom/ico_home.png" alt="Página Principal" />
+				</a>
+			#end
+
+			##<a title="Dê a sua opinião sobre o e-Democracia" target="_blank" href="http://pesquisacd.unb.br/?q=1" style="float: right; font-weight: bold; margin: 15px 20px 0px 0px; color: rgb(84, 110, 62);">Opine sobre o e-Democracia</a>
+			
+			##<a href="/web/public/beta" title="O que é esta versão beta?" class="beta">
+			##	beta
+			##</a>
+		</div>
+		
+		
+		#if($is_signed_in)
+			#dockbar()
+		#else
+			<div id="barraLogin" class="login">
+				$velocityPortletPreferences.setValue("portletSetupShowBorders","false")
+				$theme.runtime("cdloginuser_WAR_cdloginuserportlet","",$velocityPortletPreferences.toString())
+				$velocityPortletPreferences.reset()
+			</div>
+		#end
+			
+	</div>
+	
+	<div id="topoComunidadesContainer">
+	
+		<div class="compartilhamento">
+			$velocityPortletPreferences.setValue("portletSetupShowBorders", "false") 
+			$theme.runtime("cdcompartilhamentoportlet_WAR_cdcomunidadesportlet", "", $velocityPortletPreferences.toString()) 
+			$velocityPortletPreferences.reset()
+		</div>
+		
+	##Rotina para implementação do topo das comunidades.
+	#if ($themeDisplay.getScopeGroup().getParentGroupId() == $themeDisplay.getParentGroupId())
+		#if(!("Guest" == $themeDisplay.getScopeGroup().getName()))
+			$velocityPortletPreferences.setValue("portletSetupShowBorders", "false") 
+			$theme.runtime("cdtopocomunidadeportlet_WAR_cdcomunidadesportlet", "", $velocityPortletPreferences.toString()) 
+			$velocityPortletPreferences.reset()
+		#end
+	#else 
+		#if(!("Guest" == $themeDisplay.getScopeGroup().getName()) && $themeDisplay.getScopeGroup().isCommunity())
+			$velocityPortletPreferences.setValue("portletSetupShowBorders", "false") 
+			$theme.runtime("cdtopocomunidadeportlet_WAR_cdcomunidadesportlet", "", $velocityPortletPreferences.toString()) 
+			$velocityPortletPreferences.reset()
+		#end
+	#end
+	
+		
+	
+	</div>
+
+	<header id="banner" role="banner">
+		##Navegação não aparece nas home's, em nenhuma página da guest, nem no painel de controle
+		#if (!$themeDisplay.getLayout().getGroup().isControlPanel())
+			#if ($has_navigation)
+				#parse ("$full_templates_path/navigation.vm")
+			#end
+		#end
+	</header>
+	
+	#if ($request.getRemoteAddr() == "10.1.0.60" || $request.getRemoteAddr() == "10.1.0.70" || ($request.getHeader("X-Forwarded-For") && ($request.getHeader("X-Forwarded-For").indexOf("10.1.0.70") != -1 || $request.getHeader("X-Forwarded-For").indexOf("10.1.0.60") != -1)))
+		<div class="portlet-msg-error">Procure a Central de Atendimento do CENIN para corrigir as configurações de proxy do seu browser</div>
+	#end
+				
+	<div id="content">
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<div id="rodape">
+		<ul>
+			<li><a href="/web/public/home" class="rodape">Home</a></li>
+			<li><a href="/web/public/comunidades" class="rodape">Comunidades</a></li>
+			<li><a href="/web/public/cadastro" class="rodape">Cadastro</a></li>
+			<li><a href="/web/public/sobre" class="rodape">Sobre o Portal</a></li>
+			<li class="ultimo"><a href="/web/public/contato">Contato</a></li>
+		</ul>
+		</div>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+</body>
+
+$theme.include($bottom_include)
+
+</html>

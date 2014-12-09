@@ -1,0 +1,271 @@
+.dockbar {
+	background:transparent;
+	border:none;
+	margin-left: 410px;
+	padding: 0 5px 0 0;
+}
+
+.lfr-dockbar-pinned .dockbar {
+	position: relative; /* Sobrescrevendo padrão, que é fixed */
+}
+
+.dockbar .aui-toolbar {
+	float:left;
+	padding:10px;
+}
+
+.dockbar a {
+	color: #546e3e;
+	text-shadow: none;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.dockbar .user-avatar img {
+	width: 25px;
+	height: 25px;
+}
+
+.dockbar .user-avatar .user-fullname {
+	color: #546e3e;
+	font-weight: bold;
+}
+
+.dockbar .user-avatar .sign-out a {
+	font-weight: bold;
+}
+
+.dockbar a:hover span,
+.dockbar .toggle-controls a:hover,
+.dockbar .user-links a:hover,
+.dockbar .back-link a:hover {
+	text-decoration: underline;
+}
+
+.dockbar .menu-button {
+	background-position: right 60%;
+	padding-right: 13px;
+}
+
+.dockbar .menu-button-active {
+	background: none;
+}
+
+.dockbar .menu-button-active .menu-button {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.dockbar .menu-button-active a {
+	color: #546e3e;
+	text-shadow: none;
+}
+
+
+/* Removendo imagens de fundo */
+.dockbar .add-content .menu-button span,
+.dockbar .manage-content .menu-button span,
+.dockbar .my-sites .menu-button span {
+	background-image: none;
+}
+.dockbar .menu-button span {
+	padding-left: 0;
+}
+
+/* Removendo separadores */
+.dockbar .aui-toolbar .aui-toolbar-separator {
+	display: none;
+}
+
+/* Posicionamento dos elementos */
+.dockbar .user-links,
+.dockbar .sign-out,
+.dockbar .my-sites,
+.dockbar .manage-content,
+.dockbar .pin-dockbar,
+.dockbar .add-content,
+.dockbar .toggle-controls,
+.dockbar .back-link {
+	position: absolute;
+}
+
+.dockbar .my-sites,
+.dockbar .manage-content,
+.dockbar .add-content,
+.dockbar .toggle-controls,
+.dockbar .back-link {
+	font-size: 0.8em;
+}
+
+.dockbar .manage-content,
+.dockbar .back-link {
+	padding-right: 10px;
+	border-right: 1px solid #999;
+}
+
+
+.dockbar .user-links {
+	top: 12px;
+	left: 70px;
+}
+
+.dockbar .user-avatar .sign-out { /* relativo a .user-links, que o contém */
+	/* top: 1px; */
+	top: 10px;
+	left: 462px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.dockbar .my-sites {
+	top: 11px;
+	left: 0;
+	margin-left: 0;
+	padding-left: 5px;
+	border-left: 1px solid #999;
+}
+
+.dockbar .my-sites a {
+	padding: 0 10px 0 0;
+}
+
+.dockbar .manage-content {
+	/* top: 13px; */
+	top: 22px;
+	right: 45px;
+}
+
+.dockbar .manage-content-menu {
+	left: auto !important;
+	right: 50px !important;
+}
+
+.dockbar .pin-dockbar {
+	top: 3px;
+	right: 10px;
+}
+
+.dockbar .add-content {
+	top: 22px;
+	right: 185px;
+}
+
+.dockbar .add-content-menu {
+	left: auto !important;
+	right: 180px !important;
+}
+
+.dockbar .toggle-controls {
+	top: 7px;
+	left: 280px;
+}
+
+.dockbar .back-link {
+	bottom: 2px;
+	right: 45px;
+	width: 215px;
+	text-align: right;
+	
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.dockbar .back-link a {
+	white-space: normal;
+	padding: 0 0 0 18px;
+}
+
+
+/* Nome do usuário como "bloco" para evitar que
+	nome extenso prejudique o leiaute */
+	
+.dockbar .user-portrait,
+.dockbar .user-fullname {
+	display: block;
+	float: left;
+}
+
+.dockbar .user-fullname {
+	padding: 3px;
+	width: 180px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Outros ajustes */
+.dockbar .pin-dockbar img {
+	width: 20px;
+	height: 20px;
+}
+
+
+/* Menus suspensos */
+
+.aui-menu-content {
+	background: none;
+	background-color: #e6f1d3;
+}
+
+.aui-menu-content li {
+	border: none;
+}
+
+.aui-menu-content li a {
+	color: #546e3e;
+}
+
+.aui-menu-content li a:hover {
+	text-decoration: none;
+}
+
+.aui-menu-content li a.aui-focus {
+	background-color: #a8cc66;
+	color: #546e3e;
+	text-shadow: none;
+}
+
+.aui-menu-content a:hover span {
+	text-decoration: none;
+}
+
+.aui-menugroup-content .aui-menu-label {
+	background-color: #fff;
+	color: #546e3e;
+	text-shadow: none;
+}
+
+.my-sites-menu .current-site {
+	border: none;
+}
+
+.my-sites-menu .current-site a {
+	background-color:  #a8cc66;
+	-moz-box-shadow: none;
+	color: #546e3e;
+	text-shadow: none; 
+}
+
+.my-sites-menu .current-site a:hover,
+.my-sites-menu a:hover .site-type {
+	text-decoration: none;
+	text-shadow: none;
+}
+
+.my-sites-menu .all-communities {
+	background-color: #c5dc9a;
+	margin-bottom: 0;
+	padding: 4px 5px;
+	text-align: right;
+}
+
+.my-sites-menu .my-sites-title {
+	border-bottom: 1px dotted;
+	font-weight: bold;
+	margin: 0 4px;
+	padding: 5px 0;
+}
+
+.manage-content-menu .control-panel a {
+	background: url(../images/dock/control_panel.png) no-repeat 3px 50%;
+	padding-left: 25px;
+}

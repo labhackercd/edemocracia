@@ -1,0 +1,26 @@
+#*
+This file allows you to override and define new Velocity variables.
+*#
+
+#set ($titulo_completo = $company_name)
+
+
+#if ($layout)
+	#if ("Guest" == $themeDisplay.getScopeGroup().getName())
+		#if ($page.getFriendlyURL() != "/home" && $page.getFriendlyURL() != "/principal")
+		 	#set ($titulo_completo = $the_title + " - " + $company_name)
+		#end
+	#else
+		#if ($is_first_child && $is_first_parent)
+			#set ($titulo_completo = $community_name + " - " + $company_name)
+		#else
+			#set ($titulo_completo = $the_title + " - " + $community_name + " - " + $company_name)
+		#end
+	#end
+#end
+
+## Identificando a home do e-Democracia
+#set($classe_home = "")
+#if(($page.getFriendlyURL() == "/home" && "Guest" == $themeDisplay.getScopeGroup().getName()))
+	#set($classe_home = "homePage")
+#end

@@ -1,0 +1,309 @@
+/*
+	FORMULÁRIOS
+	* Elementos genéricos
+	* Redefinições(override) do framework
+	* Elementos de Orientação do Formulário
+	- Disposição de campos vertical, com label por sobre o campo
+	- Disposição de campos horizontal, com label por sobre o campo
+	- Disposição de campos horizontal, com label ao lado do campo
+	* Especializações de elementos 
+	- ...
+*/
+
+/****** Elementos de Orientação do Formulário */
+/* Disposição de campos vertical, com label por sobre o campo */
+.vForm {
+	margin-bottom:1em; 
+}
+.vForm .fieldList li { 
+	display: block; 
+	clear: both; 
+	width: 100%;
+	margin-bottom: 1.7em;
+}
+
+.vForm .fieldList li.maisProximo {
+	/* Para o caso de o campo ter forte relação com o anterior (ex.: Nome e Apelido) */
+	margin-top: -1.1em;
+} 
+
+.vForm label { 
+	padding-left: 0.2em;
+}
+
+.vForm input, 
+.vForm select , 
+.vForm textarea { 
+	display: block; 
+}
+.ie6 .choices input {
+	display:inline; }
+
+.vForm fieldset .fieldList li {
+	margin-bottom: 0.8em;
+}
+.vForm fieldset .campoDependente {
+	margin-left: 1em;
+	}
+
+.vForm .choices li,
+.vForm fieldset .choices li {
+	margin-bottom: 0.2em;
+}
+
+.vForm .grid2:after,
+.vForm .grid3:after,
+.vForm .grid4:after,
+.vForm .grid5:after {
+	/* O mesmo estilo que clearedBox, para estender a dimensão com floats */
+	content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;	
+}
+
+.vForm .grid3 li {
+	float: left;
+	width: 32.8% !important;
+	clear: none;
+}
+
+.vForm .grid2 li {
+	float: left;
+	width: 49.9% !important;
+	clear: none;
+}
+
+.vForm .grid4 li {
+	float: left;
+	width: 24.9% !important;
+	clear: none;
+}
+.vForm .grid5 li {
+	float: left;
+	width: 19.9% !important;
+	clear: none;
+	margin-right:0px !important;
+}
+
+/* Disposição de campos horizontal, com label por sobre o campo */
+.hForm { 
+	overflow: hidden; 
+	height: 1%; 
+}
+
+
+.hForm .fieldList,
+.hForm .choices {
+	overflow: hidden;
+	height: 1%;
+}
+
+.hForm .fieldList li,
+.hForm .choices li { 
+	float: left; 
+	margin-right: 10px; 
+	display: inline; 
+	width: auto; 
+	clear: none; 
+}
+
+.hForm .fieldList li {
+	margin-bottom: 0.85em;
+	display:inline-block;
+	float:none;
+	vertical-align:bottom; }
+	 
+.ie7 .hForm .fieldList li,
+.ie6 .hForm .fieldList li {
+	float: left; 
+		}
+
+.hForm input, 
+.hForm select, 
+.hForm textarea { 
+	display: block;
+}
+
+/* Disposição de campos horizontal, com label ao lado do campo */
+.iForm { 
+	overflow: hidden; 
+	height: 1% ;
+}
+
+.iForm .fieldList li { 
+	float: left; 
+	margin-right: 0.85em; 
+	display: inline; 
+	width: auto; 
+	border-bottom: 0;
+	margin-bottom: 0.85em;
+}
+
+.iForm label { 
+	float: left; 
+	width: 8.5em;
+}
+
+.iForm input, 
+.iForm select,
+.iForm textarea { 
+	float: left;
+	margin-right:0.85em
+}
+
+.field, .field:focus {
+	margin-bottom:0.8em;
+	}
+/****** Novos elementos para uso nos formulários */
+fieldset .notes {
+}
+
+.errorMessage { 
+}
+
+.fieldList {
+	margin: 0;
+	padding: 0;
+	border: none; 
+}
+
+.finalMessage {
+}
+
+.hint {
+	display: block;
+	font-size: 0.9em;
+	font-style:italic;
+	color: #999;	
+	clear:both;
+}
+.hint:hover {
+	color:#333; }
+.groupHint {
+	margin-top:0.2em;
+	}
+
+.instructions {
+	margin-bottom: 1em;
+	display: block;
+}
+
+.okMessage {
+}
+
+.required {
+}
+
+.warningMessage {
+}
+
+.errorMessage, 
+.warningMessage,
+.okMessage {
+	display: block;
+}
+
+.error {	
+	
+}
+
+.visualLabel {
+	font-weight: bold;
+	color: #666;
+}
+
+.secaoDinamica {
+	margin-top: 1.2em;
+	padding-top: 1em;
+	border-top: 1px dotted #999;
+}
+
+.obrigatorio {
+	color:white;
+	padding-left:1em;
+	border:0;
+	overflow:hidden;
+	background: transparent url("../images/custom/ico_obrigatorio.gif") no-repeat scroll left 5px; }
+	
+.controleSelecao {
+	margin-left: 0.2em !important;
+	margin-bottom: 0.3em !important;
+}
+
+.altaCoesao .line {
+		margin-bottom: 0 !important;	}
+
+.campoGrande {width:40em;}
+.campoMedio { width:25em;}
+.campoPequeno { width:10em;}
+select.campoGrande {width:auto; min-width:40em;}
+select.campoMedio {width:auto; min-width:25em;}
+select.campoPequeno {width:auto; min-width:10em; }
+
+/****** Especialização de elementos básicos */
+fieldset.visualWrapper, fieldset.choicesWrapper {
+	padding: 0;
+	margin: 0;
+	border: none; 
+}
+
+fieldset.choicesWrapper {
+	padding-top: 0.8em;
+}
+
+fieldset.choicesWrapper legend {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+ul.choices {
+	margin: 0;
+	padding: 0;
+}
+
+input.action {
+}
+
+input.secondary {
+}
+
+input.changingStep {
+}
+
+/* Para definir botões de forma absoluta no formulário */
+form.conteiner,
+fieldset.conteiner {
+	position: relative;
+}
+
+form.conteiner input[type="submit"].fixo, 
+form.conteiner button.fixo,
+form.conteiner .submit.fixo {
+	position: absolute;
+	bottom: 0;
+	right: 0; 
+}
+
+/* ---------- Lista de Botões de Ação ---------- */
+
+.actionList {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+.actionList li,
+.vForm .actionList li,
+.hForm .actionList li {
+	float: left;
+	margin-right: 1em;
+	clear: none;
+	width: auto;
+}
+
+.actionList li.ultimo {
+	margin-right: 0;
+}

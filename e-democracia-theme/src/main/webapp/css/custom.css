@@ -1,0 +1,2943 @@
+@import url(ed-dockbar.css);
+@import url(ed-guiaDiscussao.css);
+@import url(ed-comunidadesAtivas.css);
+@import url(ed-twitter.css);
+@import url(ed-addthis.css);
+@import url(ed-grid.css);
+@import url(custom-forms.css);
+@import url(ed-slider-home.css);
+@import url(base-jcarrossel.css);
+
+/* ---------- Global ---------- */
+
+html > .lfr-dockbar-pinned {
+	
+	padding-top: 183px; /* Para compensar a altura dos elementos que "saem" do fluxo do documento */
+}
+
+body {
+	background-image:url(../images/custom/bg_body.png);
+	background-position:center center;
+	background-repeat:repeat-y;
+	color: #666;
+	font: 12px/1.25 Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+	color: #B65210;
+	font-weight: bold;
+	margin: 0.5em 0 0.5em 0;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2,
+h2.portlet-title {
+	font-size: 1.6em;
+	margin: 0 0 0.5em 0;
+}
+
+h2.portlet-title {
+	margin-bottom: 0;
+}
+
+h2.tituloSecundario,
+.conteudoSecundario .portlet .portlet-title {
+	font-size: 1.4em;
+	color: #547040;
+}
+
+
+h3 {
+	font-size: 1.4em;
+	color: #666666;
+}
+
+img{border:none;}
+
+
+a {
+	color: #546e3e; /* verde */
+	text-decoration: underline;
+}
+
+
+.obscured,
+#skip-to-content,
+#heading .company-title span,
+#heading .community-title,
+#heading .page-title,
+#navigation h1,
+#breadcrumbs h1 {
+	/* Isso talvez precise ser atualizado para as mesmas definições de "visualHidden".
+	   Não foi feito pelo risco envolvido. */
+	clip: rect(0 0 0 0);
+	position: absolute;
+}
+
+.visualHidden {
+	/* Técnica extraída de: http://yaccessibilityblog.com/library/css-clip-hidden-content.html */
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;		
+}
+
+.ie6 .visualHidden,
+.ie7 .visualHidden {
+	clip: rect(1px 1px 1px 1px); /* sintaxe "equivocada", sem vírgulas */
+}
+
+
+/* ---------- Tabelas ---------- */
+
+.taglib-search-iterator .results-header {
+	background-color: #fff2d8;
+}
+
+.results-header a {
+	color: #B4510E;
+}
+
+.results-header th {
+	border:none;
+	background:none;
+	color: #b4510e;
+}
+
+.results-header th.sort-column {
+	background: #fff2d8;
+	border:none;
+}
+
+.ie7 .results-row td,
+.results-row td {
+	border: none;
+	border-right: none !important;
+	border-left: none !important;
+}
+
+/*---- Solução de contorno para adicionar borda inferior nas linhas --*/
+/*---- de resultados do forum quando o browser for diferente do ie7 --*/
+
+.ie7 .results-row td {
+	border-bottom: 1px solid #cccccc;
+}
+.results-row {
+	border-bottom: 1px solid #cccccc;
+}
+
+.results-grid {
+	border:none;
+}
+
+/* ------------------- */
+
+.results-row td,
+.results-row.alt td {
+	background-color: transparent;
+}
+
+.results-row.hover td {
+	background-color: transparent;
+}
+
+/* ---------- Fim Tabelas ---------- */
+
+
+/* ---------- Tabelas Primefaces ---------- */
+
+.portlet-content .tabelaPrimefaces thead {
+background-color: #fff2d8; }
+
+.portlet-content .tabelaPrimefaces thead a {
+color: #B4510E; }
+
+.portlet-content .tabelaPrimefaces thead tr {
+background-color: #fff2d8;
+}
+
+.portlet-content .tabelaPrimefaces thead th {
+border: none !important;
+background: none;
+color: #b4510e; }
+
+.portlet-content .tabelaPrimefaces thead th.sort-column {
+background: #fff2d8;
+border: none; }
+
+.portlet-content .tabelaPrimefaces tbody tr {
+border-bottom: 1px solid #CCC !important;
+}
+
+.ie7 .portlet-content .tabelaPrimefaces tbody td,
+.portlet-content .tabelaPrimefaces tbody td {
+border: none;
+border-right: none !important;
+border-left: none !important;
+white-space:normal !important; }
+
+/*---- Solução de contorno para adicionar borda inferior nas linhas --*/
+/*---- de resultados do forum quando o browser for diferente do ie7 --*/
+.ie7 .portlet-content .tabelaPrimefaces tbody td {
+border-bottom: 1px solid #cccccc; }
+
+.portlet-content .tabelaPrimefaces tbody {
+border-bottom: 1px solid #cccccc; }
+
+.portlet-content .tabelaPrimefaces .results-grid {
+border: none; }
+
+/* ------------------- */
+.portlet-content .tabelaPrimefaces tbody td,
+.portlet-content .tabelaPrimefaces tbody.alt td {
+background-color: transparent; }
+
+.portlet-content .tabelaPrimefaces tbody.hover td {
+background-color: transparent; }
+
+
+/* ---------- Fim Tabelas ---------- */
+
+
+
+/* ---------- Calendário ---------- */
+
+.portlet-calendar .calendar-container {
+	background-image: none;
+	border-color: #d1e3af;
+	width: 340px;
+}
+
+.portlet-calendar .calendar-day {
+	width: 149px;
+}
+
+.portlet-calendar .calendar-day .day-text {
+	background-color: #f3f7e9;
+	color: #b65210;
+}
+
+.portlet-calendar .calendar-day .day-number {
+	background-color: #fff;
+	color: #666;
+}
+
+
+.portlet-calendar .calendar-container .taglib-calendar {
+	border-left-color: #d1e3af;
+}
+
+.portlet-calendar .taglib-calendar tr td a {
+	background-color: #f9faf9;
+}
+
+.portlet-calendar .taglib-calendar tr td a:hover {
+	color: #546e3e; /* apenas mantendo o verde padrão */
+}
+
+.portlet-calendar .taglib-calendar tr td.calendar-current-day a {
+	
+	border-color: #b4510e;
+	color: #b4510e;
+	background-color: #fff;
+}
+
+.portlet-calendar .taglib-calendar tr td.calendar-current-day a:hover {
+	
+	border-color: #b4510e;
+	color: #b4510e;
+	background-color: #fff2d8;	
+}
+
+.portlet-calendar .detail-column .detail-column-content {
+	border: 1px solid #d1e3af;
+	background-color: #f3f7e9;
+}
+
+/* ---------- Fim Calendário ---------- */
+
+/* ---------- Botões ---------- */
+
+/*
+<elemento>,				<elemento>:hover,			<elemento>:focus
+*/
+input[type="submit"],	input[type="submit"]:hover,	input[type="submit"]:focus,
+input[type="button"],	input[type="button"]:hover,	input[type="button"]:focus,
+input[type="reset"],	input[type="reset"]:hover,	input[type="reset"]:focus,
+button, 				button:hover,				button:focus,
+.lfr-actions, 			.lfr-actions:hover,			.lfr-actions:focus,		
+.lfr-actions ul, 		.lfr-actions:hover ul,		.lfr-actions:focus ul, .lnk-botao { 
+	background-image: none !important;
+	background-color: #fdd37f !important;
+	border: 1px solid #ffa302 !important;
+	color: #b4510e !important;
+	text-shadow: none !important;
+}
+
+/* Classe usada para criar um botão a partir de um link */
+.lnk-botao {
+	padding: 5px;
+	text-decoration: none;
+	font-size: 1em;
+	font-weight: bold;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.lnk-botao.desativado {
+	border: 1px solid #ccc !important;
+	color: #999 !important;
+	background-color: #E2E2E2 !important;
+}
+
+.lfr-trigger strong  a, .lfr-trigger strong  a:hover
+{
+	color: #b4510e;
+	text-shadow: none;
+}
+
+.lfr-actions.portlet-options:hover {
+	border: none;
+}
+
+
+.portlet-topper-toolbar .lfr-actions:hover { /* Removendo efeito colateral do controle dos portlets. */
+	border: none;
+}
+
+.lfr-menu-list ul {
+	background-image: none;
+	background-color: #fff2d8;	
+	border-color: #fdd37f;
+}
+
+.lfr-menu-list ul li {
+	background-color: transparent;
+	border: none;
+	margin: 2px 0;
+}
+
+.lfr-menu-list ul li a {
+	color: #b4510e;
+	text-shadow: none;
+}
+
+.lfr-menu-list ul li a.aui-focus,
+.lfr-menu-expanded li a:focus {
+	background-color: #fdd37f;
+	color: #b4510e;
+	text-shadow: none;
+}
+
+
+
+/* ---------- Fim Botões ---------- */
+
+
+/* ---------- Listas ---------- */
+
+.portlet-journal-content .portlet-body .destaques li,
+.portlet-journal-content .portlet-body .redesSociais li {
+	/* Há imagem de background servidor como bullets nas listas genéricas
+		dentro de webcontents. Isso remove esses bullets. */
+	background: none;
+	margin-bottom: 0;
+	padding: 0 0 1em 0;
+	overflow: auto;
+}
+
+.redesSociais {
+	overflow: auto;
+}
+
+.redesSociais li {
+	float: left;
+	width: 49%;
+}
+ 
+.destaques li img,
+.redesSociais li img {
+	float: left;
+	margin-right: 8px;
+	height: 40px;
+	width: 40px;
+}
+
+
+/* "Membros desta comunidade" */
+.social-networking-portlet-members img.avatar {
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.social-networking-portlet-members .results-row,
+.ie7 .social-networking-portlet-members .results-row td {
+	border-bottom: none;
+}
+
+.social-networking-portlet-members .results-row td.col-1 {
+	padding: 0;
+}
+
+.social-networking-portlet-members .taglib-user-display {
+/* 	padding-bottom: 1em; */
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+}
+
+
+/* "Outras comunidades" */
+
+.cd-comunidades-portlet ul {
+	margin-left: 0;
+}
+
+.cd-comunidades-portlet li {
+	overflow: auto;
+	padding: 0 0 1em 0;
+}
+
+.cd-comunidades-portlet li img {
+	float: left;
+	margin-right: 8px;
+	height: 40px;
+	width: 40px;
+}
+
+.cd-comunidades-portlet ul.navegacao a {
+	color: #546e3e;
+	text-decoration: underline;
+}
+
+/* Comum a várias listas */
+
+.redesSociais li a,
+.destaques li a,
+.social-networking-portlet-members .user-details a,
+.cd-comunidades-portlet li a {
+	color:#666666;
+	text-decoration:none;
+}
+
+.redesSociais li a:hover,
+.destaques li a:hover,
+.social-networking-portlet-members .user-details a:hover,
+.cd-comunidades-portlet li a:hover {
+	color: #546e3e;
+	text-decoration: underline;
+}
+
+
+
+/* ---------- Fim Listas ---------- */
+
+
+/* ---------- Wrapper ---------- */
+
+#wrapper {
+	background-color:#fff;
+	margin: 0 auto;
+	width: 980px;
+}
+
+/* ---------- Content ---------- */
+#content {
+	padding: 20px;
+}
+
+/* ---------- Skip to content ---------- */
+
+#skip-to-content:focus {
+	left: auto;
+	right: 0;
+	top: -2.4em;
+}
+
+/* ---------- Banner ---------- */
+
+#heading {
+	margin-bottom: 26px;
+	min-height: 40px;
+}
+
+#heading .company-title {
+	margin: 0;
+}
+
+/* ---------- Topo ---------- */
+
+/* Barra Câmara */
+
+#barraCamara {
+	background: url("../images/custom/barra_cd.png") no-repeat scroll 1px 0  #ffffff;
+	height: 35px;
+}
+
+#barraCamara form {	
+float:right;
+}
+
+#barraCamara select {
+	border: none;
+	float: right;
+	height: 22px;
+    margin-right: 63px;
+    margin-top: 5px;
+	padding: 3px;
+	width: 212px;
+}
+
+#barraCamara .logo img {
+	border-right: 2px solid #fff;
+	float: left;
+	margin: 0 0 0 1px;
+}
+
+#barraCamara .logo {
+	display: inline;
+}
+
+.lfr-dockbar-pinned #barraCamara {
+	position: fixed;
+	top: 0;
+	width:980px;
+	z-index: 299;
+}
+
+
+/* Barra e-Democracia */
+
+#barraEdemocracia {
+	background: url(../images/custom/bg_barraEdemocracia.jpg) no-repeat scroll 0 0 #C3DB96;
+	height: 47px;
+}
+
+.lfr-dockbar-pinned #barraEdemocracia {
+	position: fixed;
+	top: 35px; /* Altura da barraCamara*/
+	width: 980px;	
+	z-index: 299;
+}
+
+#barraEdemocracia .logo {
+	height: 47px;
+	width: 440px;
+	float: left;
+}
+
+.signed-in #barraEdemocracia .logo {
+	/* Quando estiver logado, reduz a largura para comportar o ícone
+	   do menu de comunidades */
+	width: 410px;
+}
+
+#barraEdemocracia .logo .gotoPrincipal{
+	float: right;
+	margin: 10px 1px 0 0;
+}
+
+#barraEdemocracia .logo h1.principal {
+	margin: 35px 0 0 20px;
+}
+
+#barraEdemocracia .logo h1.principal img{
+	width: 390px;
+}
+
+
+#barraEdemocracia h1 {
+	margin: 5px 0px 0px 10px;
+	padding: 0;
+	position: absolute;
+}
+
+#barraEdemocracia h1 a {
+	text-decoration: none;
+}
+
+
+#barraEdemocracia .beta {
+	color: #f4835b;
+	float:left;
+	font-size:0.85em;
+	margin-top:14px;
+	text-decoration:none;
+}
+
+#barraLogin {
+	height: 47px;
+	margin-left: 440px;
+	margin-right: 10px;
+}
+
+#barraLogin .cd-loginuser-portlet {
+	float: right;
+}
+
+#barraLogin .portlet-cdlogin {
+	float: right;
+}
+
+#barraLogin .problemaAcesso {
+	float: right;
+	margin-top: 15px;	
+}
+
+	
+form.loginTopo {
+	float:right;
+}
+
+.ie6 form.loginTopo {
+	width: 500px;
+}
+
+.ie6 form.loginTopo input {
+	width: 110px;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+	border:1px solid #FFAC51;
+	font: 0.9em Verdana,Arial,Helvetica,sans-serif;
+	color:#666;
+	height:15px;
+	width:110px;
+}
+
+.login input[type="text"] {
+	width: 155px;
+}
+	
+.login input[type="password"] {
+	width: 75px;
+}
+
+/* removendo um pouco da margem esquerda dos labels do formul�rio de login */
+.login label {
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+.login fieldset {
+	border: none;
+    padding: 5px 0 0 0;
+    float: right;
+}
+
+.login input[type="submit"]{
+	width:72px;
+	margin-left:5px;
+	padding-top:4px;
+	-moz-border-radius:0 0 0 0;
+	background-color:#CF5E12;
+	background-image:url(../images/custom/bg_botoes.png) !important;
+	border:medium none;
+	color:#FFFFFF !important;
+	height:26px;
+	text-shadow:none;
+}
+.linksLogin {
+	font-weight: bold;
+    font-size: 0.8em;
+}
+.linksLogin a.linkCadastro {
+	text-decoration: none;
+    display: block;
+    margin-left: 50px;
+    float: left;
+}
+.linksLogin a.linkEsqueci {
+    float: left;
+    margin-left: 56px;
+    display: block;
+    text-decoration: none;
+}
+
+.cd-loginuser-portlet .portlet-msg-error {
+	display: none; /* Esconde mensagem de erro "genérica" */
+}
+
+.cd-loginuser-portlet  .mensagensErro {
+	position: absolute;
+	right: 5px;
+	top: 40px;
+	z-index: 1000;	
+}
+
+.cd-loginuser-portlet  .mensagensErro .portlet-msg-error {
+	
+	display: block; /* Mostra mensagens de erro específicias */
+	margin: 0 0 1px 0;
+	max-width: 300px;
+}
+
+.portlet-cdlogin .portlet-body{
+	margin: 0;	
+}
+
+.portlet-cdlogin .portlet-msg-error {
+	display: none; /* Esconde mensagem de erro "genérica" */
+}
+
+.portlet-cdlogin .mensagensErro {
+	position: absolute;
+	right: 5px;
+	top: 40px;
+	z-index: 1000;	
+}
+
+.portlet-cdlogin .mensagensErro .portlet-msg-error {
+	
+	display: block; /* Mostra mensagens de erro específicias */
+	margin: 0 0 1px 0;
+	max-width: 300px;
+}
+
+
+/* Topo Comunidades */
+
+.lfr-dockbar-pinned #topoComunidadesContainer {
+	position: fixed;
+	top: 82px;
+	z-index: 298;
+}
+
+.ie7 #topoComunidadesContainer .portlet-borderless-container {
+	/* Para que as mensagens de erro de login (no topo) apareçam por cima deste elemento */
+	z-index: 1; 
+}
+
+#topoComunidadesContainer {
+	background: url("../images/custom/bg_topoComunidades.jpg") top left no-repeat;
+	width: 980px;
+	height: 99px;
+	overflow: hidden;
+	border-bottom: 2px solid #fff;
+}
+
+#topoComunidades {
+	background-color: transparent;
+	overflow: hidden; /* para conter adequadamente descricao e acao, que são floats. */
+}
+
+#topoComunidades .descricao {
+	padding: 0 15px;
+	float: left;
+	width: 710px;
+}
+
+#topoComunidades .descricao img {
+	
+	float: left;
+	width: 90px;
+	height: 90px;
+}
+
+#topoComunidades .descricao h1,
+#topoComunidades .descricao p {
+	margin: 5px 0 5px 100px
+}
+
+#topoComunidades .descricao h1 {
+	color: #546e3e;
+	font-weight: normal;
+	font-size: 1.8em;
+}
+
+#topoComunidades .descricao h1 a {
+	text-decoration: none;
+}
+
+#topoComunidades .descricao p {
+	height: 4em;
+	overflow: auto;
+}
+
+#topoComunidades .compartilhamento, 
+#topoComunidadesContainer .compartilhamento {
+	float: right;
+	width: 182px;
+	height: 50px;
+	margin-right: 15px;
+	margin-top: 50px;
+	z-index: 1;
+	position: relative;
+	}
+#topoComunidades .compartilhamento .titulo, 
+#topoComunidadesContainer .compartilhamento .titulo {
+	font-size: 0.9em;
+	margin-right: 8px;
+	text-align: right;
+	display: block;
+	margin-bottom: 3px;
+}
+/*#topoComunidades .acao {
+	float: left;
+	width:240px;
+}
+#topoComunidades .acao h3{
+	background-image: url(../images/custom/bt_faca_parte.png);
+	background-repeat:no-repeat;
+    margin: 25px 0 0 45px;
+    width: 157px;
+}
+#topoComunidades .acao h3 a {
+	text-decoration: none;
+}
+#topoComunidades .acao h3 span {
+	display: block;
+	cursor: pointer;
+	line-height:100%;
+}
+#topoComunidades .acao h3 .titulo {padding:10px 0px 0px 25px;}
+#topoComunidades .acao h3 .subtitulo {padding:2px 0px 11px 25px;font-size:0.68em;font-weight:normal;}*/
+
+/* ---------- Fim Topo ---------- */
+
+
+/* ---------- Colunas ---------- */
+
+.portlet-column {
+	border-right: 1px solid #ccc;
+}
+
+/* Remove a borda na coluna mais à direita ou se for somente uma coluna. */
+/* Remove a borda nos portlets aninhados. */
+.portlet-column-last,
+.portlet-column-only,
+.portlet-nested-portlets .portlet-column {
+	border-right: none;
+}
+
+/* ---------- Fim Colunas ---------- */
+
+
+
+/* ---------- Portlet de Notícias ---------- */
+
+/* Exibição em lista 
+	Para quando houver mais metadados além da data */
+	
+.portlet-asset-publisher li.title-list {
+	padding-left: 1em;
+	background: url(../images/custom/marker.png) no-repeat left 0.5em transparent;
+}
+
+.portlet-asset-publisher .title-list a.taglib-icon {
+	color: #666666;
+	font-size: 1.1em
+}
+
+.portlet-asset-publisher .title-list a.taglib-icon:hover {
+	color: #546e3e;
+	text-decoration: underline;
+}
+
+.portlet-asset-publisher .title-list a.taglib-icon .taglib-text {
+	text-decoration: none;
+}
+
+.portlet-asset-publisher .title-list a.taglib-icon img {
+	display: none;
+}
+
+.portlet-asset-publisher .title-list .asset-metadata {
+	margin-left: 0;
+	margin-bottom: 0.5em;
+}
+
+.portlet-asset-publisher .title-list .metadata-entry {
+	margin-bottom: 0.2em;
+}
+
+
+/* Exibição em tabela
+	Para quando houver somente a data como metadado */
+.portlet-asset-publisher .results-header {
+	display: none;
+}
+
+.portlet-asset-publisher .results-row {
+	display: block;
+	overflow: auto;
+	padding-left: 1em;
+	margin-bottom: 0.4em;
+	background: url(../images/custom/marker.png) no-repeat left center transparent;
+	border: none;
+}
+
+.portlet-asset-publisher .results-row td {
+	float: left;
+	padding: 0;
+	margin-right: 1em;
+}
+
+.ie7 .portlet-asset-publisher .results-row td {
+	border-bottom: none;
+}
+
+.portlet-asset-publisher .results-row td a {
+	color: #666666;
+	text-decoration: none;
+}
+
+.portlet-asset-publisher .results-row td a:hover {
+	color: #546e3e;
+	text-decoration: underline;
+}
+
+
+/* ---------- Fim Portlet de Notícias ---------- */
+
+/* ---------- Instrumentos ---------- */
+
+
+/* Propriedades comuns a todos os instrumentos */
+.portlet-message-boards .portlet-title-text,
+.portlet-boundary_cdchatroom_WAR_cdchatportlet_ .portlet-title-text,
+.portlet-boundary_cdchatroomcompletelist_WAR_cdchatportlet_ .portlet-title-text,
+.portlet-wiki .portlet-title-text,
+.topoInstrumento .titulo .textoTitulo,
+.portlet-boundary_priorizacao_WAR_cdpriorizacaoportlet_ .portlet-title-text,
+.portlet-boundary_wl_WAR_cdwikilegisportlet_ .portlet-title-text,
+.tituloEmenda .portlet-title-text, .tituloComente .portlet-title-text,
+.tituloBalanca .portlet-title-text {
+	background-color: transparent;
+	background-position: left 50%;
+	background-repeat: no-repeat;
+	padding: 0.3em 0 0.3em 40px;
+}
+
+/* Propriedades de instrumentos específicos */
+
+.topoInstrumento .tituloBiblioteca .textoTitulo { 
+	background-image: url("../images/custom/ico_biblioteca.jpg"); 	
+}
+
+.topoInstrumento .tituloEnquete .textoTitulo {
+	background-image: url("../images/custom/ico_enquete.jpg");
+}
+
+.topoInstrumento .tituloIdeias .textoTitulo {
+	background-image: url("../images/custom/ico_ideias.jpg");
+}
+
+.tituloDiscussao .portlet-title .portlet-title-text {
+	background-image: url("../images/custom/ico_discussao.jpg");
+}
+
+.tituloEmenda .portlet-title .portlet-title-text {
+	background-image: url("../images/custom/ico_emendas.jpg");
+}
+
+.tituloProposta .portlet-title .portlet-title-text {
+	background-image: url("../images/custom/ico_proposta.jpg");
+}
+
+.tituloAvaliacao .portlet-title .portlet-title-text {
+	background-image: url("../images/custom/ico_avaliacao.jpg");
+}
+
+.tituloComente .portlet-title .portlet-title-text {
+	background-image: url("../images/custom/ico_comente.jpg");
+}
+
+.tituloBalanca .portlet-title .portlet-title-text {
+	background-image: url("../images/custom/ico_balanca.jpg");
+}
+
+.portlet-message-boards .portlet-title-text { 
+	background-image: url("../images/custom/ico_forum.jpg"); 	
+}
+
+.portlet-boundary_priorizacao_WAR_cdpriorizacaoportlet_ .portlet-title-text {
+	background-image: url("../images/custom/ico_valoracao.jpg");
+}
+
+.portlet-boundary_cdchatroom_WAR_cdchatportlet_ .portlet-title-text,
+.portlet-boundary_cdchatroomcompletelist_WAR_cdchatportlet_ .portlet-title-text {
+	background-image: url("../images/custom/ico_batePapo.jpg"); 	
+}
+		
+.portlet-wiki .portlet-title-text { 
+	background-image: url("../images/custom/ico_wikiLegis.jpg"); 	
+}
+
+.portlet-boundary_wl_WAR_cdwikilegisportlet_ .portlet-title-text { 
+	background-image: url("../images/custom/ico_wikiLegis.jpg"); 	
+}
+
+
+.portlet-bookmarks .lfr-asset-column-actions .lfr-asset-column-actions-content {
+	/* Esse estilo talvez deva ser estendido para outros lugares 
+	(removendo a classe .portlet-bookmarks que faz ele ser específico para esse instrumento) */
+	border: 1px solid #d1e3af;
+	background-color: #f3f7e9;
+}
+
+
+.portlet-polls-display h2.portlet-title {
+	/*background-color: #fff2d8;*/
+	padding: 0 8px 0.2em;
+	margin-bottom: 0;
+}
+
+.portlet-polls-display h2 span {
+	/*font-size: 0.7em;*/
+}
+
+.portlet-polls-display .portlet-content {
+	/*background-color: #fffaf0;*/
+	padding: 12px 8px; 
+}
+
+.portlet-polls-display .portlet-body {
+	font-weight: bold;
+	/*font-size: 1.15em;*/
+}
+
+.portlet-polls-display .portlet-body fieldset,
+.portlet-polls-display .portlet-body table {
+	/*font-size: 0.85em;*/
+}
+
+.portlet-polls-display .portlet-body fieldset label,
+.portlet-polls-display .portlet-body fieldset label strong,
+.portlet-polls-display .portlet-body table {
+	font-weight: normal;
+}
+
+
+.portlet-polls-display .portlet-body .results-row td {
+background: 0;
+border: 1px solid;
+border-color: #D7D7D7 #E7E7E7;
+padding: 5px 10px;
+}
+
+.portlet-polls-display .portlet-body .results-row td.alpha {
+background-color:#e7eaed;
+}
+
+/* corre��o da quebra de layout causada pela largura da tabela */
+.portlet-polls-display .portlet-body table {
+  table-layout:fixed;
+  word-wrap:break-word;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.portlet-blogs .entry-title {
+	font-size: 1.4em;
+	
+}
+.portlet-blogs .entry-title a {
+	color: #B65210;
+}
+
+.portlet-blogs .search-form { /* Separando visualmente a busca do título da primeira entrada do blog */
+	float: none;
+	text-align: right;
+}
+
+.portlet-blogs .entry {
+	overflow: hidden; /* Para fazer com que a altura da div seja correta quando o último elemento dentro dela for "float" */
+}
+
+.portlet-blogs .portlet-content {
+	max-width:940px; /* Evitando a quebra do layout quando é adicionado na página um texto sem espaçamento muito grande */
+}
+
+.js .portlet-blogs .taglib-social-bookmarks.visible {
+	background-color: #F2F7E9;
+}
+
+.portlet-blogs .taglib-social-bookmarks li {
+	margin-bottom: 0.5em;
+}
+
+.portlet-blogs .taglib-social-bookmarks li a .opens-new-window-accessible {
+	color: #666666;
+	font-size: 0.85em;
+}
+
+.portlet-blogs .taglib-social-bookmarks a.taglib-social-bookmark-orkut {
+	background-image: url("../images/social_bookmarks/orkut.png")
+}
+.portlet-blogs .taglib-social-bookmarks a.taglib-social-bookmark-twitter {
+	background-image: url("../images/social_bookmarks/twitter.png")
+}
+.portlet-blogs .taglib-social-bookmarks a.taglib-social-bookmark-google {
+	background-image: url("../images/social_bookmarks/google.png")
+}
+
+.portlet-blogs .portlet-content {
+	max-width:940px; /* Evitando a quebra do layout quando Ã© adicionado na pÃ¡gina um texto sem espaÃ§amento muito grande */
+}
+
+.portlet-wiki .child-pages h2 {
+	background-color: #fff2d8;
+}
+
+.portlet-message-boards .lfr-textarea.message-edit {
+	max-width:none;
+}
+
+.portlet-message-boards .taglib-header {
+	margin-bottom: 0.5em;
+}
+
+.portlet-message-boards .compartilhe {
+	float: right;
+}
+
+.portlet-message-boards .compartilhe .titulo {
+	float: left;
+	margin-right: 0.3em;
+	font-weight: bold;
+}
+
+.portlet-message-boards .compartilhe .addthis_toolbox {
+	float: left;
+}
+
+.topicoDestaque{
+	background-color: #EFEFEF;
+}
+
+
+/* Bate-papo */
+
+/* acesso */
+
+.acessoBatePapo {
+	margin: 0 auto;
+	padding: 1em;
+}
+
+.acessoBatePapo .titulo {
+	margin-bottom: 1em;
+}
+
+.acessoBatePapo .titulo h2 {
+	font-weight: normal;
+	margin: 0 0 0.5em;
+}
+
+.acessoBatePapo .descricao {
+	margin-right: 1.5em;
+}
+
+.acessoBatePapo .descricao img {
+	width: 130px;
+	height: 130px;
+	float: left;
+	padding-right: 1em;
+}
+
+.acessoBatePapo .entrar {
+/* 	border-left: 1px solid #ccc; */
+	padding-left: 1em;
+	padding-right: 1em; 
+}
+
+.acessoBatePapo .entrar label {
+	display: block;
+}
+
+.acessoBatePapo .entrar input[type='text'] {
+	width: 100%;
+}
+
+.acessoBatePapo .espiar {
+	padding-left: 1em;
+}
+
+.acessoBatePapo .espiar .ajuda {
+	font-size: 0.9em;
+}
+
+.acessoBatePapo .espiar a.botao {
+	background-color: #fdd37f;	
+	border: 1px solid #ffa302;
+	color: #b4510e;
+	font-weight: bold;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	padding: 5px;
+	text-decoration: none;
+	
+	/* extras */
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.acessoBatePapo .fieldList {
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+
+.acessoBatePapo .fieldList li {
+	margin-bottom: 1em;
+}
+
+.acessoBatePapo .boxDottedBatePapo{
+	border: 1px dotted #999;
+	background-color: #F8F8F8;
+	padding: 0.3em;
+	margin-left: 4px;
+	
+}
+
+/* sala */
+
+.cdchat_navbar .instrucao {
+	background-color: transparent;
+	font-size: 0.9em;
+	border: 1px solid #d1e3af;
+	border-bottom: none;
+}
+
+
+ul.cdchat_moderatorusrlist,
+ul.cdchat_moderatorbanuserlist,
+ul.cdchat_usrlist {
+	background-color: #f3f7e9;
+	border: 1px solid #d1e3af;
+}
+
+
+ul.cdchat_msglist,
+ul.cdchat_admmsglist,
+ul.cdchat_audience_msglist {
+	border: 1px solid #d1e3af;
+	border-bottom: none;
+	margin-bottom: 0;
+	padding: 10px;
+
+}
+
+p.cdchat_autoscroll_chkbox {
+	
+	background-color: #f3f7e9;
+	border: 1px solid #d1e3af;
+	border-top: none;
+	padding: 0.2em 0.5em;
+	margin-bottom: 10px;
+}
+
+span.cdchat_sendto_user {
+	font-weight: bold;
+}
+
+li.cdchat_user {
+	cursor: pointer;
+	margin: 3px 0;
+	padding: 3px;
+}
+
+li.cdchat_selected_user {
+	background-color: #fff;
+	border: 1px solid #fdd37f;
+	padding: 2px; /* para compensar a largura da borda */ 
+}
+
+
+/* Links de navegação personalizados (biblioteca, enquetes...) */
+
+.topoInstrumento {
+	margin-bottom: 18px;
+}
+
+.portlet-journal-content .portlet-body .topoInstrumento .navegacao {
+	overflow: auto;
+	padding: 12px 0 0 0;
+}
+
+.portlet-journal-content .portlet-body .topoInstrumento .navegacao li {
+	background-image: none;
+	padding: 0 1em 0 0;
+	float: left;
+}
+	
+	
+/* Entrada de tags (blogs, forum...) */
+
+.aui-tagselector .aui-textboxlist-input-container {
+	padding: 5px 25px 3px 11px;
+	border: 1px solid #CAD8F3;
+	background-color: #ffffff;
+	-moz-border-radius: 14px;
+	border-radius: 14px;
+}
+
+/* Wikilegis */
+
+/* Menu */
+
+.topMenuSuperiorWikilegis{
+	padding-bottom: 15px;
+}
+
+.topMenuSuperiorWikilegis .top-links {
+	float: left;
+}
+
+.menuSuperiorWikilegis{
+	font-style: normal;
+	text-decoration: none;
+	color: #546E3E;
+}
+
+.menuWikilegis{
+	border: 1px solid #999999;
+	padding: 1px 5px 1px 2px;
+	margin: 0 0 1em 0;
+	word-wrap: break-word;
+}
+
+.menuWikilegis .wikilegisLink a:link, .menuWikilegis .wikilegisLink a:visited{
+	color: #546E3E;
+	text-decoration: underline;
+}
+
+.menuWikilegis .wikilegisLink a:hover{
+	text-decoration: none;
+}
+
+.menuWikilegis span{
+	font-weight:bold;
+	color: #B65210;		
+}
+
+.menuWikilegis ul{
+	list-style-type: none;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.menuWikilegis a:link{
+	text-decoration: none;
+	color: #333333;
+}
+
+.menuWikilegis a:hover{
+	text-decoration: underline; 
+}
+
+.menuWikilegis a:visited{
+	text-decoration: none;
+	color: #333333; 
+}
+
+.menuWikilegis li{
+	padding: 5px 0 5px 3px;
+	}
+
+.menuWikilegis li ul li{
+	padding: 5px 0 5px 5px;
+	}
+
+.itemMenu{
+	border-top: 1px dotted #CCCCCC;
+}
+
+.expandirMenu{
+	padding-right: 2px;
+}
+
+.menuAberto{
+	padding-rigth: 5px;
+}
+
+.conteudoWikilegis{
+	padding-left: 10px;	
+}
+
+.colunaTituloWikilegis{
+	margin-left: 100px;	
+}
+
+.colunaIconesWikilegis{
+	float: left;
+	width: 15%;	
+	margin: 0 5px 0 0;
+	text-align: right;
+}
+
+.conteudoArtigo {
+	padding: 5px;	
+}
+
+.colunaIconesWikilegis ul {
+	margin: 0;
+}
+
+.colunaIconesWikilegis a:link{
+	text-decoration: none;
+}
+
+.colunaIconesWikilegis li{
+	display: inline;
+	padding-right: 9px;
+	float: right;
+}
+
+.colunaIconesWikilegis .iconesComentarioWikilegis{
+	position: relative;
+	z-index:1;
+	top: -16px;
+}
+
+.colunaIconesWikilegis .iconesSugestaoWikilegis{
+	position: relative;
+	z-index:1;
+	top: -16px;
+}
+
+.colunaIconesWikilegis .contadorWikilegis{
+	z-index: 2;
+	position: relative;
+	left: 5px;
+	top: 15px;
+	width: 23px;
+	height: 13px;
+	background-image: url("../images/custom/balao.png");
+	text-align: center;
+	font-weight: normal;
+	font-size: 0.8em;
+	color: #526c3e;
+	padding-top: 3px;
+}
+
+.colunaIconesWikilegis .demaisIconesWikilegis{
+	padding-top: 0px;	
+	padding-left: 7px;
+}
+
+
+img.colunaIconesWikilegis{
+	padding-right: 2px;	
+}
+
+.colunaTextoWikilegis{
+	float: left;
+	width: 84%;	
+	padding: 0;
+	padding-bottom: 10px;
+}
+
+.colunaAvatarWikilegis{
+	float: left;
+	width: 15%;
+	padding-top: 15px;
+}
+
+.colunaAvatarWikilegis img{
+	width: 100px;
+	height: 100px;
+}
+
+p.tituloLeiWikilegis{
+	font-weight:bold;
+	text-align:center;
+}
+
+.legislacaoWikilegis{
+	font-size: 0.8em;
+	border: 1px dotted #999;
+	background-color: #F8F8F8;
+	padding: 3px 5px 1px 5px
+}
+
+p.textoLeiIdentado{
+	text-indent: 3em;
+}
+
+.wikilegisComentarios{
+	border: 1px dotted #999;
+	background-color: #F8F8F8;
+	padding: 6px 10px 1px 5px
+}
+
+.clearWikilegis{
+	clear: both;
+}
+
+.finalTabelaWikilegis{
+	border-top: 1px solid #C8C9CA;
+	color: #555;
+	margin-bottom: 1em;
+}
+
+.posicaoSugestaoRight{
+	float: Right;
+}
+
+.posicaoSugestaoLeft{
+	float: left;
+}
+
+.sugestaoBox{
+	border: 1px solid #999;
+	padding: 0px 10px 0px 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 918px;
+	overflow-x: auto;
+
+}
+
+.textAreaWikilegis{
+	width: 100%;
+}
+
+.buttonDisableWikilegis{
+	background-color: #E8E8E8 !important;
+	border: 1px solid #C6C6C6 !important;
+	color: #C6C6C6 !important;
+	text-shadow: none !important;	
+}
+
+.comentariosWikilegis{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px dotted #999999;
+	width: 563px;
+	overflow-x: auto;
+}
+
+.comentariosWikilegisAvatar{
+	float: left;
+	width: 15%;
+	text-align:center;
+}
+
+.comentariosWikilegisTexto{
+	float: left;
+	width: 85%;
+	font-size: 0.9em;
+}
+
+.comentariosWikilegisLinks li{
+	display: inline;
+	padding-right: 4px;
+}
+
+.comentarioWikilegisAdicionar{
+	padding: 5px 0 5px 0;
+}
+
+.comentarioWikilegisOcultar{
+	padding: 5px 0 5px 0;
+	float: right;
+}
+
+/*Conteúdo em abas do Wikilegis*/
+
+.foldered .abas ul {
+	padding-left:1em; 
+	list-style-type:none;
+}
+
+.foldered .abas li {	
+	border: 1px solid #ccc;
+	background-color: #f3f3f3;
+	float:left;
+	padding: 0.5em 1em;
+	position:relative;
+	top:1px;
+	border-radius: 4px 4px 0 0;
+	margin-left:2px; 
+}
+
+.foldered .abas li:hover {
+	background-color:white; 
+}
+
+.foldered .abas li.selected {
+	background-color: white;
+	border-bottom: 1px solid white;
+}
+
+.foldered .abas li a {
+	text-decoration:none;
+	color: #26451B; 	
+}
+
+.conteudoInternoAba{
+	clear:both;
+	padding: 10px;	
+	border: 1px solid #ccc;
+}
+
+
+/* Fim Wikilegis */
+
+/* ---------- Fim Instrumentos ---------- */
+
+/* ---------- Nuvem de tags ---------- */
+
+.nuvemTags {
+	text-align: center;
+	margin: 0 1em !important;
+	padding: 0 !important;
+}
+
+.nuvemTags li {
+	display: inline;
+	background: none !important;
+	padding: 0 0.5em !important;
+}
+
+.nuvemTags a {
+	text-decoration: none;
+}
+
+.nuvemTags a:hover {
+	text-decoration:underline;
+}
+
+.nuvemTags .peso1 {
+	color:#546e3e;
+	font-size:85%;
+}
+
+.nuvemTags .peso2 {
+	color:#e6842b;
+	font-size:100%;
+}
+
+.nuvemTags .peso3 {
+	color:#c1731c;
+	font-size:120%;
+}
+
+.nuvemTags .peso4 {
+	color:#974b00;
+	font-size:130%;
+}
+
+.nuvemTags .peso5 {
+	color:#003300;
+	font-size:160%;
+}
+
+
+/* ---------- Fim Nuvem de tags ---------- */
+
+/* ---------- Painel de Controle ---------- */
+
+.taglib-form-navigator .form-navigator {
+	border: 1px solid #d1e3af;
+	background-color: #f3f7e9; 
+	width:29%;
+}
+
+.portlet-users-admin .form-navigator .user-info .user-name,
+.portlet-users-admin .form-navigator .organization-info .organization-name,
+.portlet-users-admin .form-navigator .company-info .company-name {
+	color: #b65210;
+}
+
+.taglib-form-navigator .form-navigator h3 {
+	color: #666666;	
+}
+
+.taglib-form-navigator .avatar {
+	width: 100px;
+	height: 100px;
+	outline: 1px solid #88C5D9;
+	display: block;
+	margin: 10px auto;
+}
+
+.taglib-form-navigator .form-navigator .user-info .avatar,
+.taglib-form-navigator .form-navigator .organization-info .avatar {
+	width: 35px;
+	height: 35px;
+	border: 1px solid #d1e3af;
+}
+
+.panel-page-menu-content .lfr-panel-titlebar {
+	background-image: none;
+	background-color: #f3f7e9;
+}
+
+.panel-page-menu-content .category-portlets li {
+	padding: 2px 6px 2px 6px;	
+}
+
+.panel-page-menu-content .category-portlets li.selected-portlet {
+	background-color: #f3f7e9;
+}
+
+.portlet-asset-category-admin .categories-admin-search .aui-field-input,
+.portlet-asset-tag-admin .tags-admin-search .aui-field-input {
+	width:175px;
+}
+
+
+
+/* ---------- Fim Painel de Controle ---------- */
+
+
+
+
+/* ---------- Modelos de Conteúdo ---------- */
+
+/* Espaço Livre */
+
+#espacoLivre img {
+	float:left;
+	height:100px;
+	width:100px;
+}
+
+#espacoLivre p {
+	margin-left: 115px;
+}
+
+/* Hotspot */
+.hotspot {
+	margin: 0.2em 0 1em 0;
+	overflow: hidden;
+}
+
+.hotspot .tipoConteudo {
+	font-weight: bold;
+	color: #B65210;
+	margin-bottom: 0;
+}
+
+.hotspot h3 {
+	margin-top: 0;
+	font-weight: normal;
+}
+
+.hotspot img {
+	max-width: 310px;
+}
+
+.hotspot .video {
+	margin: 5px 0;	
+}
+
+.hotspot .video-flash object,
+.hotspot .video-flash embed {
+	width: 310px;
+	height: 253px;
+}
+
+.hotspot .video-wmv object,
+.hotspot .video-wmv embed {
+	width: 310px;
+	height: 293px;
+}
+
+/* Video Destaque */
+
+.videoDestaque .subtitulo {
+	font-weight: bold;
+	font-size: 1.1em;
+	margin-bottom: 0;
+}
+
+.videoDestaque .video {
+	margin: 5px 0;
+}
+
+.videoDestaque .video-flash object,
+.videoDestaque .video-flash embed {
+	width: 270px;
+	height: 223px;
+}
+
+.videoDestaque .video-wmv object,
+.videoDestaque .video-wmv embed {
+	width: 270px;
+	height: 263px;
+}
+
+
+
+/* Elementos comuns */
+
+.leiaMais {
+	float: right;
+}
+
+/* ---------- Fim Modelos de Conteúdo ---------- */
+
+
+/* ---------- Home ---------- */
+
+#topo{
+	overflow: hidden;
+	margin-bottom: 80px;
+}
+
+#logo{
+	float: left;
+	width: 463px;	
+}
+
+#logo h1 {
+	margin: 0;
+}
+
+/*.logo img{width:174px;height:41px;}*/
+
+#textoTopo {
+	color:#999999;
+	float:left;
+	font-size:1.39em;
+	margin-left:55px;
+	margin-top:40px;
+	padding-bottom: 6px;
+	width: 420px;
+}
+
+#video {
+	background-image:url(../images/custom/play.png);
+	background-repeat:no-repeat;
+	color:#d78100;
+	font-size:0.9em;
+	font-weight:bold;
+	padding:6px 35px;
+	text-decoration: none;
+}
+
+#play{vertical-align: middle;}
+
+.tutorialHome {
+	padding-right:20px;
+}
+
+.tutorialHome img
+{
+	width: 264px;
+	height: 176px;
+}
+
+.tutorialHome p {
+	margin-top: 1em;
+}
+
+.tutorialHome h2 a {
+	text-decoration: none;
+}
+
+.tutorialHome h2 {
+	font-size: 1.6em;
+}
+
+
+#acompanhe{
+	background-image: url(../images/custom/acompanhe.png);
+	background-repeat:no-repeat;
+	height:78px;
+	width:330px;
+}
+#acompanhe h2 {
+	font-size: 1.8em;
+	margin:0;
+}
+#acompanhe h2 span {
+	display:block;
+	cursor: pointer;
+}
+
+#acompanhe h2 .titulo {
+	padding-top: 15px;
+	height: 25px;
+}
+
+#acompanhe h2 .subtitulo {
+	height: 38px;
+	font-size:0.67em;
+	font-weight:normal;	
+}
+
+#acompanhe a {
+	display: block;
+	padding-left: 30px;
+	width: 300px;
+	height: 78px;
+	color:#546F3E;
+	text-decoration: none;
+}
+
+.cadastro {
+	background-image: url(/e-democracia-theme/images/custom/bg_cadastro.png);
+	background-repeat: no-repeat;
+	width:330px;
+	height:360px;
+	margin-bottom:-285px;
+	margin-top: 20px;
+}
+
+.cadastro h2 {
+	font-size: 1.8em;
+	padding: 0 30px;
+	margin: 0;
+}
+
+.cadastro h2 span {
+	display: block;
+}
+
+.cadastro h2 .titulo {
+	padding-top: 20px;
+	height: 25px;
+}
+
+.cadastro h2 .subtitulo {
+	font-size:0.67em;
+	font-weight:normal;
+}
+
+
+.cadastroHome input[type="text"]{border:1px solid #FFAC51;font:1em Verdana,Arial,Helvetica,sans-serif;margin-bottom:10px;width:260px;padding:3px 0;}
+.cadastroHome select {
+	border:1px solid #FFAC51;
+	width:260px;
+	margin-bottom:10px;
+}
+
+.cadastroHome input[type="submit"]{
+	-moz-border-radius:0 0 0 0;
+	background-color:#CF5E12;
+	background-image:url(../images/custom/bg_botoes.png) !important;
+	border:1px solid #FFFFFF !important;
+	color:#FFFFFF !important;
+	font-size:1.3em;
+	height:30px;
+	margin:15px 65px;
+	text-shadow:none;
+	width:140px;
+}
+.cadastroHome input[type="checkbox"]{border:1px solid #FFF; margin-right:5px;}
+
+
+.cadastroHome fieldset{padding-left:30px;padding-bottom:65px;width:260px;border:medium none;}
+
+
+.cadastroHome .mensagensErro {
+	position: absolute;
+	left: 10px;
+	top: 260px;
+	z-index: 1000;	
+}
+
+.cadastroHome .portlet-msg-error { /* Mensagem de erro "genérica" */
+	margin-right: 10px;
+	position: absolute;
+	top:-70px;
+	left: 160px;
+}
+
+.cadastroHome .mensagensErro .portlet-msg-error {
+	/* Desfazendo o que foi feito acima, que deveria ser aplicado a uma mensagem específica */
+	margin-right: 0;
+	position: static;
+	
+	/* Alterando o que realmente precisaria ser alterado */
+	margin: 0 0 1px 0;
+	width: 270px;
+}
+
+.cadastroHome .portlet-msg-success { /* Mensagem de sucesso no cadastramento */
+	
+	width:120px;
+	position:absolute;
+	top:-330px;
+	left:150px;
+}
+
+/* ---------- Fim Home ---------- */
+
+
+/* ---------- Tutoriais ---------- */
+
+/* Navegação */
+.nav-menu ul {
+	list-style: none outside none;
+	margin-left: 0;
+	padding-left:0;
+}
+
+.nav-menu li a {
+	color: #B65210;
+	text-decoration: none;
+}
+
+.nav-menu li a:hover {
+	text-decoration: underline;
+}
+
+
+.nav-menu li a.selected {
+	color: #B65210;
+	font-weight: bold;
+}
+
+.nav-menu li {
+	border-bottom: 1px solid #CCCCCC;
+	padding: 10px 0;
+}
+
+/* Páginas */
+
+#acompanheBotao{
+	background-image: url(../images/custom/bt_acompanhe.png);
+	width: 191px;
+	height: 58px;
+}
+#cadastroBotao{
+	background-image: url(../images/custom/bt_cadastro.png);
+	width: 191px;
+	height: 58px;
+}
+
+#acompanheBotao a{color:#546F3E;}
+#cadastroBotao a{color:#B65210;}
+.botaoMenu{margin-top: 5px;}
+
+.botaoMenu h3 {
+	margin: 0;
+}
+
+.botaoMenu h3 a {
+	text-decoration: none;
+}
+.botaoMenu h3 span {
+	display: block;
+	width: 175px;
+	cursor: pointer;
+	line-height:100%;
+}
+.botaoMenu h3 .titulo {padding:15px 0px 0px 15px;}
+.botaoMenu h3 .subtitulo {padding:2px 0px 13px 16px;font-size:0.68em;font-weight:normal;}
+
+
+/* ---------- Fim Tutoriais ---------- */
+
+
+/* ---------- Página de Login e Cadastro ---------- */
+
+.colunaLogin,
+.colunaCadastro {
+	margin: 0px 70px;
+}
+
+.colunaLogin input[type="text"],
+.colunaLogin input[type="password"],
+.colunaCadastro input[type="text"] {
+	border:1px solid #CCC;
+	height:15px;
+	width:260px;
+}
+
+input.campoGrande[type="text"] {
+	width:460px;
+}
+
+
+.formDescadastro input[type="submit"] {
+	margin-right: 5px;
+}
+
+
+.colunaLogin input[type="submit"],
+.colunaCadastro input[type="submit"] {
+	background-repeat: no-repeat;
+	background-color: transparent;
+	font-size:1.6em;
+	height:48px;
+	width:153px;
+	border: none;
+}
+
+
+.colunaLogin h2 {
+	color:#546F3E; /* Verde */
+}
+
+.colunaLogin label {
+	font-weight: normal;
+}
+
+
+.colunaLogin input[type="submit"]{
+	background-image: url(../images/custom/bt_acessar.png);
+	color:#536E3E;
+}
+
+.portlet-login .navigation {
+	border-top: 1px solid #d1e3af;
+	background-color: #f3f7e9;
+}
+
+
+.colunaCadastro fieldset {
+	border: none;
+	padding: 0;
+}
+
+.colunaCadastro .itensCadastro {
+	margin: 10px 0;
+}
+
+.colunaCadastro select {
+	border: 1px solid #CCC;
+	width: 263px;
+	height: 22px;
+	margin-bottom: 5px;
+}
+
+
+.colunaCadastro input[type="submit"]{
+	background-image: url("../images/custom/bt_cadastrar.png");
+	color:#B65210;
+}
+
+
+
+
+/* ---------- Fim Página de Login e Cadastro ---------- */
+
+
+
+
+/* ---------- Sign In ---------- */
+
+#sign-in {
+	background: url(../images/custom/login_icon.png) no-repeat 3px 50%;
+	font-weight: bold;
+	position: absolute;
+	right: 10px;
+	top: 3em;
+}
+
+/* ---------- Main navigation ---------- */
+
+#navigation {
+	background: #E6F0D3;
+	clear: both;
+	margin: 0 auto 5px;
+	border-bottom: 3px solid #d1e3af;
+	
+	min-height: 2.2em;
+	position: relative;
+	z-index: auto;
+}
+
+#navigation ul {
+	list-style: none;
+	margin: 0;
+}
+
+.ie7 #navigation ul {
+	padding: 2px;
+}
+
+#navigation li, #navigation a {
+	display: inline-block;
+}
+
+.ie6 #navigation, .ie7 #navigation {
+	z-index: 199;
+}
+
+.ie6 #navigation li, .ie7 #navigation li, .ie6 #navigation a, .ie7 #navigation a {
+	display: inline;
+	zoom: 1;
+	z-index: 200;
+}
+
+#navigation li {
+	position: relative;
+	vertical-align: top;
+}
+
+#navigation a {
+	color: #546F3E;
+	font-size: 1.1em;
+	padding: 7px 15px;
+	text-decoration: none;
+	border-right: 1px solid #D1E4AF;
+}
+
+.ie7 #navigation a {
+	padding: 4px 15px;
+}
+
+#navigation .aui-dd-drop a {
+	cursor: move;
+}
+
+#navigation .selected a, #navigation a:hover, #navigation a:focus, #navigation .child-menu li a, #navigation .aui-dd-dragging, .lfr-navigation-proxy {
+	background: #D1E4AF;
+	color: #546F3E;
+	outline: 0;
+}
+
+#navigation .selected {
+	border-bottom: 3px solid #a8cd66;
+	margin-bottom: -3px;
+}
+
+#navigation .child-menu .selected {
+	/* Borda destacada apenas para 1º nível do menu. */
+	border-bottom: none; 
+	margin-bottom: 0;
+}
+
+
+#navigation li:hover .child-menu {
+	background: #D1E4AF;
+	display: block;
+	position: absolute;
+	width: 200px;
+	z-index: 200;
+}
+
+.ie6 #navigation li.hover .child-menu {
+	background: #D1E4AF;
+	display: block;
+	position: absolute;
+	width: 200px;
+	z-index: 200;
+}
+
+.ie6 #navigation li.hover .child-menu, .ie7 #navigation li:hover ul.child-menu {
+	left: 0;
+	top: 25px;
+}
+
+#navigation .child-menu {
+	display: none;
+	border: 1px solid #d1e3af;
+	border-top: none;
+	padding: 2px 0;
+	-moz-border-radius: 0 0 2px 2px;
+	-moz-box-shadow: 2px 4px 4px rgba(84, 111, 62, 0.4);
+}
+
+#navigation .child-menu li {
+	display: block;
+	float: none;
+	margin: 0;
+	padding: 0 2px;
+}
+
+#navigation .child-menu li a {
+	cursor: pointer !important;
+	display: block;
+	border-right: none;
+	font-size: 0.95em;
+}
+
+.ie7 #navigation .child-menu li a {
+	zoom: 1;
+}
+
+#navigation .child-menu li a:hover {
+	background-color: #A8CC66;
+}
+
+#navigation .child-menu .selected a {
+	background: #A8CC66 url(../images/navigation/bullet_selected.png) no-repeat 5px 50%;
+}
+
+
+/* ---------- Layout ---------- */
+
+.portlet-column-content {
+	padding: 0 10px;
+}
+
+.portlet-column-content-first,
+.portlet-column-content-only {
+	padding-left: 0;
+}
+
+.portlet-column-content-last,
+.portlet-column-content-only {
+	padding-right: 0;
+}
+
+.portlet-content,
+.portlet-minimized .portlet-content-container {
+	padding: 12px 0;
+}
+
+/* ---------- Portlet ---------- */
+
+.portlet .portlet-topper {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+/*	background-color: #215172; */
+	border-radius: 4px;
+	font-weight: bold;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet .portlet-topper-toolbar {
+	right: 6px;
+	top: 7px;
+}
+
+.portlet .portlet-title {
+	min-height: 1em;
+}
+
+.portlet .portlet-title-text {
+	/* Por padrão, o cursor sobre o título do portlet se comportará como se
+	   estivesse sobre um texto normal qualquer. */
+	cursor: text;
+}
+
+.aui-dd-draggable .portlet .portlet-title-text {
+	/* Se o portlet puder ser arrastado, via de regra, seu título pode ser editado,
+	   e isso será indicado através do cursor: pointer. */
+	cursor: pointer;
+}
+
+.portlet-sign-in .portlet-title {
+	background-image: url(../images/custom/login_icon.png);
+}
+
+.portlet-body {
+	margin: 0 0 1.5em 0;
+}
+
+#page-banner {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #215172 url(../images/custom/page-banner_bg.png) no-repeat right center;
+	border-radius: 3px;
+	color: #FFF;
+	font-size: 2.2em;
+	margin: 0;
+	padding: 0.5em 0.8em;
+}
+
+
+
+/* ---------- Footer ---------- */
+
+#rodape ul li .rodape {
+	color:#666;
+}
+
+#rodape ul li {
+	list-style-type:none;
+	float:left;
+	margin-right: 15px;
+	padding-right: 15px;
+	border-right: 2px #ccc solid;
+}
+
+#rodape ul li.ultimo {
+	margin-right: 0;
+	padding-right: 0;
+	border-right: 0;
+}
+
+#rodape ul{margin-left:1em;}
+#rodape{padding-top:1px;}
+
+#rodape a {
+	text-decoration: none;
+}
+
+#rodape a:hover {
+	text-decoration: underline;
+}
+
+
+#footer {
+	background-image:url("../images/custom/bg_rodape.png");
+	height:51px;
+	width:980px;
+}
+.powered-by{
+	text-align:right;
+	margin-right:43px;
+}
+
+.callout {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #EEEFEF;
+	background-image: -moz-linear-gradient(#D2D2D3, #EEEFEF);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #D2D2D3), color-stop(1.0, #EEEFEF));
+	border: 1px solid;
+	border-color: #808080 #777 #404040;
+	border-radius: 4px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#D2D2D3', EndColorStr='#EEEFEF');
+}
+
+.callout-extraborder {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+}
+
+a:hover .callout-extraborder,
+a:focus .callout-extraborder {
+	background-image: -moz-linear-gradient(#DDD, #EEE);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #DDD), color-stop(1.0, #EEE));
+	border-color: #FFF;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#DDDDDD', EndColorStr='#EEEEEE');
+}
+
+.callout-content {
+	padding: 14px 24px;
+}
+
+.after-icon-callout {
+	margin: 0 0 16px 132px;
+}
+
+.small-after-icon-callout {
+	border-bottom: 1px solid #777;
+	padding: 5px 0 16px 85px;
+}
+
+.portlet-journal-content .portlet-body .small-after-icon-callout h1 {
+	margin: 0 0 3px;
+}
+
+.portlet-journal-content .portlet-body h1 {
+	/*line-height: 1.125;
+	margin: 0 0 12px; */
+}
+
+.portlet-journal-content .icons-container {
+	/* Borda inferior para facilitar a identificação de a quem pertence os controles */
+	padding-bottom: 0.5em;
+	border-bottom: 1px dotted #dddddd;
+	margin-bottom: 0.5em;
+}
+
+.portlet-journal-content .portlet-body ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 2px;
+}
+
+.portlet-journal-content .portlet-body li {
+	background: url(../images/custom/marker.png) no-repeat 0 0.4em;
+	margin-bottom: 6px;
+	padding-left: 20px;
+}
+
+.article h1 {
+	color: #215172;
+	font-size: 2.2em;
+	font-weight: normal;
+	line-height: 1.125;
+	margin: 0 0 12px;
+}
+
+.article h2 {
+	color: #484A4C;
+	font-size: 1.2em;
+	line-height: 1.125;
+	margin: 0 0 12px;
+}
+
+.article p {
+	line-height: 1.7;
+}
+
+.small-article {
+	margin-bottom: 20px;
+}
+
+.small-article h1 {
+	font-size: 1.2em;
+	margin: 0.5em 0;
+}
+
+.small-article h2 {
+	font-size: 1em;
+	margin: 0.25em 0;
+}
+
+.small-article p {
+	font-size: 90%;
+	line-height: 2;
+}
+
+.after-icon-callout h1 {
+	color: #215172;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.125;
+	margin: 0 0 2px;
+}
+
+.after-icon-callout p {
+	color: #474A4B;
+	line-height: 1.75;
+	margin: 0;
+}
+
+/* ---------- Breadcrumbs ---------- */
+
+.breadcrumbs {
+	margin-bottom: 1.5em;
+}
+
+.breadcrumbs li {
+	background: url(../images/arrows/05_right.png) no-repeat 100% 50%;
+	display: inline;
+	margin-right: 5px;
+	padding-right: 15px;
+}
+
+.breadcrumbs .last {
+	background-image: none;
+	font-weight: bold;
+	margin-top: 0.2em;
+}
+
+.breadcrumbs .last a {
+	color: #555;
+}
+
+/* ---------- Site breadcrumbs ---------- */
+
+.site-breadcrumbs {
+	margin: 0 10px 5px;
+	width: auto;
+}
+
+.site-breadcrumbs ul {
+	background-color: #FFF;
+	border: 1px solid #DEDEDE;
+	border-color: #C0C2C5;
+	height: 1.8em;
+	margin: 0;
+}
+
+.site-breadcrumbs li {
+	background-image: none;
+	float: left;
+	line-height: 1.8em;
+	margin-right: 0;
+	padding-left: 0.75em;
+	padding-right: 0;
+}
+
+.site-breadcrumbs li span {
+	background: url(../images/common/breadcrumbs.png) no-repeat 100% 50%;
+	display: block;
+	line-height: 1.8em;
+	padding: 0 15px 0 0;
+}
+
+.site-breadcrumbs li span a {
+	text-decoration: none;
+}
+
+.site-breadcrumbs li.first a {
+	color: #369;
+	font-weight: bold;
+}
+
+.site-breadcrumbs li.last a {
+	color: #4B5567;
+	font-size: 1.3em;
+}
+
+.site-breadcrumbs .last {
+	display: inline;
+	font-size: 1em;
+	margin-top: 0;
+	padding-right: 0;
+}
+
+.site-breadcrumbs .last span {
+	background-image: none;
+	padding: 0;
+}
+
+.lfr-hudcrumbs {
+	position: fixed;
+	top: 0;
+	z-index: 200;
+}
+
+.lfr-hudcrumbs ul {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.lfr-hudcrumbs .breadcrumbs li a,
+.lfr-hudcrumbs .breadcrumbs li span {
+	color: #FFF;
+}
+
+.lfr-hudcrumbs li span {
+	background-image: url(../images/common/breadcrumbs_hud.png);
+}
+
+/* ---------- Página de Erro ---------- */
+#portlet_status {
+	overflow: auto;
+}
+
+
+/* ---------- Document library --------- */
+/* - Na tradução oficial do Liferay, "Documentos e mídia".
+   - Estilos definidos os dois portles, tanto para o gerenciador quanto para o visualizador.
+*/
+
+
+/* Alterando a cor da seleção dos ítens do menu */
+.portlet-document-library .lfr-list-view-content li.selected,
+.portlet-document-library-display .lfr-list-view-content li.selected {
+background-color: #7abfdd;
+}
+
+/* Alterando a cor do ítem selecionado na migalha de pão */
+.aui-paginator-current-page {
+background: #7abfdd;
+}
+
+
+/* Alterando a cor da fonte onde é indicado a pasta que está acima na navegação, na lateral da biblioteca */
+.portlet-document-library .lfr-header-row-content .parent-folder-title, .portlet-document-library-display .lfr-header-row-content .parent-folder-title {
+color: #777;
+text-shadow: none;
+}
+
+/* Linha de cabeçalho (onde estão os menus, opções de exibição e caixa de busca) */
+.portlet-document-library .lfr-header-row,
+.view .lfr-header-row {
+	border-bottom: 1px solid #FDD37F;
+	background: #FFF2D8;
+}
+
+.portlet-document-library .lfr-header-row .aui-column:before {
+	/* Removendo definição de borda trazida pelo tema base
+	feita usando o pseudo-elemento :before */
+	border-right: none; 
+}
+
+/* Linha de cabeçalho (onde estão os menus, opções de exibição e caixa de busca) */
+.portlet-document-library .lfr-header-row .aui-column-content {
+	padding: 0;
+}
+
+/* Remoção do padding que separava a coluna do menu da do conteúdo */
+.portlet-document-library .navigation-pane .aui-column-content,
+.portlet-document-library .context-pane .aui-column-content {
+	padding:0;
+}
+
+/* Removendo a borda em volta do campo de busca na linha de cabeçalho */
+.lfr-header-row .lfr-search-combobox {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+	-ms-border-radius: 0;
+	-khtml-border-radius: 0;
+	border-radius: 0;
+	border:0;
+}
+
+/* Ajustando box da busca na linha de cabeçalho */
+.lfr-header-row .lfr-search-combobox {
+	border-left: 1px solid #fdd37f;
+	padding-left: 1.2em;
+	margin: -1px 0 0 1.2em;
+	width: 18em;
+}
+
+
+
+/* Removendo o arredondado do input de busca na linha de cabeçalho */
+.portlet-document-library .lfr-search-combobox .aui-field-input {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+	-ms-border-radius: 0;
+	-khtml-border-radius: 0;
+	border-radius: 0;
+}
+
+/* Ajustando visual do título do menu das Minhas comunidades */
+.my-sites-menu .my-places-title {
+	border-bottom: 1px dotted;
+	font-weight: bold;
+	margin: 0 4px;
+	padding: 5px 0;
+}
+
+
+
+/* Ajuste no input de busca na linha de cabeçalho */
+.portlet-document-library .lfr-search-combobox .aui-button-input {
+	margin-top:1px;
+	padding: 5px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	border:1px solid #ffc766;
+}
+
+.portlet-document-library .lfr-search-combobox .aui-w70,
+.portlet-document-library .lfr-search-combobox .aui-w30 {
+	/* Largura definida em percentual não funciona bem com o botão traduzido para "Pesquisar",
+	   daí a opção de deixar a largura automática, quebrando a semântica das classes. */
+	width: auto; 
+}
+
+/* Removendo borda escura de elementos na linha de cabeçalho */
+.lfr-header-row .aui-buttonitem-content,
+.lfr-header-row .aui-button-input,
+.lfr-header-row .lfr-actions.lfr-extended,
+.lfr-header-row .lfr-search-combobox {
+	border-color: none;
+}
+
+/* Removendo background de vários elementos */
+.portlet-document-library .taglib-search-iterator-page-iterator-top,
+.portlet-document-library .taglib-search-iterator-page-iterator-bottom,
+.portlet-document-library .aui-paginator-container,
+.portlet-document-library .document-library-breadcrumb,
+.portlet-document-library-display .taglib-search-iterator-page-iterator-top,
+.portlet-document-library-display .taglib-search-iterator-page-iterator-bottom,
+.portlet-document-library-display .aui-paginator-container,
+.portlet-document-library-display .document-library-breadcrumb {
+	background: none;
+}
+
+/* Removendo borda e fundo da seta de funções ao passar o mouse nos itens do visualizador de pasta/arquivos */
+.portlet-document-library .document-display-style .document-action .direction-down,
+.portlet-document-library-display .document-display-style .document-action .direction-down {
+	border: none !important;
+	background: none !important;
+}
+
+/* Removendo borda e fundo da seta de funções ao passar o mouse nos itens do menu */
+.portlet-document-library .navigation-pane-content .lfr-component {
+	background-color: transparent !important;
+	border:none !important;
+}
+
+/* Alterando a cor da borda em volta da biblioteca */
+.portlet-document-library .lfr-app-column-view {
+	border:1px solid #fdd37f;
+}
+
+/* Alterando a cor da borda em volta da biblioteca */
+.portlet-document-library .lfr-app-column-view .aui-column::before {
+	border-right:1px solid #fdd37f;
+}
+
+/* Alterando a cor da borda em volta da biblioteca */
+.portlet-document-library .lfr-header-row {
+	border-bottom:1px solid #fdd37f;
+}
+
+/* Alterando a cor da borda em volta da biblioteca */
+.portlet-document-library .context-pane .context-pane-content,
+.portlet-document-library-display .context-pane .context-pane-content {
+	border-left:1px solid #fdd37f;
+}
+
+/* Removendo estilos em volta do checkbox na linha de cabeçalho */
+.portlet-document-library .select-documents,
+.portlet-document-library-display .select-documents {
+	background:none;
+	border:none;
+}
+
+/* Removendo borda e fundo de itens de funções, minimizar, maximizar, etc no header */
+header .lfr-component,
+header .lfr-component ul,
+header .lfr-component li,
+header .lfr-component dl,
+header .lfr-component dt,
+header .lfr-component dd,
+.portlet-borderless-bar .lfr-component,
+.portlet-borderless-bar .lfr-component ul,
+.portlet-borderless-bar .lfr-component li,
+.portlet-borderless-bar .lfr-component dl,
+.portlet-borderless-bar .lfr-component dt,
+.portlet-borderless-bar .lfr-component dd  {
+	border: none !important;
+	background: none !important;
+}
+
+.lfr-actions li .taglib-text {
+	color:#B4510E;
+}
+
+.aui-menu-content li a {
+color: #546E3E;
+}
+
+.lfr-menu-list ul li .taglib-icon,
+.aui-menu-content li .disabled {
+	color:#B4510E;
+}
+
+
+.aui-menu-content li a.aui-focus {
+background-color: #A8CC66;
+color: #546E3E;
+text-shadow: none;
+}
+
+.lfr-menu-list ul .taglib-icon.aui-focus,
+.lfr-menu-expanded li a:focus {
+	background-color: #FDD37F;
+	color: #B4510E;
+	text-shadow: none;
+}
+
+/* Removendo borda e fundo de botões de ações com seta do menu do Painel de Controle */
+.lfr-ctrl-panel .lfr-panel-container .portal-add-content ul.lfr-component {
+	border: none !important;
+	background-color: transparent !important;
+}
+
+.portal-add-content ul.lfr-component .taglib-text {
+	color:#546E3E
+}
+
+.portal-add-content a {
+	color:#546E3E;
+}
+
+.portlet-enterprise-admin .portlet-enterprise-admin .form-navigation {
+border: 1px solid #D1E3AF;
+border-image: initial;
+background-color: #F3F7E9;
+}
+
+.manage-view .lfr-header-row {
+	background:#FFF2D8;
+}
+
+.lfr-app-column-view .aui-column::before {
+	border-right:1px solid #fdd37f;
+}
+
+.manage-view .lfr-header-row {
+	border-bottom:1px solid #fdd37f;
+}
+
+.portlet-communities .manage-view, .portlet-users-admin .manage-view {
+	border: 1px solid #fdd37f;
+}
+
+.lfr-app-column-view {
+	border: 1px solid #fdd37f;
+}
+
+.lfr-portlet-toolbar .lfr-toolbar-button a,
+.lfr-portlet-toolbar .lfr-toolbar-button a span {
+	color: #B4510E;
+}
+
+.lfr-portlet-toolbar .lfr-toolbar-button a {
+	border:none;
+}
+
+.lfr-portlet-toolbar .lfr-toolbar-button.current a,
+.lfr-portlet-toolbar .lfr-toolbar-button.current a:hover {
+	background-color: #FDD37F;
+	border: 1px solid #FFA302;
+	color: #B4510E;
+}
+
+.lfr-portlet-toolbar .lfr-toolbar-button a:hover {
+	background-color: transparent;
+	border: none;
+	color: #B4510E;
+}
+
+
+.lfr-panel.lfr-extended .lfr-panel-titlebar {
+	color: #B4510E;
+	background: #FFF2D8;
+	border-bottom: 1px solid #FDD37F;
+}
+
+
+/* ---------- Barra de abas ---------- */
+
+.aui-tab-content {
+background: #FDD37F;
+border: 1px solid #fdd37f;
+}
+  
+.aui-tabview-list {
+background: #FDD37F;
+border: 1px solid #E29A03;
+}
+
+.aui-tab-active .aui-tab-content, .aui-tab-active .aui-tab-content:hover {
+background: #FFF2D8;
+border-color: #FFF2D8;
+}
+
+.aui-tab-active .aui-tab-content {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.aui-tab-active .aui-tab-label {
+color: #C3510E;
+text-shadow: none;
+}
+
+.aui-tab-active .aui-tab-label:hover {
+text-shadow: none;
+color: #EF6D1F;
+}
+
+.aui-tab-label:hover, .aui-state-hover .aui-tab-label, .aui-tab-label a:hover {
+color: #C3510E;
+}
+
+.aui-tab-label, .aui-tab-label a {
+text-shadow: none;
+}
+
+.aui-tabview-list .last, .aui-tabview-list .aui-tab:last-child {
+border-right-color: #E29A03;
+border-right-width: 1px;
+}
