@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.1.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_1_0.dtd">
+
+<hook>
+	<portal-properties>portal.properties</portal-properties>
+	<language-properties>content/Language_pt_BR.properties</language-properties>
+	<custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+	
+	<service>
+    	<service-type>com.liferay.portlet.messageboards.service.MBMessageLocalService</service-type>
+    	<service-impl>br.gov.camara.edemocracia.hook.servicewrapper.MBMessageLocalServiceImplWrapper</service-impl>
+	</service>
+	
+	<struts-action>
+		<struts-action-path>/login/login</struts-action-path>
+		<struts-action-impl>br.gov.camara.edemocracia.hook.portlet.login.CDLoginAction</struts-action-impl>
+	</struts-action>
+	
+	<struts-action>
+		<struts-action-path>/portal/update_password</struts-action-path>
+		<struts-action-impl>br.gov.camara.edemocracia.hook.portal.CDUpdatePasswordAction</struts-action-impl>
+	</struts-action>
+	
+	<struts-action>
+		<struts-action-path>/portal/login</struts-action-path>
+		<struts-action-impl>br.gov.camara.edemocracia.hook.portal.CDLoginAction</struts-action-impl>
+	</struts-action>
+	
+	
+</hook>

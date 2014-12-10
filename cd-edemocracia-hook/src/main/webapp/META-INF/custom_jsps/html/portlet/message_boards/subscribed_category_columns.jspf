@@ -1,0 +1,63 @@
+<%--
+/**
+ * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+--%>
+<%
+	String forumCategoryColumn  = preferences.getValue(MBLabelKeys.FORUM_CATEGORY,MBLabelKeys.FORUM_CATEGORY);	
+	String forumCategoriesColumn = preferences.getValue(MBLabelKeys.FORUM_CATEGORIES,MBLabelKeys.FORUM_CATEGORIES);
+	String threadsColumn = preferences.getValue(MBLabelKeys.THREADS,MBLabelKeys.THREADS);
+	String postsColumn = preferences.getValue(MBLabelKeys.POSTS,MBLabelKeys.POSTS);
+
+%>
+
+<liferay-ui:search-container-column-text
+	buffer="buffer"
+	name="<%=forumCategoryColumn %>"
+>
+
+	<%
+	buffer.append("<a href=\"");
+	buffer.append(rowURL);
+	buffer.append("\">");
+	buffer.append("<strong>");
+	buffer.append(curCategory.getName());
+	buffer.append("</strong>");
+
+	if (Validator.isNotNull(curCategory.getDescription())) {
+		buffer.append("<br />");
+		buffer.append(curCategory.getDescription());
+	}
+	%>
+
+</liferay-ui:search-container-column-text>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="<%=forumCategoriesColumn %>"
+	value="<%= String.valueOf(categoryDisplay.getSubcategoriesCount(curCategory)) %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="<%=threadsColumn %>"
+	value="<%= String.valueOf(categoryDisplay.getSubcategoriesThreadsCount(curCategory)) %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="<%=postsColumn %>"
+	value="<%= String.valueOf(categoryDisplay.getSubcategoriesMessagesCount(curCategory)) %>"
+/>
+
+<%@ include file="/html/portlet/message_boards/subscribed_category_columns_action.jspf" %>
