@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.gov.camara.edemocracia.portlets</groupId>
+	<artifactId>edemocracia-comum</artifactId>
+	<name>edemocracia-comum</name>
+	<description>Jar com classes comuns a mais de um portlet</description>
+
+	<parent>
+		<groupId>br.gov.camara.edemocracia</groupId>
+		<artifactId>edemocracia-portlet-parent</artifactId>
+		<version>6.1.1-SNAPSHOT</version>
+		<relativePath>../edemocracia-portlet-parent</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.htmlparser.jericho</groupId>
+			<artifactId>jericho-html</artifactId>
+			<version>3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
