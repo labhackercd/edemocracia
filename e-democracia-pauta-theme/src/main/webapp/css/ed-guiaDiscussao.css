@@ -1,0 +1,182 @@
+/* Há imagem de background servindo como bullets nas listas genéricas
+   dentro de webcontents. Isso remove esses bullets. */
+		
+.portlet-journal-content .portlet-body #guiaDiscussao .carrossel li {
+	background: none;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+.portlet-journal-content .portlet-body #guiaDiscussao .carrossel ol{list-style:none; margin:0;}
+
+/* ---------- Fim ---------- */
+
+
+/*Guia da Discuss�o*/
+
+#guiaDiscussao{
+	width:620px;
+	background:#FFF;
+	margin-bottom: 2em;
+}
+
+#guiaDiscussao .navegacao{
+	display:block;
+	width:25px;
+	height:80px;
+	margin-top:15px;
+}
+
+#guiaDiscussao .anterior, 
+#guiaDiscussao .anteriorDesabilitado {
+	margin-right:5px;
+	float:left;
+	background:url(../images/custom/seta_carrosel_anterior.jpg) no-repeat top left;
+}
+
+#guiaDiscussao .anteriorDesabilitado {
+	background-image :url(../images/custom/seta_carrosel_anterior_desabilitado.jpg);	
+}
+
+#guiaDiscussao .proximo,
+#guiaDiscussao .proximoDesabilitado {
+	margin-left:5px;
+	float:right;
+	background:url(../images/custom/seta_carrosel_proximo.jpg) no-repeat top right;
+}
+
+#guiaDiscussao .proximoDesabilitado {
+	background-image :url(../images/custom/seta_carrosel_proximo_desabilitado.jpg);
+}
+
+#guiaDiscussao .carrossel {
+	width: 560px;
+	height: 370px;
+	overflow: hidden;
+	position: relative;
+	background:url(../images/custom/borda_carrosel_on.gif) no-repeat top center;	
+}
+
+#guiaDiscussao .fases {
+	position: relative;
+	left: 0;	
+	width: 7000px;
+	height: 360px;	
+	overflow: hidden;
+}
+
+#guiaDiscussao .fases > li {
+	display: in-line;
+	list-style: none;	
+	width: 187px;
+}
+
+#guiaDiscussao .fases .resumo{
+	width:187px;
+	height: 130px;
+	margin:10px 0 30px 0;
+	text-align: center;
+	background-position:center 90px;
+	background-repeat:no-repeat;	
+}
+
+#guiaDiscussao .fases .resumo h3{
+	height:70px;
+	padding:0 3px; 
+	overflow:hidden;
+	margin:0 !important;
+	font-weight: bold;
+}
+
+#guiaDiscussao .fases p.situacao{
+	margin-top:55px;
+	font-size:0.9em;
+	color:#999;
+}
+
+
+#guiaDiscussao .fases .encerrada .resumo{background-image:url(../images/custom/fase_encerrada.gif);}
+#guiaDiscussao .fases .encerradaInicio .resumo{background-image:url(../images/custom/fase_encerrada_inicio.gif);}
+#guiaDiscussao .fases .encerradaFim .resumo{background-image:url(../images/custom/fase_encerrada_fim.gif);}
+#guiaDiscussao .fases .encerradaUnica .resumo{background-image:url(../images/custom/fase_encerrada_unica.gif);}
+
+#guiaDiscussao .fases .atual .resumo{background-image:url(../images/custom/fase_atual.gif);}
+#guiaDiscussao .fases .atualInicio .resumo{background-image:url(../images/custom/fase_atual_inicio.gif);} 
+#guiaDiscussao .fases .atualFim .resumo{background-image:url(../images/custom/fase_atual_fim.gif);}
+#guiaDiscussao .fases .atualUnica .resumo{background-image:url(../images/custom/fase_atual_unica.gif);}
+
+#guiaDiscussao .fases .futura .resumo{background-image:url(../images/custom/fase_futura.gif);}
+#guiaDiscussao .fases .futuraInicio .resumo{background-image:url(../images/custom/fase_futura_inicio.gif);}
+#guiaDiscussao .fases .futuraFim .resumo{background-image:url(../images/custom/fase_futura_fim.gif);}
+#guiaDiscussao .fases .futuraUnica .resumo{background-image:url(../images/custom/fase_futura_unica.gif);}
+ 
+
+#guiaDiscussao .fases li.selecionada .resumo h3, 
+#guiaDiscussao .fases li.selecionada p.situacao {color:#b65210;} 
+
+#guiaDiscussao .fases .detalhes {display: none;}
+
+#guiaDiscussao .fases li.selecionada .detalhes {
+	display: block;
+	width: 555px;
+	position: absolute;
+}
+
+#guiaDiscussao .fases .detalhes ul li{
+	padding-left:50px !important;
+	clear:both;
+}
+
+#guiaDiscussao .fases .detalhes ul li .boxTable{
+	display:table;
+	height:60px;
+	overflow:hidden;
+}
+
+#guiaDiscussao .fases .detalhes ul li .boxTableCell{
+	display:table-cell; 
+	vertical-align:middle;
+	}
+
+.ie7 #guiaDiscussao .fases .detalhes ul li .boxTable{position:relative;}
+.ie7 #guiaDiscussao .fases .detalhes ul li .boxTableCell{position:absolute; top:50%;}
+.ie7 #guiaDiscussao .fases .detalhes ul li .boxTableCell span{position:relative; top:-50%;}
+
+
+#guiaDiscussao .fases .detalhes li.descricao{background:url(../images/custom/ico_descricao.gif) left center no-repeat;}
+#guiaDiscussao .fases .detalhes li.instrumentos{background:#f7f7f7 url(../images/custom/ico_instrumentos.gif) left center no-repeat;}
+#guiaDiscussao .fases .detalhes li.infoAdicional{background:url(../images/custom/ico_infoAdicional.gif) left center no-repeat;}
+
+#guiaDiscussao .fases .detalhes .instrumentos ul{padding:2px 0;}
+#guiaDiscussao .fases .detalhes .instrumentos ul li{
+	display:inline;
+	clear:none;	
+	padding:0 !important;	
+}
+
+#guiaDiscussao .fases .detalhes .instrumentos ul li a{
+	display:block;
+	float:left;
+	min-width:35px;
+	margin:5px 10px 0 10px;
+	padding-top:35px;
+	font-size:0.8em;
+	text-align:center;
+	text-decoration:none;
+	color:#666;
+}
+
+#guiaDiscussao .fases .detalhes a.wikiLegis{background:url(../images/custom/ico_wikiLegis.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.batePapo{background:url(../images/custom/ico_batePapo.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.forum{background:url(../images/custom/ico_forum.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.biblioteca{background:url(../images/custom/ico_biblioteca.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.enquete{background:url(../images/custom/ico_enquete.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.video{background:url(../images/custom/ico_video.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.ideias{background:url(../images/custom/ico_ideias.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.proposta{background:url(../images/custom/ico_proposta.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.discussao{background:url(../images/custom/ico_discussao.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.valoracao{background:url(../images/custom/ico_valoracao.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.avaliacao{background:url(../images/custom/ico_avaliacao.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.emenda{background:url(../images/custom/ico_emendas.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.comente{background:url(../images/custom/ico_comente.jpg) top center no-repeat;}
+#guiaDiscussao .fases .detalhes a.balanca{background:url(../images/custom/ico_balanca.jpg) top center no-repeat;}

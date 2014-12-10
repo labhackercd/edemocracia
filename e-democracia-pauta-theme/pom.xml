@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.gov.camara.edemocracia.themes</groupId>
+	<artifactId>e-democracia-pauta-theme</artifactId>
+	<packaging>war</packaging>
+	<name>e-Democracia theme</name>
+
+	<parent>
+		<groupId>br.gov.camara.edemocracia</groupId>
+		<artifactId>edemocracia-portlet-parent</artifactId>
+		<version>6.1.1-SNAPSHOT</version>
+		<relativePath>../edemocracia-portlet-parent</relativePath>
+	</parent>
+
+	<build>
+		<finalName>${artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.liferay.maven.plugins</groupId>
+				<artifactId>liferay-maven-plugin</artifactId>
+				<version>${liferay.version}</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>theme-merge</goal>
+							<goal>build-thumbnail</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
+					<liferayVersion>${liferay.version}</liferayVersion>
+					<parentTheme>${liferay.theme.parent}</parentTheme>
+					<themeType>${liferay.theme.type}</themeType>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<properties>
+		<liferay.theme.parent>_styled</liferay.theme.parent>
+		<liferay.theme.type>vm</liferay.theme.type>
+	</properties>
+	
+</project>
