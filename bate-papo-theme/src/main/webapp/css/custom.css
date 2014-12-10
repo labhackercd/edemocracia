@@ -1,0 +1,211 @@
+/* ---------- Importações ---------- */
+@import url(custom-grid.css);
+
+@import url(custom-forms.css);
+
+@import url(ed-twitter.css);
+
+/* ---------- Definições gerais ---------- */
+body {
+	background-color: #fff;
+	font: 75% Verdana, "Lucida sans", Helvetica, Arial, sans-serif;
+	color: #333333;
+}
+
+/* ---------- Acesso ---------- */
+.acessoBatePapo {
+	width: 880px;
+	margin: 0 auto;
+	background-color: #ebebeb;
+	padding: 1em;
+	/* extras */
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.acessoBatePapo .titulo {
+	border-bottom: 3px solid #fff;
+	margin-bottom: 1em;
+}
+
+.acessoBatePapo .titulo h2 {
+	font-weight: normal;
+	margin: 0 0 0.5em;
+}
+
+.acessoBatePapo .descricao {
+	margin-right: 1.5em;
+}
+
+.acessoBatePapo .descricao img {
+	width: 130px;
+	height: 130px;
+	float: left;
+	padding-right: 1em;
+}
+
+.acessoBatePapo .entrar {
+	border-left: 1px solid #ccc;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.acessoBatePapo .entrar input[type='text'] {
+	width: 100%;
+}
+
+.acessoBatePapo .espiar {
+	padding-left: 1em;
+}
+
+.acessoBatePapo .espiar .ajuda {
+	font-size: 0.9em;
+}
+
+.acessoBatePapo .espiar a.botao {
+	background: url(http://www2.camara.gov.br/bg_botao_formulario.jpg)
+		repeat-x scroll left top #ededed;
+	border: 1px solid #ccc;
+	color: #333;
+	font-weight: bold;
+	font-size: 0.95em;
+	padding: 0.2em 1em;
+	text-decoration: none;
+	height: 17px;
+}
+
+/* ---------- Sala ---------- */
+.portlet-boundary_cdchatroom_WAR_cdchatportlet_ {
+	width: auto;
+	margin: 0 auto;
+}
+
+.portlet-boundary_cdchatroom_WAR_cdchatportlet_  label {
+	font-weight: normal;
+}
+
+p.cdchat_room-controls {
+	float: right;
+}
+
+.cdchat_navbar .instrucao {
+	color: #666;
+	background-color: #eee;
+	font-size: 0.9em;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+
+ul.cdchat_moderatorusrlist,ul.cdchat_moderatorbanuserlist,ul.cdchat_usrlist
+	{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	height: 284px;
+}
+
+ul.cdchat_moderatorusrlist {
+	height: 300px;
+	padding: 10px;
+}
+
+ul.cdchat_msglist,ul.cdchat_admmsglist,ul.cdchat_audience_msglist {
+	border: 1px solid #ccc;
+	border-bottom: none;
+	margin: 0;
+	padding: 10px;
+}
+
+.cdchat_twitter-video {
+	border: 1px solid #ccc;
+	width: 230px;
+	float: right;
+	margin-left: 8px;
+	padding: 10px;
+}
+
+ul.cdchat_msglist em,ul.cdchat_admmsglist em,ul.cdchat_audience_msglist em
+	{
+	color: #666;
+	font-size: 0.9em;
+	font-style: normal;
+}
+
+p.cdchat_autoscroll_chkbox {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-top: none;
+	padding: 0.2em 0.5em;
+	margin: 0 0 10px 0;
+}
+
+span.cdchat_sendto_user {
+	font-weight: bold;
+}
+
+li.cdchat_user {
+	cursor: pointer;
+	margin: 3px 0;
+	padding: 3px;
+}
+
+li.cdchat_user img {
+	display: none;
+}
+
+li.cdchat_selected_user {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	padding: 2px; /* para compensar a largura da borda */
+}
+
+h2.tituloSecundario {
+	font-size: 1.4em;
+}
+
+.acessoBatePapo .cdchat_twitter-video-horizontal {
+	padding-top: 0px;
+}
+
+.videoFlash,.videoMediaPlayer {
+	padding-top: 7px;
+}
+
+.acessoBatePapo .titulo h2 {
+	width: 682px;
+}
+
+.lista_bp_abertos h3,.lista_bp_fechados h3, .lista_bp_agendados h3 {
+	color: #666;
+	font-size: 1.2em;
+	border-bottom: 2px #CCC solid;
+	margin-bottom: 5px;
+	padding-bottom: 2px;
+}
+
+.lnk-botao {
+	background: url(http://www2.camara.gov.br/bg_botao_formulario.jpg)
+		repeat-x scroll left top #ededed;
+	border: 1px solid #ccc;
+	color: #333;
+	font-weight: bold;
+	font-size: 0.95em;
+	padding: 0.2em 1em;
+	text-decoration: none;
+	height: 17px;
+}
+
+.lnk-botao.desativado {
+	color: #C5C5C5;
+	border-color: #DDD;
+	background: #F1F1F1;
+}
+
+span.lnk-botao a {
+	color: #333;
+	text-shadow: none !important;
+	text-decoration: none;
+}
+.taglib-search-iterator-page-iterator-bottom {
+	margin-top: 10px;	
+}

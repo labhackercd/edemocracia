@@ -1,0 +1,384 @@
+/*
+	FORMULÁRIOS
+	* Elementos genéricos
+	* Redefinições(override) do framework
+	* Elementos de Orientação do Formulário
+	- Disposição de campos vertical, com label por sobre o campo
+	- Disposição de campos horizontal, com label por sobre o campo
+	- Disposição de campos horizontal, com label ao lado do campo
+	* Especializações de elementos 
+	- ...
+*/
+
+/****** Elementos genéricos */
+fieldset {
+	padding: 0.8em 0.8em 1.2em;
+}
+
+form {
+}
+
+label {
+	font-weight: bold;
+	font-size: 1em;
+	color: #666;
+}
+
+.choices label,
+label.choice {
+	font-size: 1em;
+	font-weight: normal;
+}
+
+legend {
+	font-size: 1em;
+	font-weight: bold;
+	padding: 0.2em;
+	margin-bottom: 0.4em;
+	background-color: transparent;
+	color: #666;
+}
+
+select {
+	margin-left: 0;
+}
+
+/* -------------- Botões de ação ------------- */
+input[type="submit"], input[type="submit"]:hover, input[type="submit"]:focus,
+input[type="button"], input[type="button"]:hover, input[type="button"]:focus,
+input[type="reset"],  input[type="reset"]:hover,  input[type="reset"]:focus,
+button,               button:hover,               button:focus,
+.aui-buttonitem {
+	background: url(http://www2.camara.gov.br/bg_botao_formulario.jpg) repeat-x scroll left top #ededed;	
+	border: 1px solid #ccc;
+	color: #333;
+	font-weight: bold;
+	font-size: 0.95em;
+	font-family: inherit;
+	text-shadow: none;
+	padding: 0.2em 1em;
+	
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+
+input.comIcone,  input.comIcone:hover, input.comIcone:focus,
+input.apenasIcone, input.apenasIcone:hover, input.apenasIcone:focus {
+	padding-left: 2.8em;
+	background-position: 0.6em 0.5em;
+	background-repeat: no-repeat;
+}
+
+input.apenasIcone, input.apenasIcone:hover, input.apenasIcone:focus {
+	padding-right: 0;
+	width: 0;
+	text-indent: -10000px;
+}
+
+input.adicionar, input.adicionar:hover, input.adicionar:focus {
+	background-image: url(../images/custom/ico_adicionar.png);
+}
+input.buscar, input.buscar:hover, input.buscar:focus {
+	background-image: url(../images/custom/ico_lupa.png);
+}
+
+input.comentar, input.comentar:hover, input.comentar:focus {
+	background-image: url(../images/custom/ico_comentar.png);
+}
+
+input.limpar, input.limpar:hover, input.limpar:focus {
+	background-image: url(../images/custom/ico_limpar.png);
+}
+
+
+.aui-toolbar-item {
+	margin-right: 3px;
+}
+
+/* ---------- Entrada de dados  ---------- */
+input.focus,
+textarea.focus {
+	background: #ffffff none;
+	border-color: #cccccc;
+}
+
+input[type="text"], input[type="password"], input[type="file"],  
+select,
+textarea,
+.textarea,
+textarea:focus {
+    background-color: #fff;
+    background-repeat: repeat-x;
+    background-image: none;
+    border: 1px solid #ccc;
+    padding: 3px 2px;
+    color: inherit;
+    margin: 0;
+}
+
+select {
+	padding: 2px;
+}
+
+input[type='radio'], input[type='checkbox'],
+.choices input,
+input.choice { 
+	border: 0px !important; 
+	background: none !important;
+	display: inline !important;
+	vertical-align: middle;
+}
+
+
+/****** Elementos de Orientação do Formulário */
+/* Disposição de campos vertical, com label por sobre o campo */
+.vForm .fieldList li { 
+	display: block; 
+	clear: both; 
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.vForm .fieldList li.maisProximo {
+	/* Para o caso de o campo ter forte relação com o anterior (ex.: Nome e Apelido) */
+	margin-top: -1.1em;
+} 
+
+.vForm label { 
+	padding-left: 0.2em;
+}
+
+.vForm input, 
+.vForm select , 
+.vForm textarea { 
+	display: block; 
+}
+
+.vForm fieldset .fieldList li {
+	margin-bottom: 0.8em;
+}
+
+.vForm .choices li,
+.vForm fieldset .choices li {
+	margin-bottom: 0.2em;
+}
+
+.vForm .grid2:after,
+.vForm .grid3:after,
+.vForm .grid4:after {
+	/* O mesmo estilo que clearedBox, para estender a dimensão com floats */
+	content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;	
+}
+
+.vForm .grid3 li {
+	float: left;
+	width: 32.8%;
+	clear: none;
+}
+
+.vForm .grid2 li {
+	float: left;
+	width: 49.9%;
+	clear: none;
+}
+
+.vForm .grid4 li {
+	float: left;
+	width: 24.9%;
+	clear: none;
+}
+
+/* Disposição de campos horizontal, com label por sobre o campo */
+.hForm { 
+	overflow: hidden; 
+	height: 1%; 
+}
+
+.hForm .choices {
+	float: left;
+}
+
+.hForm .fieldList,
+.hForm .choices {
+	overflow: hidden;
+	height: 1%;
+}
+
+.hForm .fieldList li,
+.hForm .choices li { 
+	float: left; 
+	margin-right: 10px; 
+	display: inline; 
+	width: auto; 
+	clear: none; 
+}
+
+.hForm .fieldList li {
+	margin-bottom: 0.85em;
+}
+
+.hForm input, 
+.hForm select, 
+.hForm textarea { 
+	display: block;
+}
+
+/* Disposição de campos horizontal, com label ao lado do campo */
+.iForm { 
+	overflow: hidden; 
+	height: 1% 
+}
+
+.iForm .fieldList li { 
+	float: left; 
+	margin-right: 0.85em; 
+	display: inline; 
+	width: auto; 
+	border-bottom: 0;
+	margin-bottom: 0.85em;
+}
+
+.iForm label{ 
+	float: left; 
+	width: 8.5em;
+}
+
+.iForm input, 
+.iForm select,
+.iForm textarea { 
+	float: left
+}
+
+/****** Novos elementos para uso nos formulários */
+fieldset .notes {
+}
+
+.errorMessage { 
+}
+
+.fieldList {
+	margin: 0;
+	padding: 0;
+	border: none;
+	list-style: none; 
+}
+
+.finalMessage {
+}
+
+.hint {
+	display: block;
+	font-size: 0.9em;
+	color: #666;	
+}
+
+.instructions {
+	margin-bottom: 1em;
+	display: block;
+}
+
+.okMessage {
+}
+
+.required {
+}
+
+.warningMessage {
+}
+
+.errorMessage, 
+.warningMessage,
+.okMessage {
+	display: block;
+}
+
+.error {
+}
+
+.visualLabel {
+	font-weight: bold;
+	color: #666;
+}
+
+.secaoDinamica {
+	margin-top: 1.2em;
+	padding-top: 1em;
+	border-top: 1px dotted #999;
+}
+
+/****** Especialização de elementos básicos */
+fieldset.visualWrapper, fieldset.choicesWrapper {
+	padding: 0;
+	margin: 0;
+	border: none; 
+}
+
+fieldset.choicesWrapper {
+	padding-top: 0.8em;
+}
+
+fieldset.choicesWrapper legend {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+ul.choices {
+	margin: 0;
+	padding: 0;
+}
+
+input.action {
+}
+
+input.secondary {
+}
+
+input.changingStep {
+}
+
+/* Para definir botões de forma absoluta no formulário */
+form.conteiner,
+fieldset.conteiner {
+	position: relative;
+}
+
+form.conteiner input[type="submit"].fixo, 
+form.conteiner button.fixo,
+form.conteiner .submit.fixo {
+	position: absolute;
+	bottom: 0;
+	right: 0; 
+}
+
+/* ---------- Lista de Botões de Ação ---------- */
+
+.actionList {
+	overflow: hidden;
+}
+
+.actionList li,
+.vForm .actionList li,
+.hForm .actionList li {
+	float: left;
+	margin-right: 1em;
+	clear: none;
+	width: auto;
+}
+
+.actionList li.ultimo {
+	margin-right: 0;
+}
+
+/* ---------- Extras ---------- */
+input, select, textarea {
+	box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	-webkit-box-sizing: border-box !important;
+	-ms-box-sizing: border-box !important;
+}
