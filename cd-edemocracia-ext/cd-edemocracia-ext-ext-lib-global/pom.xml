@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>br.gov.camara.edemocracia</groupId>
+		<artifactId>cd-edemocracia-ext</artifactId>
+		<relativePath>../pom.xml</relativePath>
+		<version>6.1.1-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.gov.camara.edemocracia</groupId>
+	<artifactId>cd-edemocracia-ext-ext-lib-global</artifactId>
+	<packaging>pom</packaging>
+	<name>cd-edemocracia-ext Ext Lib Global</name>
+	<dependencies>
+	</dependencies>
+</project>
