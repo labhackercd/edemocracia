@@ -39,15 +39,15 @@ Flickr: https://www.flickr.com/photos/edemocracia/ <br/>
 
 3. Criar o banco de dados e configurar o datasource com as configurações do banco utilizado e adicionar o nome do datasource criado no arquivo portal-ext.properties através da propriedade: jdbc.default.jndi.name=NOMEDODATASOURCE
 
-* Este arquivo se encontra dentro do projeto cd-edemocracia-ext, no diretório: cd-edemocracia-ext-ext
-* É necessário abrir este arquivo e adicionar as configurações necessárias
-* Copiar este arquivo para um diretório acima da pasta do tomcat
+	* Este arquivo se encontra dentro do projeto cd-edemocracia-ext, no diretório: cd-edemocracia-ext-ext
+	* É necessário abrir este arquivo e adicionar as configurações necessárias
+	* Copiar este arquivo para um diretório acima da pasta do tomcat
 
 4. Instalar o ext
 
-* Fazer o build do projeto cd-edemocracia-ext utilizando o maven
-* Acessar a pasta cd-edemocracia-ext-ext-impl/target/classes dentro do projeto. Copiar os subdiretórios br, com e templates e colar dentro do arquivo jar do liferay chamado portal-impl.jar, localizado no diretório /tomcat-7.0.27/webapps/ROOT/WEB-INF/lib. Copiar o arquivo ext-spring que está dentro de cd-edemocracia-ext-ext-impl/target/classes/META-INF para a pasta META-INF dentro do portal-impl.jar.
-* Acessar a pasta cd-edemocracia-ext-ext-util-java/target/classes dentro do projeto. Copiar o subdiretório chamado com e colar dentro do arquivo jar do liferay chamado util-java.jar, localizado no diretório /tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/
+	* Fazer o build do projeto cd-edemocracia-ext utilizando o maven
+	* Acessar a pasta cd-edemocracia-ext-ext-impl/target/classes dentro do projeto. Copiar os subdiretórios br, com e templates e colar dentro do arquivo jar do liferay chamado portal-impl.jar, localizado no diretório /tomcat-7.0.27/webapps/ROOT/WEB-INF/lib. Copiar o arquivo ext-spring que está dentro de cd-edemocracia-ext-ext-impl/target/classes/META-INF para a pasta META-INF dentro do portal-impl.jar.
+	* Acessar a pasta cd-edemocracia-ext-ext-util-java/target/classes dentro do projeto. Copiar o subdiretório chamado com e colar dentro do arquivo jar do liferay chamado util-java.jar, localizado no diretório /tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/
 
 5. Copiar o arquivo usuário.lar no diretório cd-edemocracia-ext/doc para o diretório /data que fica um diretório acima da pasta do tomcat
 
