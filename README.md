@@ -20,8 +20,6 @@ Twitter: https://twitter.com/Edemocracia<br/>
 YouTube: http://www.youtube.com/user/edemocraciacd/featured <br/>
 Flickr: https://www.flickr.com/photos/edemocracia/ <br/>
 
-<br/><br/>
-
 ##Instalação do e-Democracia 
 
 ###Ambiente
