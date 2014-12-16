@@ -26,7 +26,7 @@ Flickr: https://www.flickr.com/photos/edemocracia/ <br/>
 
 * Liferay Portal Community Edition 6.1.1 CE GA2 (Tomcat bundle)
 * JRE 1.6
-* SQL Server 10
+* SQL Server 2008
 
 
 ###Instruções
