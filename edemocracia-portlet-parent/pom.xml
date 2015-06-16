@@ -21,16 +21,26 @@
 		<slf4j.version>1.5.11</slf4j.version>
 	</properties>
 
+    <repositories>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>com.liferay.maven.plugins</groupId>
 				<artifactId>liferay-maven-plugin</artifactId>
-				<version>${liferay.version}-SNAPSHOT</version>
+				<version>${liferay.version}</version>
 				<configuration>
 					<autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
 					<apiDir>${basedir}/src/main/java</apiDir>
 					<pluginType>portlet</pluginType>
+					<liferayVersion>${liferay.version}</liferayVersion>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -159,6 +169,5 @@
 		<module>../cd-priorizacao-portlet</module>
 		<module>../cd-registeruser-portlet</module>
 		<module>../cd-wikilegis-portlet</module>
-		<module>../social-networking-portlet</module>
 	</modules>
 </project>
