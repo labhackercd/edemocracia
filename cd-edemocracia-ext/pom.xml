@@ -39,6 +39,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+		    <id>data-local</id>
+		    <name>data</name>
+		    <url>file://${basedir}/../../repo</url>
+  		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>javax.portlet</groupId>

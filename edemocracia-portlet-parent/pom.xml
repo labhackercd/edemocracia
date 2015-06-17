@@ -28,8 +28,13 @@
             <url>http://repository.primefaces.org</url>
             <layout>default</layout>
         </repository>
+		<repository>
+		    <id>data-local</id>
+		    <name>Repositório local</name>
+		    <url>file://${basedir}/../repo</url>
+  		</repository>
     </repositories>
-
+    
 	<build>
 		<plugins>
 			<plugin>
